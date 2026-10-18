@@ -23,6 +23,8 @@ def harbor_trials(job_dir):
             continue
         if not r.get("finished_at"):
             continue
+        if (r.get("exception_info") or {}).get("exception_type") == "CancelledError":
+            continue  # interrupted by the operator (runner stopped); re-run in a continuation part
         task = res.parent.name.rsplit("__", 1)[0]
         reward = ((r.get("verifier_result") or {}).get("rewards") or {}).get("reward")
         exc = (r.get("exception_info") or {}).get("exception_type")

@@ -52,7 +52,9 @@ def finished_tasks(jobs_dir, name, seed):
     done = set()
     for res in jobs_dir.glob(f"tb2-{name}-s{seed}*/*/result.json"):
         try:
-            if json.loads(res.read_text()).get("finished_at"):
+            r = json.loads(res.read_text())
+            # trials cancelled by the operator (runner stopped) are re-run, not counted
+            if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
                 done.add(res.parent.name.rsplit("__", 1)[0])
         except ValueError:
             pass
