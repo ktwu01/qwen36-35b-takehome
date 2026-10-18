@@ -10,3 +10,7 @@ ties-d0.2-l1.0	--method ties --experts outputs/swe outputs/term outputs/sci --de
 ties-d0.5-l1.0	--method ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 1.0
 ties-d0.5-l0.7	--method ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 0.7
 dare-d0.5-l1.0	--method dare_ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 1.0
+expert-term-ckpt75	--method single --experts outputs/term/ckpt/checkpoint-75
+expert-swe-ckpt50	--method single --experts outputs/swe/ckpt/checkpoint-50
+ta2-swe+term-l1.0	--method task_arithmetic --experts outputs/swe outputs/term --lam 1.0
+ties2-swe+term-d0.5-l1.0	--method ties --experts outputs/swe outputs/term --density 0.5 --lam 1.0
