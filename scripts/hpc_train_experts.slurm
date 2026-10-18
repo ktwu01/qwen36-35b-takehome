@@ -16,11 +16,12 @@ PY=$SCRATCH/qwen36/venv/bin/python
 mkdir -p logs outputs
 nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.draw --format=csv -l 30 \
   > "logs/gpu_${SLURM_JOB_ID}.csv" &
-i=0
+i=0; pids=()
 for e in ${EXPERTS:-swe term sci}; do
   if [ -f "outputs/$e/adapter/adapter_model.safetensors" ]; then echo "$e already done"; i=$((i+1)); continue; fi
   CUDA_VISIBLE_DEVICES=$i "$PY" -m takehome.sft --expert "$e" --data "data/processed/$e" --out "outputs/$e" \
     >> "logs/train_$e.log" 2>&1 &
-  i=$((i+1))
+  pids+=($!); i=$((i+1))
 done
-wait
+# wait only for training (a bare `wait` would also wait on the nvidia-smi logger until the time limit)
+[ ${#pids[@]} -gt 0 ] && wait "${pids[@]}"
