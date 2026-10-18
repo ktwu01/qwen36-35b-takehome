@@ -89,8 +89,44 @@ untouched tensors (embeddings, norms, vision tower, MTP head) are copied bit-exa
 
 Ablation grid (`configs/merge_ablation.tsv`): task arithmetic lam in {0.5, 0.7, 1.0}; TIES
 (density, lam) in {(0.2, 1.0), (0.5, 1.0), (0.5, 0.7)}; DARE-TIES (0.5, 1.0). Selection uses only the
-independent dev sets (per-domain token loss, `src/takehome/dev_loss.py`); per-module sign-conflict rates
-and pairwise task-vector cosines are saved as `merge_stats.json`. Results: pending.
+independent dev sets (per-domain token loss on the first 100 dev examples, `src/takehome/dev_loss.py`,
+bf16 weights, one A100) under a rule fixed before any result (`scripts/select_merge.py`): lowest mean
+dev loss among 3-expert merges. Per-module sign-conflict rates and pairwise task-vector cosines are in
+`results/dev/*.merge_stats.json`; plot `curves/merge_ablation.png`, data `curves/source/merge_ablation_dev_loss.csv`.
+
+| Model / merge | swe dev | term dev | sci dev | mean |
+|---|---|---|---|---|
+| Base | 0.2907 | 0.3082 | 0.6242 | 0.4077 |
+| expert swe | **0.2083** | 0.2574 | 0.6304 | 0.3654 |
+| expert term | 0.2377 | **0.1706** | 0.6260 | 0.3448 |
+| expert sci | 0.2880 | 0.2801 | **0.5619** | 0.3767 |
+| task arithmetic lam 1.0 | 0.2535 | 0.2076 | 0.6224 | 0.3612 |
+| task arithmetic lam 0.7 | 0.2311 | 0.1908 | 0.5937 | 0.3385 |
+| task arithmetic lam 0.5 | 0.2225 | 0.1908 | 0.5827 | 0.3320 |
+| DARE-TIES d 0.5 lam 1.0 | 0.2292 | 0.1898 | 0.5899 | 0.3363 |
+| TIES d 0.5 lam 0.7 | 0.2207 | 0.1987 | 0.5758 | 0.3317 |
+| TIES d 0.2 lam 1.0 | 0.2214 | 0.1894 | 0.5778 | 0.3295 |
+| **TIES d 0.5 lam 1.0 (selected, `configs/merge_final.json`)** | 0.2203 | 0.1873 | 0.5759 | **0.3278** |
+
+What the merge does on dev: it keeps 85% (swe), 88% (term) and 78% (sci) of each expert's own-domain
+loss reduction relative to base, inside one model. The task vectors are nearly orthogonal (mean cosine
+swe-term 0.097, swe-sci 0.030, term-sci 0.026) and the per-entry sign-conflict rate among non-zero
+entries is 0.73, close to the 0.75 expected for three independent sign patterns; so plain summation
+(task arithmetic lam 1.0) over-shoots and erases most of the science gain, scaling down helps, and TIES'
+per-entry sign election plus disjoint mean handles the conflicts best. DARE's random drop is worse than
+TIES' magnitude trim at the same density.
+
+### Controls
+
+- **Number of experts merged** (dev loss): merging only the two agent experts (TIES swe+term d 0.5)
+  gives slightly better agent losses (swe 0.2151, term 0.1803) than the 3-expert merge (0.2203, 0.1873)
+  but science gets worse than base (0.6312 vs 0.6242). Adding the science expert costs ~0.005-0.007 on the
+  agent domains and buys a 0.055 science improvement.
+- **Training strength** (dev loss): term expert at 60% of training (checkpoint 75) vs final: term 0.1761
+  vs 0.1706. (The equivalent swe checkpoint-50 had been rotated out by `save_total_limit`; not run.)
+- **Union of the data in one adapter** (planned "merge vs single model"): attempted as a 3-GPU DDP run,
+  failed at the first step (`DistributedDataParallel` hides `get_base_model`, used by the chunked loss;
+  `logs/train-union/`), and was dropped for time. Not reported as a result.
 
 ## 5. Benchmarks (locked before training)
 
