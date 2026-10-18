@@ -1,7 +1,8 @@
 #!/bin/bash
 # Sequential evaluation lane for the experts on seismic15 (run from seismic18, which hosts the
 # agent containers). Required cells first:
-#   term TB2 seed 1 (already running) -> swe on SWE-Pro -> sci on ASI-Bench -> term TB2 seed 2.
+#   term TB2 seed 1 (already running) -> swe on SWE-Pro -> term TB2 seed 2+.
+# (sci on ASI-Bench and HLE run on the HPC A100 lanes, like every model's ASI-Bench/HLE.)
 #   bash scripts/lane_s15.sh >> logs/lane_s15.log 2>&1
 set -u
 cd "$(dirname "$0")/.."
@@ -44,10 +45,6 @@ log "term seed 1 done"
 serve swe expert-swe
 bash scripts/run_swepro.sh swe "$API" 6 >> logs/sbp_swe.log 2>&1
 log "swe SWE-Pro done"
-
-serve sci expert-sci
-bash scripts/run_asi.sh sci "$API" 6 >> logs/asi_sci.log 2>&1
-log "sci ASI-Bench done"
 
 serve term expert-term
 /usr/bin/python3.12 scripts/run_tb2.py --name term --api "$API" --seeds 2 3 4 5 -n 6 >> logs/tb2/term-s15.log 2>&1
