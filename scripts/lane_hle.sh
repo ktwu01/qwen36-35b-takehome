@@ -21,7 +21,10 @@ for spec in "base 18107 base $(u 18107)" "merged 18101 merged $(u 18109 18101 18
   set -- $spec
   until curl -sf --max-time 5 "http://127.0.0.1:$2/v1/models" | grep -q "\"$1\""; do sleep 60; done
   echo "[$(date '+%F %T')] HLE $1 -> $4"
-  bash scripts/run_hle.sh "$1" "$4" "$3" 48 >> "logs/hle_$1.log" 2>&1 &
+  # 12 in-flight requests per endpoint, so the agent benchmarks sharing these GPUs (ASI-Bench, TB2) keep
+  # being served; their budgets are wall-clock, so HLE must not starve them (same cap for every model)
+  n_ep=$(echo "$4" | tr "," "\n" | wc -l)
+  bash scripts/run_hle.sh "$1" "$4" "$3" $((12 * n_ep)) >> "logs/hle_$1.log" 2>&1 &
 done
 wait
 echo "[$(date '+%F %T')] HLE done"
