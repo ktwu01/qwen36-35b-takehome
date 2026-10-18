@@ -62,8 +62,11 @@ def swe_pro(base, model):
     rows, seen = [], set()
     jobs = Path(base) / "sbp-jobs"
     for job in [jobs / f"sbp-{model}-regrade"] + sorted(jobs.glob(f"sbp-{model}-p*-regrade")):
+        # only tasks whose agent trial finished in this part (an interrupted part's regrade would
+        # replay cancelled tasks with an empty patch)
+        agent_done = {t["task"] for t in harbor_trials(jobs / job.name.removesuffix("-regrade"))}
         for t in harbor_trials(job):
-            if t["task"] not in seen:
+            if t["task"] in agent_done and t["task"] not in seen:
                 seen.add(t["task"])
                 rows.append({**t, "run": "regrade", "part": job.name})
     return rows
