@@ -1,136 +1,173 @@
-> **提交位置说明：**代码、README、分析报告、loss 曲线、训练与评测日志等，必须提交到**面试方提供并分配给该候选人的独立 GitHub 仓库**。训练好的 LoRA SFT 和第二阶段优化模型，必须上传到**候选人自己的 Hugging Face 账号下创建的模型仓库**（`https://huggingface.co/<你的用户名>/<模型仓库名>`），设置为 **Public**，并将两个模型链接及 revision 写入面试方提供的 GitHub 仓库 README 后提交给面试方。
+# Multi-expert training and model merging on Qwen3.5-9B
 
-# 模型训练研究员笔试提交指南
+Candidate repository for the take-home "多专家训练与模型合版实验" (template:
+[apexin-ai/qwen36-35b-takehome](https://github.com/apexin-ai/qwen36-35b-takehome)). Three LoRA experts
+are trained on public data, each aimed at a subset of SWE-bench Pro v2-hard, Terminal-Bench 2.0, HLE and
+ASI-Bench, merged into one checkpoint with task arithmetic / TIES / DARE-TIES, and compared against the
+untouched base on all four benchmarks under fixed, identical protocols.
 
-以 [Qwen/Qwen3.6-35B-A3B](https://huggingface.co/Qwen/Qwen3.6-35B-A3B) 完成自建数据、LoRA/QLoRA SFT、SFT 后第二阶段优化，并在 **SWE-bench Pro v2-hard、HLE、ASI-Bench、Terminal-Bench** 上完成三组模型对比。
+- Candidate repo: https://github.com/ktwu01/qwen36-35b-takehome (this repository)
+- Hugging Face checkpoints: see [models/README.md](models/README.md) (links and revisions)
+- One-page report: [report.pdf](report.pdf)
 
-> **训练好的模型必须上传 Hugging Face，并设置为 Public（公开）。** 至少提供 LoRA SFT 与第二阶段优化两个 checkpoint，供面试方及公众下载、验证和展示。GitHub 提交代码、报告、曲线和日志；模型权重存放在 Hugging Face。
+> Status markers in this file: every number is produced by `scripts/summarize.py` from the raw runs in
+> `results/` and `logs/`. Anything not yet measured is written as "pending", never estimated.
 
-## 仓库使用方式
+## 1. Research question
 
-本仓库为公开题目模板仓库：https://github.com/apexin-ai/qwen36-35b-takehome 。面试方从模板为每位候选人创建独立私有仓库，并单独邀请对应 GitHub 账号。候选人只在分配给自己的仓库提交，不向模板仓库提交答案，也不使用共享候选人分支。模板设置不会自动创建候选人仓库或发送邀请。
+Can three narrow experts, each trained in the exact agent protocol of its target benchmark, be merged
+into a single model that keeps (most of) each expert's gain without losing the base model's general
+ability, and does a merge beat simply training one adapter on the union of the data?
 
-在个人候选人仓库的 main 分支提交，或按面试通知提交 Pull Request。最终提供仓库或 PR 链接、最终 commit SHA、两个 Hugging Face 模型链接及 revision，并发送至面试通知指定的邮箱。私有代码仓库与公开模型仓库是两项独立要求。
+Design hypothesis: SWE-bench Pro and Terminal-Bench need two *different* agent protocols
+(mini-swe-agent text actions vs Terminus-2 JSON keystrokes), which would interfere inside one adapter;
+HLE and ASI-Bench share the scientific-knowledge domain. Weight-space merging should keep the protocols
+apart better than data mixing. ASI-Bench is the interesting case: it is run with the same mini-swe-agent
+harness as SWE-Pro but needs science knowledge, so only a model that has both (the merge) can combine
+them.
 
-## 推荐目录结构
+## 2. Base model choice (7B-class fallback, disclosed)
 
-以下为提交结构示例，不代表模板已包含这些实现文件。文件名可调整，请在 README 标明实际路径。
+The exam's preferred base is `Qwen/Qwen3.6-35B-A3B` (revision `995ad96eacd98c81ed38be0c5b274b04031597b0`,
+downloaded and verified, 71.9 GB bf16). It was not used, because of compute available inside the
+deadline:
 
-```text
-./
-├── README.md                 # 实验说明、复现命令、结果及公开模型链接
-├── report.pdf                # 一页以内分析报告
-├── requirements.lock         # 或等价依赖锁定文件
-├── .gitignore                # 排除密钥、缓存、权重；保留要求的日志
-├── configs/
-│   ├── sft.yaml              # SFT 完整配置
-│   ├── stage2.yaml           # 第二阶段训练配置
-│   └── eval/                 # 四项 benchmark 的版本、任务清单和固定配置
-├── data/
-│   ├── README.md             # 来源、许可、规模、划分、清洗和去重
-│   └── manifests/            # 数据版本、清单及校验值
-├── src/                      # 数据处理、训练和评测实现
-├── scripts/
-│   ├── prepare_data.sh
-│   ├── train_sft.sh
-│   ├── train_stage2.sh
-│   ├── evaluate.sh           # 三组模型 × 四项 benchmark
-│   ├── summarize.py          # 汇总原始结果、计算置信区间
-│   └── plot_curves.py        # 从源数据重建曲线
-├── logs/<run_id>/
-│   ├── metadata.json         # 版本、硬件、配置、命令、时间和种子
-│   ├── train.log             # 训练 run 的完整日志
-│   ├── eval.log              # 评测 run 的完整日志
-│   ├── metrics.jsonl         # 逐 step 原始指标
-│   ├── errors.log            # 错误、重试、超时；无错误则说明
-│   └── resources.csv         # 显存、耗时、GPU 小时和费用
-├── curves/
-│   ├── sft_loss.png          # 训练及独立验证集 loss
-│   ├── stage2_metrics.png    # 第二阶段 loss 及方法相关指标
-│   └── source/              # CSV/JSON 等曲线源数据
-├── results/
-│   ├── base/<benchmark>/<run_id>/
-│   ├── sft/<benchmark>/<run_id>/
-│   ├── stage2/<benchmark>/<run_id>/
-│   └── summary.csv          # 三组模型 × 四项 benchmark 汇总
-├── analysis/
-│   ├── failures.md          # 至少 20 个失败案例及归因
-│   └── uncertainty.json     # 置信区间和重复运行波动
-└── models/
-    └── README.md            # 两个公开 HF 链接、revision、加载命令和许可证
+| Resource | What was available |
+|---|---|
+| seismic18 | 1x NVIDIA RTX PRO 4000 Blackwell 24 GB, 64 CPU, 502 GB RAM |
+| seismic15 / seismic17 | 1x RTX A4500 20 GB each |
+| an HPC supercomputer | A100 40 GB nodes via `gpu-a100-dev` (2 h jobs) / `gpu-a100`; GPU queues had 1-2 day waits on 2026-10-18 |
+
+35B-A3B needs ~72 GB just for bf16 weights (all experts are resident even though only ~3B are active),
+so neither training nor 256K-context serving fits any single GPU here, and the four full evaluations of
+>= 5 models need several GPUs for a day. The exam allows a 7B-class same-family fallback; we use
+**`Qwen/Qwen3.5-9B`** (revision `c202236235762e1c871ad0ccb60c8ee5ba337b9a`), which shares Qwen3.6's
+architecture family (`qwen3_5`: Gated DeltaNet + gated attention hybrid, 3:1 linear/full attention,
+natively multimodal, 262K context). That keeps the 256K Terminal-Bench setting and HLE's image questions
+in scope, which Qwen3-8B (32K, text-only) would not. Tokenizer and chat template: the pinned revision's.
+Thinking mode: on (model default) for every model and benchmark.
+
+## 3. Experts and training
+
+| Expert | Target benchmark(s) | Data (license) | Train / dev | Protocol |
+|---|---|---|---|---|
+| `swe` | SWE-bench Pro v2-hard | SWE-smith mini-swe-agent trajectories (MIT) | 2,000 / 200 | mini-swe-agent text actions |
+| `term` | Terminal-Bench 2.0 | OpenThoughts-Agent v1 SFT, Terminus-2 traces (Apache-2.0) | 2,000 / 200 | Terminus-2 JSON |
+| `sci` | HLE, ASI-Bench | OpenScienceReasoning-2 (CC-BY-4.0) | 4,000 / 200 | single-turn reasoning |
+| control `union` | all | the three sets concatenated | 8,000 / 600 | mixed |
+
+Data construction, cleaning, dedup, difficulty tiers and decontamination: [data/README.md](data/README.md).
+
+All experts share one configuration (`configs/experiment.yaml`), seed `20261018`:
+
+| Setting | Value |
+|---|---|
+| Method | QLoRA: nf4 4-bit base (double quant), bf16 compute, LoRA adapters in bf16 |
+| Why QLoRA | 9B bf16 weights (~19 GB) plus 16K-token activations do not fit 20-40 GB GPUs; peak with QLoRA 18-19 GB |
+| Target modules | language model only: full-attention `q/k/v/o_proj` (8 layers), Gated DeltaNet `in_proj_qkv`, `in_proj_z`, `out_proj` (24 layers), MLP `gate/up/down_proj` (32 layers); vision tower frozen |
+| Rank / alpha / dropout | 32 / 64 / 0.0 (80.2M trainable params, 0.89%) |
+| LR / schedule | 1e-4, cosine, 3% warmup |
+| Batch | 1 x grad-accum 16 = 16 sequences (union: 3 GPUs x 1 x 5 = 15) |
+| Context | 16,384 tokens; longer examples dropped |
+| Loss | assistant tokens only (chat-template spans), token-level mean over the accumulated batch |
+| Epochs | 1 |
+| Checkpoints | every 25 steps, last 3 kept; resumable across 2 h jobs; final adapter = end of epoch |
+
+Hardware, time, throughput, memory and adapter size per expert: pending (`logs/<run_id>/resources.csv`).
+
+## 4. Merging
+
+Implemented in `src/takehome/merge.py` (no external merge library; mergekit pins conflict with the vLLM
+stack). Each expert's task vector is the dense LoRA delta `dW_i = (alpha/r) B_i A_i` per adapted matrix;
+untouched tensors (embeddings, norms, vision tower, MTP head) are copied bit-exact from the base.
+
+| Method | Rule | Conflict handling |
+|---|---|---|
+| Task arithmetic | `W + lam * sum_i dW_i` | none (deltas add) |
+| TIES | trim each `dW_i` to its top-`density` magnitudes, elect the sign of the summed trimmed deltas per entry, average only agreeing entries | sign election + disjoint mean |
+| DARE-TIES | random drop with prob `1 - density`, rescale `1/density`, then TIES election | stochastic sparsification + sign election |
+
+Ablation grid (`configs/merge_ablation.tsv`): task arithmetic lam in {0.5, 0.7, 1.0}; TIES
+(density, lam) in {(0.2, 1.0), (0.5, 1.0), (0.5, 0.7)}; DARE-TIES (0.5, 1.0). Selection uses only the
+independent dev sets (per-domain token loss, `src/takehome/dev_loss.py`); per-module sign-conflict rates
+and pairwise task-vector cosines are saved as `merge_stats.json`. Results: pending.
+
+## 5. Benchmarks (locked before training)
+
+Lock files with source, revision, split and the full task-ID list: `configs/eval/*.lock.json`.
+
+| Benchmark | Version / split | Tasks | Harness | Primary metric |
+|---|---|---|---|---|
+| SWE-bench Pro v2-hard | `ScaleAI/SWE-bench_Pro` config `hard` @ `2d52cb3`, = `v2/hard51_ids.txt` of `scaleapi/SWE-bench_Pro-os@66f9276` (v2.0.0) | 51 | official v2 Harbor tasks, host mini-swe-agent with the official `mini_textbased.yaml`, 50-min budget, `patch_replay` re-grade on pristine images | resolved rate |
+| Terminal-Bench 2.0 | Harbor registry `terminal-bench@2.0`, task digests in the lock | 89 | Harbor 0.24.0 + Terminus-2 | success rate, mean and std over 5 seeds |
+| HLE | `cais/hle` test @ `5a81a4c`, all questions incl. images, no tools | 2,500 | official prompts of `centerforaisafety/hle@22ed307`, judge `o3-mini-2025-01-31` | accuracy |
+| ASI-Bench | `asibench==0.2.0`, tasks `apexin-ai/ASI-Bench@684ac2c`, instances `ASI-Bench-seed31415` @ `0fa1421`, levels B1-B4 | 59 x 4 | file-exchange mini-swe-agent, `linux_ns` sandbox, 3 h per instance | official local `mean_percent` (+ all-instances mean, per level) |
+
+Shared serving (`scripts/serve.sh`, identical for every model): vLLM 0.31.0, online FP8 weights,
+FP8 (e4m3) KV cache, 262,144-token context, prefix caching, thinking on, `qwen3` reasoning parser.
+Sampling for every benchmark: temperature 1.0, top_p 0.95, top_k 20 (Qwen thinking defaults, also the
+Terminal-Bench model-card setting). Max tokens: TB2 80K (81,920); HLE 32,768; agents default per turn.
+
+### Deviations from the official setups (all apply identically to every evaluated model)
+
+- **Containers: apptainer, not Docker.** The hosts have no Docker and no `/etc/subuid`, so Harbor's
+  `singularity` backend is used with a patched bootstrap and launch (`patches/`, installed by
+  `scripts/setup_harbor_rt.sh`, frozen at git tag `env-v4-frozen`): each trial runs in its own writable
+  reflink copy of the image (`--writable --fakeroot`), a read-only host runtime provides the exec
+  server's Python and a static tmux, `/etc/hosts` and `/etc/resolv.conf` are bound in as Docker does,
+  the image's `PATH` order is kept, `HOME=/root`, and musl (Alpine) images skip apptainer's glibc
+  `faked`. Validation: the reference solutions (oracle) and empty patches (nop) are run through the same
+  environment; tasks the oracle cannot pass are counted as environment failures (pending).
+- **CPU limit not enforced.** The apptainer backend has no cgroups; the 48 GB memory cap is enforced by
+  Harbor's watchdog, 32 CPUs is requested but not enforced.
+- **SWE-Pro agent phase not network-isolated.** The locked protocol's `no-network` agent phase cannot be
+  enforced by this backend; `configs/eval/swe_pro_task_modifications.json` records the one-line change
+  per task. Trajectories are audited for network use (pending).
+- **Serving hardware differs across hosts** (RTX PRO 4000 Blackwell, RTX A4500, A100) with identical
+  vLLM flags and quantization; which host served each run is recorded in the claim files and logs.
+
+## 6. Results
+
+Pending. The table below is filled by `scripts/summarize.py` (`results/summary.csv`).
+
+| Benchmark | Base | swe | term | sci | Merged | Merged - Base (pp, 95% CI) |
+|---|---|---|---|---|---|---|
+| SWE-bench Pro v2-hard | pending | pending | n/e | n/e | pending | pending |
+| Terminal-Bench 2.0 | pending | n/e | pending | n/e | pending | pending |
+| HLE | pending | n/e | n/e | pending | pending | pending |
+| ASI-Bench | pending | n/e | n/e | pending | pending | pending |
+| Macro average | pending | | | | pending | pending |
+
+n/e: not evaluated (experts are evaluated on their target benchmarks).
+
+## 7. Reproduction
+
+```bash
+# 0. environments (local disk), harbor runtime + patches
+uv venv -p 3.12 /var/tmp/$USER/venvs/train && uv pip install -p /var/tmp/$USER/venvs/train/bin/python -r requirements.lock
+bash scripts/setup_harbor_rt.sh && bash scripts/setup_serving.sh
+# 1. lock benchmarks, build data
+python scripts/lock_benchmarks.py
+PYTHONPATH=src python -m takehome.build_contam
+for e in swe term; do PYTHONPATH=src python -m takehome.build_data --expert $e --n-train 2000; done
+PYTHONPATH=src python -m takehome.build_data --expert sci --n-train 4000
+PYTHONPATH=src python -m takehome.build_data --expert union
+# 2. train (HPC) and merge-ablate on dev sets
+sbatch scripts/hpc_train_experts.slurm; sbatch scripts/hpc_merge_ablation.slurm; sbatch scripts/hpc_train_union.slurm
+# 3. evaluate a served model (repeat per model)
+bash scripts/serve.sh <path> <name> 18000
+python scripts/run_tb2.py --name <name> --seeds 1 2 3 4 5
+bash scripts/run_swepro.sh <name> http://localhost:18000/v1
+PYTHONPATH=src python -m takehome.eval_hle generate --name <name> --out results/<group>/hle/<name>/run1
+PYTHONPATH=src python -m takehome.eval_hle judge --out results/<group>/hle/<name>/run1
+bash scripts/run_asi.sh <name> http://localhost:18000/v1
+# 4. tables, CIs, plots
+python scripts/summarize.py --base /var/tmp/$USER
 ```
 
-## 实验与复现说明
+## 8. Known limitations
 
-README 须包含研究问题、实验矩阵、环境安装、数据构建、SFT、第二阶段优化、模型加载、四项评测、结果汇总和绘图的完整可执行命令。注明执行目录、输入输出路径、资源需求和预计耗时。
-
-记录基座 revision、tokenizer、chat template、代码 commit、依赖版本、数据版本、LoRA 目标模块和专家层处理、rank、量化、学习率、batch size、训练步数、上下文长度、随机种子及 checkpoint 选择方式。训练集与独立验证集分离；benchmark 答案、参考补丁、隐藏测试和测试反馈不得用于训练或挑选 checkpoint。
-
-Base 指本次微调前的原始发布权重。SFT 本身属于 post-training；本题第二阶段优化指在 SFT 权重上继续训练，可采用 DPO/IPO 或执行反馈筛选后继续 SFT 等方法，不能仅用推理时拒绝采样替代。允许自行租用算力，必须提交完整实验，不接受缩小模型或 dry run 替代。
-
-## Loss 曲线与日志
-
-- 分别提交 SFT 和第二阶段训练的训练 loss、独立验证集 loss 曲线；第二阶段同时报告适用于所选方法的指标，如 DPO chosen/rejected reward、reward margin 或偏好准确率，并解释含义。不同目标函数的 loss 不应直接比较数值高低。
-- 曲线标注 step 或处理 token 数、纵轴含义、run_id 和关键 checkpoint。保留原始数据；如使用平滑，披露窗口并保留未平滑数据。提交 PNG/PDF 图、CSV/JSON 源数据和绘图脚本，不能只交截图或外部仪表盘链接。
-- 日志覆盖完整训练与评测过程，包括错误、重试、超时和恢复。每个 run_id 应对应代码版本、配置、数据版本、模型 checkpoint 和结果文件。
-- 提交训练/评测耗时、峰值显存、GPU 型号与数量、GPU 小时、费用及计算方式。日志可压缩；在 README 提供位置、格式和读取方法。超出 GitHub 文件限制时，在个人仓库 Release 附压缩日志，并提交索引、校验值和访问说明。
-
-## 四项 benchmark 与评测协议
-
-固定采用 **SWE-bench Pro v2-hard、HLE、ASI-Bench、Terminal-Bench**。训练前锁定并保存官方数据源 URL、版本/commit、split、完整任务清单、评测器、主指标、框架、容器、prompt、工具、上下文、推理预算和采样设置。实验期间不随网页更新切换版本，三组模型使用相同口径。
-
-| Benchmark | 必须说明与提交 |
-| --- | --- |
-| SWE-bench Pro v2-hard | 指定版本完整任务集、hard 划分依据、任务 ID、官方 resolved rate、Agent 框架及 commit、工具权限、步数/token/超时预算、逐任务补丁与判定结果（许可允许范围内） |
-| HLE | 固定版本及 split 的准确率；明确是否包含图像题、是否使用工具、答案抽取规则及判分器版本；不得混报 text-only 与完整多模态结果 |
-| ASI-Bench | 训练前确认并记录官方来源、版本和完整任务集；依官方协议报告主指标及分项结果，固定运行模式、种子、工具、预算和聚合方式，保留原始输出与评分凭据 |
-| Terminal-Bench | 固定数据集版本（沿用题目中的 2.0）、任务及镜像、Harbor 评测框架与 Terminus-2 Agent 版本；提交五次运行的任务成功率、均值与标准差及相同五组种子 |
-
-Terminal-Bench 沿用题目配置：3 小时超时、32 CPU、48 GB RAM、temperature=1.0、top_p=0.95、top_k=20、max_tokens=80K、256K context。三组模型保持一致。每项应记录 thinking 模式、preserve_thinking、量化和采样设置。
-
-**如指定版本或数据无法获取，须在开始实验前联系面试方确认，不得自行替换或将子集结果标为完整结果。** 未披露的官方配置明确标为本实验设置；如与模型卡设置不同，应说明差异，不声称完全复现官方成绩。官方分数不能替代本次实测 Base。
-
-每组结果应包含逐题/逐任务输出、判定、运行状态、错误原因、耗时及 token 用量。记录全部任务，环境失败、超时和模型失败分别统计，不得删除失败任务后提高分数。
-
-## 结果对比
-
-请将下表填写为真实结果。主指标统一为百分制；如原始指标不是百分比，应同时报告原值和训练前固定的归一化方法。另行报告任务数、运行失败率、成本、配对 bootstrap 置信区间及重复运行波动。
-
-| Benchmark | Base | LoRA SFT | 第二阶段优化 | 最终相对 Base 变化（百分点） |
-| --- | --- | --- | --- | --- |
-| SWE-bench Pro v2-hard | 待填写 | 待填写 | 待填写 | 待填写 |
-| HLE | 待填写 | 待填写 | 待填写 | 待填写 |
-| ASI-Bench | 待填写 | 待填写 | 待填写 | 待填写 |
-| Terminal-Bench | 待填写 | 待填写 | 待填写 | 待填写 |
-| 四项等权宏平均 | 待填写 | 待填写 | 待填写 | 待填写 |
-
-宏平均提升目标为 3 个百分点，5 个百分点作为优秀参考；这是挑战目标，并非已验证的可达门槛或官方标准。未达到仍须如实报告和分析，不得改变口径制造提升。至少分析 20 个失败案例，说明单项退化、局限及至少三个下一步实验。
-
-## Hugging Face 模型公开上传（必须）
-
-1. 将训练好的 **LoRA SFT 与第二阶段优化两个 checkpoint** 上传到 Hugging Face，模型仓库必须设置为 **Public**。可使用两个仓库，或同一仓库中明确区分的 checkpoint/revision。
-2. 可提交完整 adapter 权重及配置，或合并权重；原始 Base 引用官方模型即可。模型卡写明基座及 revision、训练方法、数据来源与许可、评测结果、限制、适用许可证和加载方法。
-3. 在本 README 与 models/README.md 写明两个 HF URL、checkpoint revision、基座 revision、tokenizer/chat template、量化信息、对应 run_id 和完整加载命令。
-4. 提交前验证两个 checkpoint 无需额外授权即可公开下载，并可加载复现。面试方可公开展示模型链接与实验结果；公开材料须具备相应分发权限。
-5. GitHub 不存放模型权重。最终提交时将两个 HF 模型链接及 revision 一并发送给面试方。
-
-## 一页分析报告
-
-report.pdf 不超过一页，结构固定为 **摘要（150–200 个中文字符）—过程—结果**。结果包含三组模型在四项 benchmark 的分数、宏平均提升、运行失败率和主要成本。详细日志、曲线、置信区间和失败分析放在仓库其他目录，不计入一页限制。
-
-## 提交检查清单
-
-- [ ] 提交到分配的独立私有仓库，附最终 commit SHA 或 PR 链接
-- [ ] README 含可执行复现命令、版本、路径、实验矩阵和已知限制
-- [ ] 数据构造代码、来源许可、清单、去重与泄漏检查可核验
-- [ ] SFT 和第二阶段训练代码、配置与完整日志齐全
-- [ ] loss/方法指标曲线、原始数据和绘图脚本齐全
-- [ ] Base/SFT/第二阶段优化的四项完整评测、逐任务结果及失败记录齐全
-- [ ] 汇总脚本、置信区间、至少 20 个失败案例及资源成本记录齐全
-- [ ] 两个训练 checkpoint 已上传 Hugging Face，设置 Public，URL、revision 和加载命令可用
-- [ ] report.pdf 不超过一页，摘要、过程、结果完整
-- [ ] 提交前移除密钥、token、个人数据及无权分发内容
-
-## 面试方使用模板
-
-通过 Use this template 创建候选人专属仓库，例如 qwen36-35b-takehome-candidate-001，选择 Private，逐仓库邀请对应候选人并给予 Write 权限。检查组织默认权限和团队授权，确保其他候选人不能访问该仓库。已从模板创建的仓库不会自动同步后续模板更新。
+- 7B-class fallback instead of the 35B-A3B base (section 2).
+- Container environment differs from official Docker/Modal runs (section 5); official scores are not
+  claimed and not comparable.
+- One training seed per expert; repeat-run variance is measured only on Terminal-Bench (5 seeds).
