@@ -120,12 +120,16 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--config", default="configs/experiment.yaml")
     ap.add_argument("--max-steps", type=int, default=-1)
+    ap.add_argument("--grad-accum", type=int, default=None, help="override (DDP: keep global batch ~ config)")
     a = ap.parse_args()
     cfg = yaml.safe_load(open(a.config))
     lc, base = cfg["lora"], cfg["base"]
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     torch.manual_seed(cfg["seed"])
+    local_rank = int(os.environ.get("LOCAL_RANK", 0))  # set by torchrun for DDP
+    world = int(os.environ.get("WORLD_SIZE", 1))
+    torch.cuda.set_device(local_rank)
 
     tok = AutoTokenizer.from_pretrained(base["model"], revision=base["revision"])
     train = tokenize_split(tok, Path(a.data) / "train.jsonl", lc["max_length"])
@@ -135,7 +139,7 @@ def main():
     quant = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True,
                                bnb_4bit_compute_dtype=torch.bfloat16)
     model = AutoModelForCausalLM.from_pretrained(base["model"], revision=base["revision"], dtype=torch.bfloat16,
-                                                 quantization_config=quant, device_map={"": 0},
+                                                 quantization_config=quant, device_map={"": local_rank},
                                                  attn_implementation="sdpa")
     # Not prepare_model_for_kbit_training: it upcasts embed_tokens and lm_head (248K x 4096 each,
     # untied) to fp32, ~8 GB extra on a 24 GB card. Keep them frozen in bf16.
@@ -150,17 +154,20 @@ def main():
         num_train_epochs=lc["epochs"], learning_rate=lc["learning_rate"],
         lr_scheduler_type=lc["lr_scheduler"], warmup_steps=lc["warmup_ratio"],  # <1 is a ratio in transformers 5
         per_device_train_batch_size=lc["per_device_train_batch_size"], per_device_eval_batch_size=1,
-        gradient_accumulation_steps=lc["gradient_accumulation_steps"], bf16=True,
+        gradient_accumulation_steps=a.grad_accum or lc["gradient_accumulation_steps"], bf16=True,
+        ddp_find_unused_parameters=False,
         gradient_checkpointing=True, gradient_checkpointing_kwargs={"use_reentrant": False},
         logging_steps=1, eval_strategy="steps", eval_steps=lc.get("eval_steps", 20),
         save_strategy="steps", save_steps=lc.get("eval_steps", 20), save_total_limit=3,
         report_to=[], remove_unused_columns=False, prediction_loss_only=True, train_sampling_strategy="group_by_length", dataloader_num_workers=2)
     trainer = ChunkedLossTrainer(model=model, args=args, train_dataset=train, eval_dataset=dev,
-                      data_collator=lambda b: collate(b, tok.pad_token_id), callbacks=[Recorder(out)])
+                      data_collator=lambda b: collate(b, tok.pad_token_id), callbacks=[Recorder(out)] if int(os.environ.get("LOCAL_RANK", 0)) == 0 else [])
     t0 = time.time()
     from transformers.trainer_utils import get_last_checkpoint
     trainer.train(resume_from_checkpoint=get_last_checkpoint(args.output_dir))
     wall = time.time() - t0
+    if local_rank != 0:
+        return
     model.save_pretrained(out / "adapter")
     tok.save_pretrained(out / "adapter")
     ntok = sum(len(x) for x in train["input_ids"]) * (lc["epochs"])
@@ -168,7 +175,7 @@ def main():
         w = csv.writer(f)
         w.writerow(["expert", "gpu", "n_gpu", "wall_s", "gpu_hours", "peak_mem_gb", "train_tokens", "tokens_per_s",
                     "adapter_mb"])
-        w.writerow([a.expert, torch.cuda.get_device_name(0), 1, round(wall), round(wall / 3600, 3),
+        w.writerow([a.expert, torch.cuda.get_device_name(0), world, round(wall), round(world * wall / 3600, 3),
                     round(torch.cuda.max_memory_allocated() / 2**30, 2), ntok, round(ntok / wall, 1),
                     round(sum(p.stat().st_size for p in (out / "adapter").glob("*")) / 2**20, 1)])
     json.dump({"expert": a.expert, "config": cfg, "host": os.uname().nodename, "best_ckpt": trainer.state.best_model_checkpoint},
