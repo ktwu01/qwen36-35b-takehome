@@ -31,10 +31,14 @@ run() {  # run <name> <endpoints> <results group>
   fi
   bash scripts/run_hle.sh "$1" "$2" "$3" $((24 * n_ep)) >> "logs/hle_$1.log" 2>&1
 }
-# each model is gated on its always-on A100 slot; eval_hle waits out gaps between HPC dev windows
-for spec in "base 18107 base $(u 18107)" "merged 18109 merged $(u 18109 18101 18102 18103)" \
-            "sci 18108 experts $(u 18108)"; do
+# each model is gated on its always-on A100 slot; eval_hle waits out gaps between HPC dev windows.
+# $B/hle_endpoints (lines "<name> <gate port> <group> <port>...") overrides the endpoint lists, e.g. when
+# a dev-window slot is retargeted to another model (scripts/rebalance_dev_slot.sh)
+specs=("base 18107 base 18107" "merged 18109 merged 18109 18101 18102 18103" "sci 18108 experts 18108")
+[ -s "$B/hle_endpoints" ] && mapfile -t specs < "$B/hle_endpoints"
+for spec in "${specs[@]}"; do
   set -- $spec
+  set -- "$1" "$2" "$3" "$(u "${@:4}")"
   until curl -sf --max-time 5 "http://127.0.0.1:$2/v1/models" | grep -q "\"$1\""; do sleep 60; done
   echo "[$(date '+%F %T')] HLE $1 -> $4"
   run "$1" "$4" "$3" &
