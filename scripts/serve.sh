@@ -8,6 +8,8 @@ set -euo pipefail
 MODEL=$1; NAME=$2; PORT=${3:-8000}
 VLLM=${VLLM:-/var/tmp/$USER/venvs/train/bin/vllm}
 export HF_HOME=${HF_HOME:-/var/tmp/$USER/hf-cache} HF_HUB_OFFLINE=1
+# No CUDA toolkit on the hosts: use vLLM's PyTorch top-k/top-p sampler instead of FlashInfer JIT.
+export VLLM_USE_FLASHINFER_SAMPLER=0
 REV_ARGS=()
 [[ "$MODEL" == Qwen/* ]] && REV_ARGS=(--revision "${BASE_REVISION:-c202236235762e1c871ad0ccb60c8ee5ba337b9a}")
 exec "$VLLM" serve "$MODEL" "${REV_ARGS[@]}" --served-model-name "$NAME" --port "$PORT" --host 0.0.0.0 \
