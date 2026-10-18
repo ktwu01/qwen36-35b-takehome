@@ -54,12 +54,23 @@ def main():
     ap.add_argument("--seeds", nargs="+", type=int, default=[1, 2, 3, 4, 5])
     ap.add_argument("-n", type=int, default=12)
     ap.add_argument("--jobs-dir", default=str(BASE / "tb2-jobs"))
+    ap.add_argument("--reclaim", action="store_true", help="run claimed seeds too (resume after a crash)")
     a = ap.parse_args()
     env = dict(os.environ, APPTAINER_CACHEDIR=str(BASE / "apptainer-cache"),
                APPTAINER_TMPDIR=str(BASE / "apptainer-tmp"), HOSTED_VLLM_API_KEY="EMPTY")
     cfg_dir = REPO / "configs/eval/tb2_jobs"
     cfg_dir.mkdir(parents=True, exist_ok=True)
     for seed in a.seeds:
+        # Several runners (one per serving GPU) share the seed list; each seed is claimed once.
+        claim = Path(a.jobs_dir) / f"tb2-{a.name}-s{seed}.claim"
+        try:
+            fd = os.open(claim, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(fd, f"{a.api} {os.uname().nodename} {os.getpid()}\n".encode())
+            os.close(fd)
+        except FileExistsError:
+            if not a.reclaim:
+                print("seed already claimed:", claim, flush=True)
+                continue
         cfg = job_config(a.name, a.api, seed, a.n, Path(a.jobs_dir))
         path = cfg_dir / f"tb2-{a.name}-s{seed}.json"
         path.write_text(json.dumps(cfg, indent=1))
