@@ -2,7 +2,7 @@
 
     python scripts/plot_curves.py --runs outputs --dev results/dev
 
-Inputs: outputs/<expert>/metrics.jsonl (written every step by takehome.sft) and
+Inputs: logs/train-<expert>/metrics.jsonl (written every step by takehome.sft) and
 results/dev/<config>.json (takehome.dev_loss). Writes curves/source/*.csv (the plotted data),
 curves/expert_loss.png and curves/merge_ablation.png. Train loss is plotted raw (thin) plus a
 10-step trailing mean; dev loss is every 25 steps on the first 100 dev examples.
@@ -44,11 +44,13 @@ def load_metrics(path):
 
 
 def expert_curves(runs, out):
-    avail = [e for e in EXPERTS if (runs / e / "metrics.jsonl").exists()]
+    def mpath(e):  # logs/train-<e>/metrics.jsonl (repo layout) or outputs/<e>/metrics.jsonl
+        return next((p for p in (runs / f"train-{e}" / "metrics.jsonl", runs / e / "metrics.jsonl") if p.exists()), None)
+    avail = [e for e in EXPERTS if mpath(e)]
     fig, axes = plt.subplots(1, len(avail), figsize=(3.6 * len(avail), 3.0), facecolor="#fcfcfb")
     axes = [axes] if len(avail) == 1 else axes
     for ax, e, color in zip(axes, avail, SERIES):
-        train, dev = load_metrics(runs / e / "metrics.jsonl")
+        train, dev = load_metrics(mpath(e))
         with open(out / "source" / f"loss_{e}.csv", "w", newline="") as f:
             w = csv.writer(f)
             w.writerow(["split", "step", "loss"])
@@ -106,7 +108,7 @@ def merge_ablation(dev_dir, out):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--runs", default="outputs")
+    ap.add_argument("--runs", default="logs")
     ap.add_argument("--dev", default="results/dev")
     ap.add_argument("--out", default="curves")
     a = ap.parse_args()
