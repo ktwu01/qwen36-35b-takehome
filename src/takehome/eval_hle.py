@@ -100,7 +100,9 @@ async def generate(a):
     ds = load_hle()
     todo = [q for q in ds if q["id"] not in done]
     print(f"{len(done)} done, {len(todo)} to go")
-    client = AsyncOpenAI(base_url=a.api, api_key="EMPTY", timeout=3600, max_retries=0)
+    # --api may list several endpoints serving the same model (comma-separated); each question is
+    # routed to one of them by crc32(id), so all of a question's retries stay on one endpoint.
+    clients = [AsyncOpenAI(base_url=u, api_key="EMPTY", timeout=3600, max_retries=0) for u in a.api.split(",")]
     sem = asyncio.Semaphore(a.concurrency)
     f = open(pred_path, "a")
 
@@ -109,6 +111,7 @@ async def generate(a):
             t0 = time.time()
             rec = {"id": q["id"], "model": a.name, "has_image": bool(q["image"])}
             try:
+                client = clients[zlib.crc32(q["id"].encode()) % len(clients)]
                 r = await retry(lambda: client.chat.completions.create(
                     model=a.name, messages=messages(q), seed=zlib.crc32(q["id"].encode()), **SAMPLING))
                 m = r.choices[0].message
