@@ -15,8 +15,9 @@ echo "[$(date '+%F %T')] HLE access granted"
 grep -q '"bench": "hle"' data/bench/contam_texts.jsonl 2>/dev/null || "$PY" -m takehome.build_contam
 [ -f data/manifests/hle_contamination.json ] || "$PY" scripts/hle_contam_check.py
 u() { local s=""; for p in "$@"; do s="$s${s:+,}http://127.0.0.1:$p/v1"; done; echo "$s"; }
-for spec in "base 18107 base $(u 18107)" "sci 18108 experts $(u 18108)" \
-            "merged 18109 merged $(u 18109 18101 18102 18103)"; do
+# order: endpoints that are up first; merged is gated on a dev-window endpoint (slot 8 joins later)
+for spec in "base 18107 base $(u 18107)" "merged 18101 merged $(u 18109 18101 18102 18103)" \
+            "sci 18108 experts $(u 18108)"; do
   set -- $spec
   until curl -sf --max-time 5 "http://127.0.0.1:$2/v1/models" | grep -q "\"$1\""; do sleep 60; done
   echo "[$(date '+%F %T')] HLE $1 -> $4"
