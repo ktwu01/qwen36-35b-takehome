@@ -21,6 +21,7 @@ mkdir -p "$CTRL" logs
 export HF_HOME=$SCRATCH/hf-cache HF_HUB_OFFLINE=1 VLLM_USE_FLASHINFER_SAMPLER=0
 export CUDA_HOME=$SCRATCH/qwen36/cuda-home PATH=$V/bin:$SCRATCH/qwen36/cuda-home/bin:$PATH
 export LIBRARY_PATH=$SCRATCH/qwen36/cuda-home/lib64
+export LD_LIBRARY_PATH=/opt/apps/gcc/9.4.0/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}  # numpy built from source with gcc 9.4
 nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.draw --format=csv -l 60 \
   > "logs/gpu_${SLURM_JOB_ID}.csv" &
 
