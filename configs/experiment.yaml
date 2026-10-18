@@ -48,6 +48,8 @@ lora:
   gradient_accumulation_steps: 16
   epochs: 1
   loss: assistant tokens only
+  eval_steps: 25
+  eval_max_samples: 100     # dev loss during training on the first 100 dev examples
 
 control:
   union: one LoRA on the union of the three expert datasets, same total steps (merge vs single multi-task model)

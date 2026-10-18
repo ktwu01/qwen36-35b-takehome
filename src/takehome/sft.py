@@ -130,6 +130,7 @@ def main():
     tok = AutoTokenizer.from_pretrained(base["model"], revision=base["revision"])
     train = tokenize_split(tok, Path(a.data) / "train.jsonl", lc["max_length"])
     dev = tokenize_split(tok, Path(a.data) / "dev.jsonl", lc["max_length"])
+    dev = dev.select(range(min(lc.get("eval_max_samples", 100), len(dev))))  # cheap periodic dev loss
 
     quant = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_use_double_quant=True,
                                bnb_4bit_compute_dtype=torch.bfloat16)
