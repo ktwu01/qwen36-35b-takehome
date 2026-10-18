@@ -1,0 +1,64 @@
+# Multi-expert training + merge experiment. Frozen before training.
+seed: 20261018
+
+base:
+  # Qwen/Qwen3.6-35B-A3B (rev 995ad96eacd98c81ed38be0c5b274b04031597b0) is the preferred base.
+  # Compute actually available inside the deadline (2026-10-19 22:53 CDT): 1x RTX PRO 4000
+  # Blackwell 24 GB (seismic18) + 2x RTX A4500 20 GB (seismic15/17); HPC GPU queues had
+  # 1-2 day waits on 2026-10-18. 35B-A3B needs ~72 GB just for bf16 weights, so we use the
+  # 7B-class same-family fallback allowed by the exam (see README "Base model choice").
+  model: Qwen/Qwen3.5-9B
+  revision: c202236235762e1c871ad0ccb60c8ee5ba337b9a
+  tokenizer: same repo and revision
+  chat_template: tokenizer_config.json chat_template at the pinned revision
+  thinking: enabled (model default) for every model in every benchmark
+
+experts:
+  swe:
+    target: [swe_pro_v2_hard]
+    data: Kwai-Klear/SWE-smith-mini_swe_agent_plus-trajectories-66k   # MIT
+    format: mini-swe-agent bash-only trajectories (same harness as SWE-Pro and ASI eval)
+  term:
+    target: [terminal_bench_2]
+    data: open-thoughts/OpenThoughts-Agent-v1-SFT                      # Apache-2.0
+    format: Terminus-2 JSON keystroke trajectories (same agent as Terminal-Bench eval)
+  sci:
+    target: [hle, asi_bench]
+    data: nvidia/OpenScienceReasoning-2                               # CC-BY-4.0
+    format: single-turn science reasoning with <think> traces
+
+# Split logic: by agent format / data domain. SWE-Pro and Terminal-Bench use different agent
+# protocols (mini-swe-agent vs Terminus-2) and would interfere inside one adapter; HLE and
+# ASI-Bench share the scientific-knowledge domain. 3 experts, same size (9B + LoRA).
+
+lora:
+  method: QLoRA (nf4, bf16 compute)      # 9B bf16 weights alone are ~19 GB > 24/20 GB GPUs with 16K activations
+  r: 32
+  alpha: 64
+  dropout: 0.0
+  # Language model only (vision tower frozen): 8 full-attention layers (q/k/v/o_proj),
+  # 24 Gated-DeltaNet layers (in_proj_qkv, in_proj_z, out_proj), all 32 MLPs.
+  # in_proj_a / in_proj_b (decay/beta gates, 32 outputs) are left frozen.
+  target_modules_regex: '.*language_model\.layers\.\d+\.(self_attn\.(q|k|v|o)_proj|linear_attn\.(in_proj_qkv|in_proj_z|out_proj)|mlp\.(gate|up|down)_proj)'
+  max_length: 16384
+  learning_rate: 1.0e-4
+  lr_scheduler: cosine
+  warmup_ratio: 0.03
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 16
+  epochs: 1
+  loss: assistant tokens only
+
+control:
+  union: one LoRA on the union of the three expert datasets, same total steps (merge vs single multi-task model)
+
+merge:
+  operate_on: dense LoRA deltas (B @ A * alpha/r) per target module, added to the bf16 base
+  methods: [task_arithmetic, ties, dare_ties]
+  ablation: {lambda: [0.5, 0.7, 1.0], density: [0.2, 0.5]}
+  selection: independent dev sets only (never benchmark items)
+
+decontamination:
+  ngram: 13
+  against: [swe_pro_v2_hard problem statements, hle questions, terminal_bench_2 instructions, asi_bench prompts b1-b4]
+  swe_repo_exclusion: every repo in configs/eval/swe_pro_v2_hard.lock.json
