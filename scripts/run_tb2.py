@@ -49,6 +49,13 @@ def job_config(name, api, seed, n, jobs_dir):
     }
 
 
+def in_shard(task, spec):
+    """spec = ((k, m), (j, n)?): crc32 % m == k, and (crc32 // m) % n == j for a sub-shard."""
+    h = zlib.crc32(task.encode())
+    (k, m), sub = spec[0], spec[1] if len(spec) > 1 else None
+    return h % m == k and (sub is None or (h // m) % sub[1] == sub[0])
+
+
 def finished_tasks(jobs_dir, name, seed):
     done = set()
     for res in jobs_dir.glob(f"tb2-{name}-s{seed}*/*/result.json"):
@@ -71,8 +78,9 @@ def main():
     ap.add_argument("--jobs-dir", default=str(BASE / "tb2-jobs"))
     ap.add_argument("--reclaim", action="store_true", help="run claimed seeds too (resume after a crash)")
     ap.add_argument("--part", type=int, default=1, help=">1: continue a seed in a new job on unfinished tasks")
-    ap.add_argument("--shard", type=lambda x: tuple(map(int, x.split("/"))), default=None,
-                    help="k/m: with --part, only unfinished tasks with crc32(name) %% m == k")
+    ap.add_argument("--shard", type=lambda x: tuple(tuple(map(int, p.split("/"))) for p in x.split(":")),
+                    default=None, help="k/m[:j/n]: with --part, only unfinished tasks with crc32(name) %% m == k"
+                                       " (and (crc32 // m) %% n == j)")
     a = ap.parse_args()
     env = dict(os.environ, APPTAINER_CACHEDIR=str(BASE / "apptainer-cache"),
                APPTAINER_TMPDIR=str(BASE / "apptainer-tmp"), HOSTED_VLLM_API_KEY="EMPTY")
@@ -99,7 +107,7 @@ def main():
             src = REPO / "data/bench/tb2/terminal-bench"
             for t in sorted(src.iterdir()):
                 # --shard k/m: disjoint subsets so two endpoints can work on one seed concurrently
-                if a.shard and zlib.crc32(t.name.encode()) % a.shard[1] != a.shard[0]:
+                if a.shard and not in_shard(t.name, a.shard):
                     continue
                 if t.name not in done and not (sub / t.name).exists():
                     (sub / t.name).symlink_to(t)
