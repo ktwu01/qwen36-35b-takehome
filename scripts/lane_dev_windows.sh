@@ -19,7 +19,7 @@ for f in glob.glob(f"{jobs}/tb2-{name}-s{seed}*/*/result.json"):
         r = json.load(open(f))
     except ValueError:
         continue
-    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
+    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") not in ("CancelledError", "InternalServerError"):
         done.add(Path(r["task_id"]["path"]).name)
 tasks = json.load(open("configs/eval/terminal_bench_2.lock.json"))["task_ids"]
 print(sum(1 for t in tasks if zlib.crc32(t.encode()) % 2 == 1 and t not in done))

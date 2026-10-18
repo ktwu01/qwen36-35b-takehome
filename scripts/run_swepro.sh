@@ -24,7 +24,7 @@ for res in jobs.glob(f"sbp-{name}*/*/result.json"):
     if res.parent.parent.name.endswith("-regrade"):
         continue
     r = json.loads(res.read_text())
-    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
+    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") not in ("CancelledError", "InternalServerError"):
         done.add(Path((r.get("task_id") or {}).get("path", "")).name)
 for t in sorted(tasks.iterdir()):
     if t.name not in done and not (sub / t.name).exists():

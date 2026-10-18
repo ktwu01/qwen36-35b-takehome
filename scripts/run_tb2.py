@@ -62,7 +62,7 @@ def finished_tasks(jobs_dir, name, seed):
         try:
             r = json.loads(res.read_text())
             # trials cancelled by the operator (runner stopped) are re-run, not counted
-            if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
+            if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") not in ("CancelledError", "InternalServerError"):
                 done.add(Path((r.get("task_id") or {}).get("path") or res.parent.name.rsplit("__", 1)[0]).name)
         except ValueError:
             pass

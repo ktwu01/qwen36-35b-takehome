@@ -24,8 +24,11 @@ def harbor_trials(job_dir):
             continue
         if not r.get("finished_at"):
             continue
-        if (r.get("exception_info") or {}).get("exception_type") == "CancelledError":
-            continue  # interrupted by the operator (runner stopped); re-run in a continuation part
+        if (r.get("exception_info") or {}).get("exception_type") in ("CancelledError", "InternalServerError"):
+            # interrupted by the operator (runner stopped) or the model endpoint was unavailable (vLLM
+            # restart / serving-window end): not a model or task-environment outcome; the task is
+            # re-run in a continuation part. Same rule for every model.
+            continue
         # trial dir names truncate the task name (e.g. all teleport tasks share a prefix); use the path
         task = Path((r.get("task_id") or {}).get("path") or res.parent.name.rsplit("__", 1)[0]).name
         reward = ((r.get("verifier_result") or {}).get("rewards") or {}).get("reward")

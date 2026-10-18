@@ -21,7 +21,7 @@ def harbor(pattern):
         except ValueError:
             continue
         e = (r.get("exception_info") or {}).get("exception_type")
-        if not r.get("finished_at") or e == "CancelledError":
+        if not r.get("finished_at") or e in ("CancelledError", "InternalServerError"):
             continue
         tasks.add(Path((r.get("task_id") or {}).get("path", f)).name)
         v = ((r.get("verifier_result") or {}).get("rewards") or {}).get("reward")

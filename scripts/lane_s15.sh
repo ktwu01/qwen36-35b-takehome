@@ -19,7 +19,7 @@ for f in glob.glob(sys.argv[1] + "/*/result.json"):
         r = json.load(open(f))
     except ValueError:
         continue
-    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
+    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") not in ("CancelledError", "InternalServerError"):
         n += 1
 print(n)
 PY

@@ -14,7 +14,7 @@ for f in glob.glob(f"{sys.argv[1]}/tb2-{sys.argv[2]}-s1*/*/result.json"):
         r = json.load(open(f))
     except ValueError:
         continue
-    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
+    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") not in ("CancelledError", "InternalServerError"):
         done.add(Path(r["task_id"]["path"]).name)
 print(len(done))
 PY
