@@ -25,7 +25,8 @@ def harbor_trials(job_dir):
             continue
         if (r.get("exception_info") or {}).get("exception_type") == "CancelledError":
             continue  # interrupted by the operator (runner stopped); re-run in a continuation part
-        task = res.parent.name.rsplit("__", 1)[0]
+        # trial dir names truncate the task name (e.g. all teleport tasks share a prefix); use the path
+        task = Path((r.get("task_id") or {}).get("path") or res.parent.name.rsplit("__", 1)[0]).name
         reward = ((r.get("verifier_result") or {}).get("rewards") or {}).get("reward")
         exc = (r.get("exception_info") or {}).get("exception_type")
         if exc in ENV_ERRORS:
@@ -58,7 +59,14 @@ def tb2(base, model, seeds=(1, 2, 3, 4, 5)):
 
 def swe_pro(base, model):
     """Authoritative score: patch_replay regrade on pristine images."""
-    return [{**t, "run": "regrade"} for t in harbor_trials(Path(base) / "sbp-jobs" / f"sbp-{model}-regrade")]
+    rows, seen = [], set()
+    jobs = Path(base) / "sbp-jobs"
+    for job in [jobs / f"sbp-{model}-regrade"] + sorted(jobs.glob(f"sbp-{model}-p*-regrade")):
+        for t in harbor_trials(job):
+            if t["task"] not in seen:
+                seen.add(t["task"])
+                rows.append({**t, "run": "regrade", "part": job.name})
+    return rows
 
 
 def hle(results_root, model, run="run1"):

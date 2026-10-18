@@ -11,6 +11,28 @@ REPO=$(cd "$(dirname "$0")/.." && pwd)
 SBP=$BASE/sbp
 TASKS=${SBP_TASKS:-$BASE/sbp-hard51-apptainer}
 JOB=${JOB:-$NAME}
+if [ "${PART:-1}" -gt 1 ]; then
+  # continuation part: only tasks without a finished, non-cancelled agent trial in earlier parts
+  JOB=$NAME-p$PART
+  SUB=$BASE/sbp-parts/$JOB; mkdir -p "$SUB"
+  /usr/bin/python3.12 - "$BASE/sbp-jobs" "$NAME" "$TASKS" "$SUB" <<'PY'
+import json, os, sys
+from pathlib import Path
+jobs, name, tasks, sub = Path(sys.argv[1]), sys.argv[2], Path(sys.argv[3]), Path(sys.argv[4])
+done = set()
+for res in jobs.glob(f"sbp-{name}*/*/result.json"):
+    if res.parent.parent.name.endswith("-regrade"):
+        continue
+    r = json.loads(res.read_text())
+    if r.get("finished_at") and (r.get("exception_info") or {}).get("exception_type") != "CancelledError":
+        done.add(Path((r.get("task_id") or {}).get("path", "")).name)
+for t in sorted(tasks.iterdir()):
+    if t.name not in done and not (sub / t.name).exists():
+        os.symlink(t.resolve(), sub / t.name)
+print(f"part: {len(list(sub.iterdir()))} unfinished tasks")
+PY
+  TASKS=$SUB
+fi
 CFG=$REPO/configs/eval/swe_pro_jobs/mini_textbased_$NAME.yaml
 "$BASE/venvs/harbor/bin/python" "$REPO/scripts/make_swepro_config.py" "$SBP" "$NAME" "$API" "$CFG"
 export PYTHONPATH=$SBP/v2/tooling:$REPO/src HOSTED_VLLM_API_KEY=EMPTY MSWEA_COST_TRACKING=ignore_errors
