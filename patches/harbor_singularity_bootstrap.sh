@@ -24,13 +24,18 @@ if [ -n "${FAKEROOTKEY:-}" ]; then
   export LD_LIBRARY_PATH
 fi
 
+# Docker runs root with HOME=/root; apptainer would keep the host user's (unmounted) home.
+[ "$(id -u)" = 0 ] && [ -d /root ] && export HOME=/root
+
 RT=/opt/harbor-rt
-# The host-built runtime is glibc; musl (Alpine) images fall back to the stock bootstrap.
-if ! "$RT/bin/python3" -c pass >/dev/null 2>&1; then
+# glibc runtime first, then the musl (Alpine) build; otherwise fall back to the stock bootstrap.
+if "$RT/bin/python3" -c pass >/dev/null 2>&1; then
+  export HARBOR_PYTHON="$RT/bin/python3"
+elif "$RT/musl/bin/python3" -c pass >/dev/null 2>&1; then
+  export HARBOR_PYTHON="$RT/musl/bin/python3"
+else
   exec /staging/bootstrap.stock.sh "$WORKDIR" "$@"
 fi
-
-export HARBOR_PYTHON="$RT/bin/python3"
 # apt drops privileges to _apt for downloads; in a root-mapped namespace that user cannot
 # write the overlay, so let apt download as (namespaced) root.
 if [ -d /etc/apt/apt.conf.d ]; then

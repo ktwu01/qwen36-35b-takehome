@@ -64,7 +64,24 @@ HELPER = f'''
 '''
 
 
+def patch_server(path):
+    """Docker keeps the image's PATH order; the stock exec server prepends /usr/bin, which makes
+    e.g. /usr/bin/python shadow an image's /usr/local/bin/python (where its pytest lives)."""
+    p = Path(path)
+    s = p.read_text()
+    if MARK in s:
+        return
+    old = '    env["PATH"] = "/usr/bin:/usr/local/bin:" + env.get("PATH", "/bin")\n'
+    new = ('    env["PATH"] = env.get("PATH") or "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"  '
+           + MARK + "\n")
+    if s.count(old) != 1:
+        sys.exit("server.py PATH anchor not found exactly once")
+    p.write_text(s.replace(old, new, 1))
+    print("patched:", p)
+
+
 def main(path):
+    patch_server(Path(path).parent / "server.py")
     p = Path(path)
     s = p.read_text()
     if MARK in s:

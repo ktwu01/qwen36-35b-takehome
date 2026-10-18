@@ -25,6 +25,16 @@ if [ ! -x "$RT/bin/python3" ]; then
   ln -sf ../py/bin/python3 "$RT/bin/python3"
 fi
 
+# musl build for Alpine images; server deps installed from musllinux wheels by the host pip.
+PYM_URL="https://github.com/astral-sh/python-build-standalone/releases/download/20261013/cpython-3.12.15%2B20261013-x86_64-unknown-linux-musl-install_only.tar.gz"
+if [ ! -x "$RT/musl/bin/python3" ]; then
+  curl -sL -o "$BASE/dl/pym.tgz" "$PYM_URL"
+  sha256sum "$BASE/dl/pym.tgz" | tee -a "$RT/SHA256SUMS"
+  mkdir -p "$BASE/dl/pym" && tar xzf "$BASE/dl/pym.tgz" -C "$BASE/dl/pym" && mv "$BASE/dl/pym/python" "$RT/musl"
+  "$RT/py/bin/python3" -m pip install -q --no-warn-script-location --target "$RT/musl/lib/python3.12/site-packages" \
+    --platform musllinux_1_2_x86_64 --python-version 3.12 --only-binary=:all: uvicorn fastapi
+fi
+
 # Docker injects these localhost entries into every container's /etc/hosts; apptainer
 # --containall does not, which breaks tools that bind or resolve "localhost".
 printf '127.0.0.1\tlocalhost\n::1\tlocalhost ip6-localhost ip6-loopback\n' > "$RT/hosts"
