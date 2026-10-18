@@ -10,3 +10,5 @@ data/bench/
 wandb/
 *.sif
 data/processed/*/*.jsonl
+report/*.aux
+report/*.log
