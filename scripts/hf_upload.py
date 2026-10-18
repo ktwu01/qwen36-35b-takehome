@@ -105,7 +105,7 @@ def main():
     api.create_repo(repo, repo_type="model", private=False, exist_ok=True)
     info = api.upload_folder(folder_path=str(path), repo_id=repo, repo_type="model",
                              commit_message=f"Upload {a.name}", allow_patterns=None,
-                             ignore_patterns=["ckpt/*", "*.pt", "optimizer*", "rng_state*"])
+                             ignore_patterns=["ckpt/*", "*.pt", "optimizer*", "rng_state*", "._*", ".DS_Store"])
     idx_path = Path("models/hf_index.json")
     idx = json.loads(idx_path.read_text()) if idx_path.exists() else {}
     idx[a.name] = {"repo": repo, "url": f"https://huggingface.co/{repo}", "revision": info.oid, "kind": a.kind}
