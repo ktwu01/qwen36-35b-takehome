@@ -5,4 +5,4 @@
 set -euo pipefail
 source "$(dirname "$0")/tb2_env.sh"
 "$HARBOR" run -p "$TB2_TASKS" -a oracle "${TB2_ENV_ARGS[@]}" -n "${1:-16}" \
-  -o "$BASE/tb2-jobs" --job-name oracle-full -y
+  -o "$BASE/tb2-jobs" --job-name oracle-full-env3 -y
