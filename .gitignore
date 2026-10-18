@@ -9,3 +9,4 @@ data/raw/
 data/bench/
 wandb/
 *.sif
+data/processed/*/*.jsonl

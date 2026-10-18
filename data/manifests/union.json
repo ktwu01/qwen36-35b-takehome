@@ -1,0 +1,17 @@
+{
+ "expert": "union",
+ "source": "concatenation of swe, term, sci train/dev",
+ "filters": {
+  "train": 8000,
+  "dev": 600
+ },
+ "train_tiers": {
+  "medium": 3253,
+  "easy": 2731,
+  "hard": 2016
+ },
+ "sha256": {
+  "train": "d80e7b3e39f52f2310d6433278b205412eaa311e37bbe2539920d88a74ec7dd1",
+  "dev": "9c2fce733830268c2a094de922f10df08e6b125043fdc839c4636b603b15237b"
+ }
+}

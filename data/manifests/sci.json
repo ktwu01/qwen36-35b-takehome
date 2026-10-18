@@ -1,0 +1,26 @@
+{
+ "expert": "sci",
+ "source": [
+  "nvidia/OpenScienceReasoning-2",
+  "CC-BY-4.0"
+ ],
+ "filters": {
+  "raw": 1600812,
+  "after_length": 1538163,
+  "after_exact_dedup": 1537418,
+  "after_13gram_decontam": 1537414,
+  "pool_after_near_dedup": 19976,
+  "near_dup_removed_in_pool": 24,
+  "train": 4000,
+  "dev": 200
+ },
+ "train_tiers": {
+  "medium": 1334,
+  "easy": 1333,
+  "hard": 1333
+ },
+ "sha256": {
+  "train": "78dab8bcb5fa651176a01d9e4823882d5c023e05594b5e023514ac15bf87fec8",
+  "dev": "7cb0e9be1e441da7c119c16e7da8aec9b1231576e77f7d21731f0fb7ba9a9696"
+ }
+}
