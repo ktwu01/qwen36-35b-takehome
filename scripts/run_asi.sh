@@ -11,6 +11,8 @@ REPO=$(cd "$(dirname "$0")/.." && pwd)
 export HF_HOME=$BASE/hf-cache
 OUT=$BASE/asi-runs/$NAME
 mkdir -p "$OUT"
+MINI_CFG=$("$BASE/venvs/harbor/bin/python" -c "import minisweagent,os;print(os.path.dirname(minisweagent.__file__))" 2>/dev/null | tail -1)/config/mini_textbased.yaml
+"$BASE/venvs/harbor/bin/python" "$REPO/scripts/make_swepro_config.py" "$MINI_CFG" "$NAME" "$API" "$OUT/mini_config.yaml"
 cd "$BASE"
 "$BASE/venvs/asibench/bin/asibench" run --instances-dir asi-instances --tasks-dir asi-src/tasks --tasks all \
   --prompt-levels b1,b2,b3,b4 --seed 31415 --timeout "$TIMEOUT" --sandbox linux_ns --parallel "$PAR" \

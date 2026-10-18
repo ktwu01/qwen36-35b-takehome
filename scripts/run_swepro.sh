@@ -34,7 +34,7 @@ PY
   TASKS=$SUB
 fi
 CFG=$REPO/configs/eval/swe_pro_jobs/mini_textbased_$NAME.yaml
-"$BASE/venvs/harbor/bin/python" "$REPO/scripts/make_swepro_config.py" "$SBP" "$NAME" "$API" "$CFG"
+"$BASE/venvs/harbor/bin/python" "$REPO/scripts/make_swepro_config.py" "$SBP/v2/tooling/configs/mini_textbased.yaml" "$NAME" "$API" "$CFG"
 export PYTHONPATH=$SBP/v2/tooling:$REPO/src HOSTED_VLLM_API_KEY=EMPTY MSWEA_COST_TRACKING=ignore_errors
 ENV_ARGS=(-e singularity --ek "singularity_image_cache_dir=$BASE/sif-cache" --mounts-json "$TB2_MOUNTS")
 "$HARBOR" run -p "$TASKS" -a takehome.sbp_agent:BudgetedHostMiniSwe -m "hosted_vllm/$NAME" --ak "config_file=$CFG" \
