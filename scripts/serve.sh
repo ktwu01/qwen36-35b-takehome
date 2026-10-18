@@ -6,7 +6,7 @@
 # fits next to a 256K-token KV cache on a 20-24 GB GPU. Thinking mode is on (model default).
 set -euo pipefail
 MODEL=$1; NAME=$2; PORT=${3:-8000}
-VLLM=${VLLM:-/home/users3/kw35262/projects/paul-graham-llm/.venv/bin/vllm}
+VLLM=${VLLM:-/var/tmp/$USER/venvs/train/bin/vllm}
 export HF_HOME=${HF_HOME:-/var/tmp/$USER/hf-cache} HF_HUB_OFFLINE=1
 REV_ARGS=()
 [[ "$MODEL" == Qwen/* ]] && REV_ARGS=(--revision "${BASE_REVISION:-c202236235762e1c871ad0ccb60c8ee5ba337b9a}")
