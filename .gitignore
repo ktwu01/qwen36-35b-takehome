@@ -1,0 +1,11 @@
+.env
+*.env
+__pycache__/
+.venv/
+outputs/
+checkpoints/
+*.safetensors
+data/raw/
+data/bench/
+wandb/
+*.sif
