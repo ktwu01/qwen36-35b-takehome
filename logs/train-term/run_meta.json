@@ -1,0 +1,89 @@
+{
+ "expert": "term",
+ "config": {
+  "seed": 20261018,
+  "base": {
+   "model": "Qwen/Qwen3.5-9B",
+   "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+   "tokenizer": "same repo and revision",
+   "chat_template": "tokenizer_config.json chat_template at the pinned revision",
+   "thinking": "enabled (model default) for every model in every benchmark"
+  },
+  "experts": {
+   "swe": {
+    "target": [
+     "swe_pro_v2_hard"
+    ],
+    "data": "Kwai-Klear/SWE-smith-mini_swe_agent_plus-trajectories-66k",
+    "format": "mini-swe-agent bash-only trajectories (same harness as SWE-Pro and ASI eval)"
+   },
+   "term": {
+    "target": [
+     "terminal_bench_2"
+    ],
+    "data": "open-thoughts/OpenThoughts-Agent-v1-SFT",
+    "format": "Terminus-2 JSON keystroke trajectories (same agent as Terminal-Bench eval)"
+   },
+   "sci": {
+    "target": [
+     "hle",
+     "asi_bench"
+    ],
+    "data": "nvidia/OpenScienceReasoning-2",
+    "format": "single-turn science reasoning with <think> traces"
+   }
+  },
+  "lora": {
+   "method": "QLoRA (nf4, bf16 compute)",
+   "r": 32,
+   "alpha": 64,
+   "dropout": 0.0,
+   "target_modules_regex": "(.*\\.)?layers\\.\\d+\\.(self_attn\\.(q|k|v|o)_proj|linear_attn\\.(in_proj_qkv|in_proj_z|out_proj)|mlp\\.(gate|up|down)_proj)",
+   "max_length": 16384,
+   "learning_rate": 0.0001,
+   "lr_scheduler": "cosine",
+   "warmup_ratio": 0.03,
+   "per_device_train_batch_size": 1,
+   "gradient_accumulation_steps": 16,
+   "epochs": 1,
+   "loss": "assistant tokens only",
+   "eval_steps": 25,
+   "eval_max_samples": 100
+  },
+  "control": {
+   "union": "one LoRA on the union of the three expert datasets, same total steps (merge vs single multi-task model)"
+  },
+  "merge": {
+   "operate_on": "dense LoRA deltas (B @ A * alpha/r) per target module, added to the bf16 base",
+   "methods": [
+    "task_arithmetic",
+    "ties",
+    "dare_ties"
+   ],
+   "ablation": {
+    "lambda": [
+     0.5,
+     0.7,
+     1.0
+    ],
+    "density": [
+     0.2,
+     0.5
+    ]
+   },
+   "selection": "independent dev sets only (never benchmark items)"
+  },
+  "decontamination": {
+   "ngram": 13,
+   "against": [
+    "swe_pro_v2_hard problem statements",
+    "hle questions",
+    "terminal_bench_2 instructions",
+    "asi_bench prompts b1-b4"
+   ],
+   "swe_repo_exclusion": "every repo in configs/eval/swe_pro_v2_hard.lock.json"
+  }
+ },
+ "host": "c301-003.hpc.hpc.utexas.edu",
+ "best_ckpt": null
+}

@@ -1,0 +1,20 @@
+{
+ "method": "dare_ties",
+ "experts": [
+  "outputs/swe",
+  "outputs/term",
+  "outputs/sci"
+ ],
+ "weights": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "lam": 1.0,
+ "density": 0.5,
+ "layers": "all",
+ "seed": 20261018,
+ "base": "Qwen/Qwen3.5-9B",
+ "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+ "modules_merged": 200
+}
