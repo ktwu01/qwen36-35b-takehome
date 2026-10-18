@@ -48,6 +48,17 @@ def job_config(name, api, seed, n, jobs_dir):
     }
 
 
+def finished_tasks(jobs_dir, name, seed):
+    done = set()
+    for res in jobs_dir.glob(f"tb2-{name}-s{seed}*/*/result.json"):
+        try:
+            if json.loads(res.read_text()).get("finished_at"):
+                done.add(res.parent.name.rsplit("__", 1)[0])
+        except ValueError:
+            pass
+    return done
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True, help="served model name (base, swe, term, sci, merged-...)")
@@ -56,6 +67,7 @@ def main():
     ap.add_argument("-n", type=int, default=12)
     ap.add_argument("--jobs-dir", default=str(BASE / "tb2-jobs"))
     ap.add_argument("--reclaim", action="store_true", help="run claimed seeds too (resume after a crash)")
+    ap.add_argument("--part", type=int, default=1, help=">1: continue a seed in a new job on unfinished tasks")
     a = ap.parse_args()
     env = dict(os.environ, APPTAINER_CACHEDIR=str(BASE / "apptainer-cache"),
                APPTAINER_TMPDIR=str(BASE / "apptainer-tmp"), HOSTED_VLLM_API_KEY="EMPTY")
@@ -73,7 +85,20 @@ def main():
                 print("seed already claimed:", claim, flush=True)
                 continue
         cfg = job_config(a.name, a.api, seed, a.n, Path(a.jobs_dir))
-        path = cfg_dir / f"tb2-{a.name}-s{seed}.json"
+        if a.part > 1:
+            # Continuation part (e.g. after changing concurrency, which harbor cannot resume): same
+            # agent/env settings, only tasks with no finished trial in earlier parts of this seed.
+            done = finished_tasks(Path(a.jobs_dir), a.name, seed)
+            sub = BASE / "tb2-parts" / f"{a.name}-s{seed}-p{a.part}"
+            sub.mkdir(parents=True, exist_ok=True)
+            src = REPO / "data/bench/tb2/terminal-bench"
+            for t in sorted(src.iterdir()):
+                if t.name not in done and not (sub / t.name).exists():
+                    (sub / t.name).symlink_to(t)
+            cfg["datasets"] = [{"path": str(sub)}]
+            cfg["job_name"] = f"tb2-{a.name}-s{seed}-p{a.part}"
+            print(f"part {a.part}: {len(list(sub.iterdir()))} unfinished tasks", flush=True)
+        path = cfg_dir / f"{cfg['job_name']}.json"
         path.write_text(json.dumps(cfg, indent=1))
         print("running", path, flush=True)
         subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)

@@ -43,8 +43,14 @@ def harbor_trials(job_dir):
 def tb2(base, model, seeds=(1, 2, 3, 4, 5)):
     rows = []
     for s in seeds:
-        for t in harbor_trials(Path(base) / "tb2-jobs" / f"tb2-{model}-s{s}"):
-            rows.append({**t, "run": f"seed{s}"})
+        seen = set()
+        # a seed may be split into continuation parts (tb2-<model>-s<seed>-p2, ...); one row per task
+        for job in sorted((Path(base) / "tb2-jobs").glob(f"tb2-{model}-s{s}"), key=str) + \
+                sorted((Path(base) / "tb2-jobs").glob(f"tb2-{model}-s{s}-p*"), key=str):
+            for t in harbor_trials(job):
+                if t["task"] not in seen:
+                    seen.add(t["task"])
+                    rows.append({**t, "run": f"seed{s}", "part": job.name})
     return rows
 
 
