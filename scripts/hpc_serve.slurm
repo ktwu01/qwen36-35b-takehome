@@ -40,6 +40,10 @@ serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file 
       pid=""; cur=$want
       if [ -n "$want" ]; then
         read -r name model <<< "$want"
+        if [[ "$model" == /* ]] && [ ! -d "$model" ]; then  # e.g. merged chosen after the job started
+          flock /tmp/qwen36/build.lock env HF_HOME=/tmp/qwen36/hf-cache bash scripts/hpc_build_models.sh \
+            >> "logs/build_models_${SLURM_JOB_ID}.log" 2>&1
+        fi
         if [ -d "$model" ]; then  # a checkpoint directory: copy it to local SSD once
           [ -d "/tmp/qwen36/models/$name" ] || cp -r "$model" "/tmp/qwen36/models/$name"
           model=/tmp/qwen36/models/$name
