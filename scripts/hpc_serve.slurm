@@ -1,0 +1,59 @@
+#!/bin/bash
+# Eval serving on one an HPC supercomputer gpu-a100 node (3x A100 40GB): one vLLM server per GPU with the
+# same flags as scripts/serve.sh, each exposed on seismic18 at 127.0.0.1:1810<gpu+1> through a
+# restricted reverse SSH tunnel (key may only open those listeners). A supervisor loop serves
+# whatever $SCRATCH/qwen36/serve/gpu<i>.model names ("<served name> <path or HF id>"), so GPUs
+# can be retargeted (base -> expert -> merged) by editing that file. Allocation: the project allocation.
+#   sbatch scripts/hpc_serve.slurm            (from $SCRATCH/qwen36/repo)
+#SBATCH -J qwen36-serve
+#SBATCH -p gpu-a100
+#SBATCH -N 1 -n 1
+#SBATCH -t 24:00:00
+#SBATCH -A the project allocation
+#SBATCH -o logs/slurm-%x-%j.out
+set -u
+cd "$SCRATCH/qwen36/repo"
+V=$SCRATCH/qwen36/vserve
+CTRL=$SCRATCH/qwen36/serve
+mkdir -p "$CTRL" logs
+export HF_HOME=$SCRATCH/hf-cache HF_HUB_OFFLINE=1 VLLM_USE_FLASHINFER_SAMPLER=0
+export CUDA_HOME=$SCRATCH/qwen36/cuda-home PATH=$V/bin:$SCRATCH/qwen36/cuda-home/bin:$PATH
+export LIBRARY_PATH=$SCRATCH/qwen36/cuda-home/lib64
+nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.draw --format=csv -l 60 \
+  > "logs/gpu_${SLURM_JOB_ID}.csv" &
+
+serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file changes
+  local i=$1 port=$((18000 + $1)) cur="" pid=""
+  while true; do
+    want=$(cat "$CTRL/gpu$i.model" 2>/dev/null || true)
+    if [ "$want" != "$cur" ]; then
+      [ -n "$pid" ] && kill "$pid" 2>/dev/null && wait "$pid" 2>/dev/null
+      pid=""; cur=$want
+      if [ -n "$want" ]; then
+        read -r name model <<< "$want"
+        rev=(); [[ "$model" == Qwen/* ]] && rev=(--revision c202236235762e1c871ad0ccb60c8ee5ba337b9a)
+        CUDA_VISIBLE_DEVICES=$i "$V/bin/vllm" serve "$model" "${rev[@]}" --served-model-name "$name" \
+          --port "$port" --host 127.0.0.1 --quantization fp8 --kv-cache-dtype fp8 --dtype bfloat16 \
+          --max-model-len 262144 --gpu-memory-utilization 0.92 --max-num-seqs 32 --enable-prefix-caching \
+          --seed 0 --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_coder \
+          --limit-mm-per-prompt '{"image": 1}' >> "logs/vllm_hpc_gpu${i}_${name}.log" 2>&1 &
+        pid=$!
+      fi
+    fi
+    sleep 30
+  done
+}
+
+tunnel() {  # tunnel <i>: keep 127.0.0.1:1810<i+1> on seismic18 -> local vLLM port
+  local i=$1
+  while true; do
+    ssh -i ~/.ssh/id_ed25519_seismic_tunnel -o BatchMode=yes -o ExitOnForwardFailure=yes \
+      -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -N \
+      -R "127.0.0.1:$((18101 + i)):127.0.0.1:$((18000 + i))" kw35262@seismic18.geo.utexas.edu \
+      >> "logs/tunnel_${SLURM_JOB_ID}_$i.log" 2>&1
+    sleep 10
+  done
+}
+
+for i in 0 1 2; do serve_gpu "$i" & tunnel "$i" & done
+wait
