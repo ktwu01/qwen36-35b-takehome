@@ -79,7 +79,7 @@ def conflict_stats(deltas):
     signs = torch.stack([torch.sign(d) for d in deltas])
     nz = (signs != 0).all(0)
     conflict = ((signs != signs[0]).any(0) & nz).float().sum() / nz.float().sum().clamp(min=1)
-    flat = [d.flatten() for d in deltas]
+    flat = [d.flatten().double() for d in deltas]  # fp32 dot products over ~50M entries drift past 1
     cos = {f"{i}-{j}": torch.nn.functional.cosine_similarity(flat[i], flat[j], dim=0).item()
            for i in range(len(flat)) for j in range(i + 1, len(flat))}
     return {"sign_conflict_rate": conflict.item(), "cosine": cos,
