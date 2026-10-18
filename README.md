@@ -161,6 +161,25 @@ Terminal-Bench model-card setting). Max tokens: TB2 80K (81,920); HLE 32,768; ag
   per task. Trajectories are audited for network use (pending).
 - **Serving hardware differs across hosts** (RTX PRO 4000 Blackwell, RTX A4500, A100) with identical
   vLLM flags and quantization; which host served each run is recorded in the claim files and logs.
+- **mini-swe-agent action fence.** SWE-Pro and ASI-Bench use the official text-based mini-swe-agent
+  configs with one change, `mswea_bash_command` -> `bash` in the templates and `model.action_regex`
+  (`scripts/make_swepro_config.py`): mini-swe-agent v2 renamed the fence, the SWE expert's training
+  trajectories use v1's `bash`, and with the v2 fence the merged model's actions were unparseable
+  (`RepeatedFormatError` on every turn). Applied to every model; runs started with the v2 fence were
+  discarded (kept under `DISCARDED-mswea-*`, not reported).
+- **ASI-Bench budget: 1,800 s per instance** (asibench default 10,800 s), the same for every model and
+  fixed before any ASI-Bench result; at the default, about half the instances ran to the cap and one
+  model's 236 runs would need ~40 GPU-hours on the available hardware.
+- **Terminal-Bench seeds.** The exam asks for 5 runs per model. Measured throughput on the available
+  GPUs is ~5-9 finished trials per hour per GPU (the 9B model thinks at length every turn), so one 89-task
+  seed takes 10-18 GPU-hours. Seeds are run paired across models (seed 1 for base, term and merged first,
+  then seed 2, ...) and the number of completed seeds per model is reported; incomplete seeds are
+  reported with their task count and never mixed into the mean.
+- **Per-call LLM timeout 600 s** (LiteLLM default inside Terminus-2), identical for every model; a call
+  that exceeds it ends the trial (`llm_call_timeout`, counted as a failure and reported separately).
+- **Concurrency** is set per GPU so that the sessions' KV working set fits the cache (it does not change
+  any per-task setting): oversubscription had dropped the prefix-cache hit rate to ~16% and wasted most
+  GPU time on re-prefill.
 
 ## 6. Results
 
