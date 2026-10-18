@@ -1,0 +1,814 @@
+{
+ "benchmark": "Terminal-Bench 2.0",
+ "dataset": "terminal-bench@2.0",
+ "harbor": "harbor==0.24.0",
+ "code": "https://github.com/harbor-framework/terminal-bench",
+ "metric": "task success rate, mean and std over 5 runs",
+ "task_ids": [
+  "adaptive-rejection-sampler",
+  "bn-fit-modify",
+  "break-filter-js-from-html",
+  "build-cython-ext",
+  "build-pmars",
+  "build-pov-ray",
+  "caffe-cifar-10",
+  "cancel-async-tasks",
+  "chess-best-move",
+  "circuit-fibsqrt",
+  "cobol-modernization",
+  "code-from-image",
+  "compile-compcert",
+  "configure-git-webserver",
+  "constraints-scheduling",
+  "count-dataset-tokens",
+  "crack-7z-hash",
+  "custom-memory-heap-crash",
+  "db-wal-recovery",
+  "distribution-search",
+  "dna-assembly",
+  "dna-insert",
+  "extract-elf",
+  "extract-moves-from-video",
+  "feal-differential-cryptanalysis",
+  "feal-linear-cryptanalysis",
+  "filter-js-from-html",
+  "financial-document-processor",
+  "fix-code-vulnerability",
+  "fix-git",
+  "fix-ocaml-gc",
+  "gcode-to-text",
+  "git-leak-recovery",
+  "git-multibranch",
+  "gpt2-codegolf",
+  "headless-terminal",
+  "hf-model-inference",
+  "install-windows-3.11",
+  "kv-store-grpc",
+  "large-scale-text-editing",
+  "largest-eigenval",
+  "llm-inference-batching-scheduler",
+  "log-summary-date-ranges",
+  "mailman",
+  "make-doom-for-mips",
+  "make-mips-interpreter",
+  "mcmc-sampling-stan",
+  "merge-diff-arc-agi-task",
+  "model-extraction-relu-logits",
+  "modernize-scientific-stack",
+  "mteb-leaderboard",
+  "mteb-retrieve",
+  "multi-source-data-merger",
+  "nginx-request-logging",
+  "openssl-selfsigned-cert",
+  "overfull-hbox",
+  "password-recovery",
+  "path-tracing",
+  "path-tracing-reverse",
+  "polyglot-c-py",
+  "polyglot-rust-c",
+  "portfolio-optimization",
+  "protein-assembly",
+  "prove-plus-comm",
+  "pypi-server",
+  "pytorch-model-cli",
+  "pytorch-model-recovery",
+  "qemu-alpine-ssh",
+  "qemu-startup",
+  "query-optimize",
+  "raman-fitting",
+  "regex-chess",
+  "regex-log",
+  "reshard-c4-data",
+  "rstan-to-pystan",
+  "sam-cell-seg",
+  "sanitize-git-repo",
+  "schemelike-metacircular-eval",
+  "sparql-university",
+  "sqlite-db-truncate",
+  "sqlite-with-gcov",
+  "torch-pipeline-parallelism",
+  "torch-tensor-parallelism",
+  "train-fasttext",
+  "tune-mjcf",
+  "video-processing",
+  "vulnerable-secret",
+  "winning-avg-corewars",
+  "write-compressor"
+ ],
+ "tasks": [
+  {
+   "task": "adaptive-rejection-sampler",
+   "sha256": "135d8d219efcc4039c6ccce6586f20e99f385abca251e1f8139bd3daf1331fed",
+   "docker_image": "alexgshaw/adaptive-rejection-sampler:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "bn-fit-modify",
+   "sha256": "1badaa79d59837c5fe083a46fce1a77ff17d49d30fe7ba0c627f42815ae3b6a3",
+   "docker_image": "alexgshaw/bn-fit-modify:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "break-filter-js-from-html",
+   "sha256": "b43d0598a585563fb8711fe7d165a14b469b8a1de307c845462e4ec11e5ff135",
+   "docker_image": "alexgshaw/break-filter-js-from-html:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1200.0
+  },
+  {
+   "task": "build-cython-ext",
+   "sha256": "3848d936318342cab37332ac0e6d8d5bfbd3ecc7121ee960ff7f8dcff6af8eef",
+   "docker_image": "alexgshaw/build-cython-ext:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "build-pmars",
+   "sha256": "942592e0cd4e26ad815c280ba082b4a0de3c0fe78de677e2ebe86662c7fc8760",
+   "docker_image": "alexgshaw/build-pmars:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "build-pov-ray",
+   "sha256": "0a61b5e8d16fba4ee5f446a1f5ebd1d0d0d31b660dd2aa6623a65e8bdd084d38",
+   "docker_image": "alexgshaw/build-pov-ray:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 12000.0
+  },
+  {
+   "task": "caffe-cifar-10",
+   "sha256": "9ca40a8e5c0d1ef96133cfb273eb0b79c69a04a72daacca42a33e9d0c83b8129",
+   "docker_image": "alexgshaw/caffe-cifar-10:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1200.0
+  },
+  {
+   "task": "cancel-async-tasks",
+   "sha256": "072925a9a384e324a7be7ad1d6a7e6bba68ffdde9c2505b2dd320dede1de5271",
+   "docker_image": "alexgshaw/cancel-async-tasks:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "chess-best-move",
+   "sha256": "7f016f5adb053bafd0a9ac3a14bf6768053f531d16cbbe5e666bfe7472d9243a",
+   "docker_image": "alexgshaw/chess-best-move:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "circuit-fibsqrt",
+   "sha256": "3159f6a6c8f7c14f78bda01d152e1a8f04410784e26276587e85903fb55e822b",
+   "docker_image": "alexgshaw/circuit-fibsqrt:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "cobol-modernization",
+   "sha256": "6f92b740ede71047d111e82ad09cb01d1a76d560bd19aec424e3caf9292548d5",
+   "docker_image": "alexgshaw/cobol-modernization:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "code-from-image",
+   "sha256": "958ecc06d80d3cb9adacedf959b04306e5a31930ea70c45fa7f3559fb8e02c09",
+   "docker_image": "alexgshaw/code-from-image:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1200.0
+  },
+  {
+   "task": "compile-compcert",
+   "sha256": "f2812456dc6442177550a2cc4e06a3c6eeecfba23940ace9f42a6a9e6c9234b5",
+   "docker_image": "alexgshaw/compile-compcert:20251031",
+   "cpus": 2,
+   "memory": "4G",
+   "agent_timeout_sec": 2400.0
+  },
+  {
+   "task": "configure-git-webserver",
+   "sha256": "2af88ffe4dc3ca845dcd5f827e1b0bcd580206952fcf816f75caaef7b8f2ee7a",
+   "docker_image": "alexgshaw/configure-git-webserver:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "constraints-scheduling",
+   "sha256": "23fa5bf701bba303bed660a1cdae5dec08bef7c341cf86ded643077d69fafd9c",
+   "docker_image": "alexgshaw/constraints-scheduling:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1200.0
+  },
+  {
+   "task": "count-dataset-tokens",
+   "sha256": "c3f8c005a8e4e1e7c040d8ac5b0faf8f41f15efa521a756b4209bd09e51b64ff",
+   "docker_image": "alexgshaw/count-dataset-tokens:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "crack-7z-hash",
+   "sha256": "97fdd00311b930c7818bea1e3febcbab370f4f74fed6b24ec56d8ff38f60a758",
+   "docker_image": "alexgshaw/crack-7z-hash:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "custom-memory-heap-crash",
+   "sha256": "bd6a5a58f8673f1a2cca31dae5724a2727d83c022fe63249e1631abf29d3f783",
+   "docker_image": "alexgshaw/custom-memory-heap-crash:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "db-wal-recovery",
+   "sha256": "6eac3feed5034e9e89a7e71496683f31ff997271ff4879ef06745c83fe8f5590",
+   "docker_image": "alexgshaw/db-wal-recovery:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "distribution-search",
+   "sha256": "6e5541f93a87108944c031c5ba8a550c546eadff272dc3d3ccce996cc6c6cd11",
+   "docker_image": "alexgshaw/distribution-search:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "dna-assembly",
+   "sha256": "39cc2ef1e36fcf5314af8d42cb9ba39e4f10170e3bca4dc84f01a2938d15e5d4",
+   "docker_image": "alexgshaw/dna-assembly:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "dna-insert",
+   "sha256": "29dcbfe2438744a6e715fc692356debd614838d7c89660a1f0a936278aa8d4e8",
+   "docker_image": "alexgshaw/dna-insert:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "extract-elf",
+   "sha256": "cb04070e9f0c61a978099144be772acd953a6a1700ab37456974063168fa703b",
+   "docker_image": "alexgshaw/extract-elf:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "extract-moves-from-video",
+   "sha256": "28c4dc2dba6c319ee1a03bd861015f4bb7157021fb8e5d64a0aa86efbfdd4c26",
+   "docker_image": "alexgshaw/extract-moves-from-video:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "feal-differential-cryptanalysis",
+   "sha256": "b32e9a7263e322ca9a47c4c628a4d374c3a40ed7cd192dbd30fbc1577f77bbfe",
+   "docker_image": "alexgshaw/feal-differential-cryptanalysis:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "feal-linear-cryptanalysis",
+   "sha256": "410961a32cc571759dd2715bb340085a827d94ceccff8e5c4ee9f9029646df23",
+   "docker_image": "alexgshaw/feal-linear-cryptanalysis:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "filter-js-from-html",
+   "sha256": "e7bd0f00265b3b04c2b39e2266e7304adc770540fa36e067896e9a9c501b0f84",
+   "docker_image": "alexgshaw/filter-js-from-html:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "financial-document-processor",
+   "sha256": "7b33c9b03049fa574c32dbeb06e446b817b38a7697c42dee5f50a937095c8732",
+   "docker_image": "alexgshaw/financial-document-processor:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 1200.0
+  },
+  {
+   "task": "fix-code-vulnerability",
+   "sha256": "ee857731ea6df5c40506d4f72594e760bea623e9453824a3eff5106503f76636",
+   "docker_image": "alexgshaw/fix-code-vulnerability:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "fix-git",
+   "sha256": "c8ce49488f4442c51bc85f56f505a33cf71c6550193a2665cb822909a7ad230b",
+   "docker_image": "alexgshaw/fix-git:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "fix-ocaml-gc",
+   "sha256": "5d9b369659d03eb02b1180054f5d322dcb738e132de996fa74385e9d761cad4d",
+   "docker_image": "alexgshaw/fix-ocaml-gc:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "gcode-to-text",
+   "sha256": "65ace23f944bfcbf7f3acf0a8d17fb9102b7cd730edd6674f5ecea0f628a4bf3",
+   "docker_image": "alexgshaw/gcode-to-text:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "git-leak-recovery",
+   "sha256": "a4ceef41146eccebd4a646fd2c261a372f81a75964f6445372a08cac67ce3e89",
+   "docker_image": "alexgshaw/git-leak-recovery:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "git-multibranch",
+   "sha256": "241a6962e8e537521690cc0441dd187b791b00e153ced848b40b9e47b9045617",
+   "docker_image": "alexgshaw/git-multibranch:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "gpt2-codegolf",
+   "sha256": "d7ff14362f4e0c3ded838689e2bb7957a0d3973c043475e724f379ebcceedc08",
+   "docker_image": "alexgshaw/gpt2-codegolf:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "headless-terminal",
+   "sha256": "346de3c6e5f2cf60390008914e2cfe4898134ee25496358a6dfc640f2cc1049b",
+   "docker_image": "alexgshaw/headless-terminal:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "hf-model-inference",
+   "sha256": "12512ce8a31132ad2cbf75e59a8296819650b9764be4c051448136b3464995a2",
+   "docker_image": "alexgshaw/hf-model-inference:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "install-windows-3.11",
+   "sha256": "d63e28d33a0898a6dd57ce06a8b98307847ef3e408b7f412d7f3a13066e3f97c",
+   "docker_image": "alexgshaw/install-windows-3.11:20251031",
+   "cpus": 2,
+   "memory": "4G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "kv-store-grpc",
+   "sha256": "c826b7986f67fb5ae26975c9aad13e9d9c08f2576e963db8194ee26534557e0a",
+   "docker_image": "alexgshaw/kv-store-grpc:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "large-scale-text-editing",
+   "sha256": "b94304ac0dc056d2124cb6ab4077e90cf13cfdce5ce56edec1d8367bb5f82051",
+   "docker_image": "alexgshaw/large-scale-text-editing:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1200.0
+  },
+  {
+   "task": "largest-eigenval",
+   "sha256": "ad223038990ca7641e6228158f54ebfbe1f00255c68e23675d1a82a8d6c1a0dd",
+   "docker_image": "alexgshaw/largest-eigenval:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "llm-inference-batching-scheduler",
+   "sha256": "94483c8b22ada038b449142e62a43d685416e8999cf8bf1268c17c2d4aaa61f2",
+   "docker_image": "alexgshaw/llm-inference-batching-scheduler:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "log-summary-date-ranges",
+   "sha256": "276cf11f0c66ceb6d1a4e2013f876ff72926741469bdcf4e4e32a243af00aded",
+   "docker_image": "alexgshaw/log-summary-date-ranges:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "mailman",
+   "sha256": "dbd1ed62579d820e5473df855bf82fe6be208282ad428630d679325a27ede234",
+   "docker_image": "alexgshaw/mailman:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "make-doom-for-mips",
+   "sha256": "43d06445caae045f361bcf3a6b404c28605ddba8affe3baca25911023ba98556",
+   "docker_image": "alexgshaw/make-doom-for-mips:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "make-mips-interpreter",
+   "sha256": "a96ba71a20a976497da6f6d16d92859581845606ef722cf241e7f239ba64863e",
+   "docker_image": "alexgshaw/make-mips-interpreter:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "mcmc-sampling-stan",
+   "sha256": "b35dd538991a00bceb6fca8f7cdf71bd5f8f10bddae06bab49dfa67709100576",
+   "docker_image": "alexgshaw/mcmc-sampling-stan:20251031",
+   "cpus": 4,
+   "memory": "8G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "merge-diff-arc-agi-task",
+   "sha256": "e27bcd1d6425c92cb9d632a0c5eee04a172bbae804f1f7926bea3a81fc70738d",
+   "docker_image": "alexgshaw/merge-diff-arc-agi-task:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "model-extraction-relu-logits",
+   "sha256": "efaaa3bed4bed81300bac4efb7aa17ec75779566f7c8c91f69d1c0e4e0a2250f",
+   "docker_image": "alexgshaw/model-extraction-relu-logits:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "modernize-scientific-stack",
+   "sha256": "8b401a412b6af39484baaadd27b92a9ecf8e64f0675e60f9ec5effadac986e47",
+   "docker_image": "alexgshaw/modernize-scientific-stack:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 600.0
+  },
+  {
+   "task": "mteb-leaderboard",
+   "sha256": "330e6594b675b6bdb02725606ff5e9fca785c968404a6f8c730480a71288067f",
+   "docker_image": "alexgshaw/mteb-leaderboard:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "mteb-retrieve",
+   "sha256": "25b0fd300140a82898322d2473510e43bbfbcf8412d154d354d14f49d5936934",
+   "docker_image": "alexgshaw/mteb-retrieve:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "multi-source-data-merger",
+   "sha256": "ace36973e9681b534775f228da771558444bfeb7c2dc6cf2f13e1f039f097417",
+   "docker_image": "alexgshaw/multi-source-data-merger:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "nginx-request-logging",
+   "sha256": "94e30a0d6c68a14482447f20c6a09bb3fb03b7a2eeb561192a7749496f11d910",
+   "docker_image": "alexgshaw/nginx-request-logging:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "openssl-selfsigned-cert",
+   "sha256": "1797a21ccbc97078f5108e6e572a968bb43bab8ca867517dfc4aa56dcef50fd3",
+   "docker_image": "alexgshaw/openssl-selfsigned-cert:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "overfull-hbox",
+   "sha256": "7db8bb8c791f63d148c9ea2f33e555379b27496f0479f5328a046e19140b2354",
+   "docker_image": "alexgshaw/overfull-hbox:20251031",
+   "cpus": 2,
+   "memory": "4G",
+   "agent_timeout_sec": 750.0
+  },
+  {
+   "task": "password-recovery",
+   "sha256": "2ef53ba131b2234b6b5fe44f54a0adb970e2540aa2d80d4c86cb9534046880e3",
+   "docker_image": "alexgshaw/password-recovery:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "path-tracing",
+   "sha256": "e6bf81d67710a0bcd8eed435210251162de8377ec39b64ad5286342daeba2f5a",
+   "docker_image": "alexgshaw/path-tracing:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "path-tracing-reverse",
+   "sha256": "36d98dea71707f2ddf7f160e6311efbaf019fd42c6974baf712242e842f6fd29",
+   "docker_image": "alexgshaw/path-tracing-reverse:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "polyglot-c-py",
+   "sha256": "0da9b90b9d810e45cb3e0854683fc156113fad6c16bc01ef3733e1a7325067a3",
+   "docker_image": "alexgshaw/polyglot-c-py:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "polyglot-rust-c",
+   "sha256": "0e67c6647a67708f9520dbe16d76b5a6cd0870cf033ac53050000f72af773d71",
+   "docker_image": "alexgshaw/polyglot-rust-c:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "portfolio-optimization",
+   "sha256": "01bfe05deb99049c2161b4f47f597f019f8ea77e7bdeaca3cee1c810cd2881f4",
+   "docker_image": "alexgshaw/portfolio-optimization:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "protein-assembly",
+   "sha256": "7a3805181fdeed9d9d07129b6c660b2f1f67813bd77165c5482c662791a5bed7",
+   "docker_image": "alexgshaw/protein-assembly:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "prove-plus-comm",
+   "sha256": "9e0f96a2ca47168d1af2c243e94b4f5e8b393905e8ad29740e6c2d594c3b89a2",
+   "docker_image": "alexgshaw/prove-plus-comm:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "pypi-server",
+   "sha256": "ca6d069d86aee07c1930c898c14b5e1e277b32c7846dec49561a4cd22aaf3aba",
+   "docker_image": "alexgshaw/pypi-server:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "pytorch-model-cli",
+   "sha256": "e1179c5e04a7fdf9b263e7d10b67fa8ed5e76ea267651997da102e2b85578804",
+   "docker_image": "alexgshaw/pytorch-model-cli:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "pytorch-model-recovery",
+   "sha256": "5d846e1738db53c1032cb3f01909f3687b28985f8dceb90f6aabedc5221fb272",
+   "docker_image": "alexgshaw/pytorch-model-recovery:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "qemu-alpine-ssh",
+   "sha256": "89115c35797aecd630ada267ba22fc7ff93d5685d2f9f6934b2646a43015a213",
+   "docker_image": "alexgshaw/qemu-alpine-ssh:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "qemu-startup",
+   "sha256": "89fb689f10693929ee019046b15461bfdc28f3e406269f56da491efee0604aa0",
+   "docker_image": "alexgshaw/qemu-startup:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "query-optimize",
+   "sha256": "648aed6b745cbdc32c4360039d9d3af2683d864638b4f41b33a6959edaf67057",
+   "docker_image": "alexgshaw/query-optimize:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "raman-fitting",
+   "sha256": "4d947b20ca1755b66f2c4a9d2581897d9d6ed456db0d9961d3b51cd7bd0cf76a",
+   "docker_image": "alexgshaw/raman-fitting:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "regex-chess",
+   "sha256": "d28aeda2e8cdd15d230706ee68ac25a3f05c9861b466a521a5264f5409627f6f",
+   "docker_image": "alexgshaw/regex-chess:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "regex-log",
+   "sha256": "1667a46f4a3a5fa82dfad79b130c962780037d3e89110d76741e8e908e2bcdac",
+   "docker_image": "alexgshaw/regex-log:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "reshard-c4-data",
+   "sha256": "37f62dc034d02a7d88098a2d26c474728b3421a548a383954770d8fe91760f6d",
+   "docker_image": "alexgshaw/reshard-c4-data:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "rstan-to-pystan",
+   "sha256": "b6ac0cedefeccd14f14da51ad62443308842fca57c1b5b345549bb31f6bdd733",
+   "docker_image": "alexgshaw/rstan-to-pystan:20251031",
+   "cpus": 4,
+   "memory": "8G",
+   "agent_timeout_sec": 1800.0
+  },
+  {
+   "task": "sam-cell-seg",
+   "sha256": "c8a48a0ed52af1b3ca99da224a8bc8004d2144b6d1942369401667b347c07a2b",
+   "docker_image": "alexgshaw/sam-cell-seg:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 7200.0
+  },
+  {
+   "task": "sanitize-git-repo",
+   "sha256": "6491d04d2bf10015727e1bcab5f93659f5dd9a4ad7a901342406ee558b15054d",
+   "docker_image": "alexgshaw/sanitize-git-repo:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "schemelike-metacircular-eval",
+   "sha256": "57a81ce5ecabf95a6f71cf92a518abbb7fe548fb9121289f45d82011e37ee94b",
+   "docker_image": "alexgshaw/schemelike-metacircular-eval:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 2400.0
+  },
+  {
+   "task": "sparql-university",
+   "sha256": "6b4fad524f7a3e6eab3529787e6f3aedafa126399618098cb0b57132ed5fec9e",
+   "docker_image": "alexgshaw/sparql-university:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "sqlite-db-truncate",
+   "sha256": "6b6d04230ec4ed56b364ab07db79dbfe59de2f73f93fa016473ecdf4f9dfedfe",
+   "docker_image": "alexgshaw/sqlite-db-truncate:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "sqlite-with-gcov",
+   "sha256": "c38dfd0e680499c6f2bfbd8e4becd22e3c02c43c2118c967d0aa141bff071fd4",
+   "docker_image": "alexgshaw/sqlite-with-gcov:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "torch-pipeline-parallelism",
+   "sha256": "dd53c2149dc5725c9f10666b21897a87e5030a9a2030e4a5f2066bc62dc2a2fb",
+   "docker_image": "alexgshaw/torch-pipeline-parallelism:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "torch-tensor-parallelism",
+   "sha256": "33b023b4280e98d88a42b9d8be1ef183da233145d35a5d32aa4280733a46701b",
+   "docker_image": "alexgshaw/torch-tensor-parallelism:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "train-fasttext",
+   "sha256": "00a587a423917641267ab3c269d2937f9548da971bf7dddb07dca166cc6d94ce",
+   "docker_image": "alexgshaw/train-fasttext:20251031",
+   "cpus": 1,
+   "memory": "4G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "tune-mjcf",
+   "sha256": "658e93272b2676b8e678b982fd6ab6e6f634d82d38f8a429d140cdc6733774aa",
+   "docker_image": "alexgshaw/tune-mjcf:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "video-processing",
+   "sha256": "e52ec4c303a2dea638583a201c0344c63910db2aa40720c15330556549f213f6",
+   "docker_image": "alexgshaw/video-processing:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "vulnerable-secret",
+   "sha256": "2536e148ddd8515dd1abe90e38e5f21e0869f14d1a2988406a006bab522ebc11",
+   "docker_image": "alexgshaw/vulnerable-secret:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  },
+  {
+   "task": "winning-avg-corewars",
+   "sha256": "afa6cfd3a754d3c645d823d699812004bca730682374dc47452d6f3a05637f1c",
+   "docker_image": "alexgshaw/winning-avg-corewars:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 3600.0
+  },
+  {
+   "task": "write-compressor",
+   "sha256": "29e6f74924ed5ffff850d897c09586fd7267130f9f05a4dbf92a577058f18eca",
+   "docker_image": "alexgshaw/write-compressor:20251031",
+   "cpus": 1,
+   "memory": "2G",
+   "agent_timeout_sec": 900.0
+  }
+ ],
+ "locked_at": "2026-10-18T06:40:04+00:00",
+ "n_tasks": 89
+}
