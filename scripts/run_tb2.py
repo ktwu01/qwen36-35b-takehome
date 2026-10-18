@@ -21,7 +21,8 @@ REPO = Path(__file__).resolve().parents[1]
 
 def job_config(name, api, seed, n, jobs_dir):
     mounts = [{"type": "bind", "source": str(BASE / "harbor-rt"), "target": "/opt/harbor-rt", "read_only": True},
-              {"type": "bind", "source": "/etc/resolv.conf", "target": "/etc/resolv.conf", "read_only": True}]
+              {"type": "bind", "source": "/etc/resolv.conf", "target": "/etc/resolv.conf", "read_only": True},
+              {"type": "bind", "source": str(BASE / "harbor-rt/hosts"), "target": "/etc/hosts", "read_only": True}]
     return {
         "job_name": f"tb2-{name}-s{seed}",
         "jobs_dir": str(jobs_dir),

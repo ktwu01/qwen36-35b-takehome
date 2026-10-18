@@ -25,6 +25,10 @@ if [ ! -x "$RT/bin/python3" ]; then
   ln -sf ../py/bin/python3 "$RT/bin/python3"
 fi
 
+# Docker injects these localhost entries into every container's /etc/hosts; apptainer
+# --containall does not, which breaks tools that bind or resolve "localhost".
+printf '127.0.0.1\tlocalhost\n::1\tlocalhost ip6-localhost ip6-loopback\n' > "$RT/hosts"
+
 SD=$("$HV/bin/python" -c "import harbor.environments.singularity as s, os; print(os.path.dirname(s.__file__))")
 [ -f "$SD/bootstrap.stock.sh" ] || cp "$SD/bootstrap.sh" "$SD/bootstrap.stock.sh"
 cp "$(dirname "$0")/../patches/harbor_singularity_bootstrap.sh" "$SD/bootstrap.sh"

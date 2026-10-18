@@ -5,7 +5,7 @@
 set -euo pipefail
 source "$(dirname "$0")/tb2_env.sh"
 SBP_TASKS=${SBP_TASKS:-$BASE/sbp-hard51-apptainer}
-for agent in oracle nop; do
+for agent in ${AGENTS:-oracle nop}; do
   "$HARBOR" run -p "$SBP_TASKS" -a "$agent" -e singularity --ek "singularity_image_cache_dir=$BASE/sif-cache" \
-    --mounts-json "$TB2_MOUNTS" -n "${1:-8}" -o "$BASE/sbp-jobs" --job-name "sbp-hard51-$agent-apptainer" -y
+    --mounts-json "$TB2_MOUNTS" -n "${1:-8}" -o "$BASE/sbp-jobs" --job-name "sbp-hard51-$agent-${TAG:-env2}" -y
 done

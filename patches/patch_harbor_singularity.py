@@ -54,6 +54,10 @@ HELPER = f'''
             elif not dest.exists():
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 dest.touch()
+        # musl (Alpine) images cannot run apptainer's glibc `faked`; rely on the root-mapped
+        # user namespace alone for them.
+        self._musl = (copy / "lib/ld-musl-x86_64.so.1").exists() and not (
+            (copy / "lib64/ld-linux-x86-64.so.2").exists() or (copy / "lib/x86_64-linux-gnu/libc.so.6").exists())
         self._trial_copy = copy
         return copy
 
@@ -68,6 +72,9 @@ def main(path):
         return
     edits = [
         ('                "--writable-tmpfs",\n', '                "--writable",  ' + MARK + '\n'),
+        ('                "--fakeroot",\n',
+         '                "--fakeroot",\n'
+         '                *(["--ignore-fakeroot-command"] if getattr(self, "_musl", False) else []),  ' + MARK + '\n'),
         ("        await self._start_server()\n\n        await self._upload_environment_dir_after_start()\n",
          "        self._sif_path = await self._writable_trial_copy(self._sif_path)  " + MARK + "\n"
          "        await self._start_server()\n\n        await self._upload_environment_dir_after_start()\n"),

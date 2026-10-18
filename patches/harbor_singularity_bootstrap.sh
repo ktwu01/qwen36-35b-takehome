@@ -15,7 +15,8 @@ mkdir -p "$WORKDIR"
 export DEBIAN_FRONTEND=noninteractive
 
 RT=/opt/harbor-rt
-if [ ! -x "$RT/bin/python3" ]; then
+# The host-built runtime is glibc; musl (Alpine) images fall back to the stock bootstrap.
+if ! "$RT/bin/python3" -c pass >/dev/null 2>&1; then
   exec /staging/bootstrap.stock.sh "$WORKDIR" "$@"
 fi
 
