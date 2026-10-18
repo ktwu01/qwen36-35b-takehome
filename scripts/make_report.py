@@ -9,6 +9,7 @@ analysis/uncertainty.json, logs/cost.json. Every number in the table comes from 
 import csv
 import json
 import shutil
+import platform
 import subprocess
 from pathlib import Path
 
@@ -53,11 +54,13 @@ def main():
         bad = sum(v for k, v in fc.items() if k in ("env_error", "no_result"))
         fail.append(f"{m}/{b} {100 * bad / max(1, n):.1f}\\%")
 
+    mac = platform.system() == "Darwin"
+    CJK, MAIN = ("Hiragino Sans GB", "Helvetica Neue") if mac else ("Noto Sans CJK SC", "DejaVu Sans")
     body = rf"""\documentclass[9pt]{{extarticle}}
 \usepackage[a4paper,margin=1.3cm]{{geometry}}
 \usepackage{{xeCJK,booktabs,array}}
-\setCJKmainfont{{Hiragino Sans GB}}
-\setmainfont{{Helvetica Neue}}
+\setCJKmainfont{{{CJK}}}
+\setmainfont{{{MAIN}}}
 \pagestyle{{empty}}\setlength{{\parskip}}{{3pt}}\setlength{{\parindent}}{{0pt}}
 \begin{{document}}
 {{\large\bfseries Qwen3.5-9B 多专家训练与模型合版实验}}\\[2pt]
