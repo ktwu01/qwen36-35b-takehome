@@ -101,21 +101,30 @@ def hle(results_root, model, run="run1"):
 
 
 def asi(base, model):
+    """Locked instances only (configs/eval/asi_bench.lock.json: 59 tasks x 4 levels): `asibench run
+    --tasks all` also runs the dataset's extra test task, which is not part of the evaluation."""
     rep = json.loads((Path(base) / "asi-runs" / model / "local_score_seed31415.json").read_text())
-    # asibench runs and scores all 60 dataset tasks; only the 59 final tasks in the lock are reported (the
-    # 60th is the dataset's test task), so the official mean is recomputed over locked instances
-    locked = {t.split("__")[0] for t in json.load(open(Path(__file__).resolve().parents[2] /
-                                                       "configs/eval/asi_bench.lock.json"))["task_ids"]}
-    results = [r for r in rep["results"] if r["instance_id"].split("__")[0] in locked]
-    valid = [r for r in results if r.get("final_score") is not None]
-    rows = []
-    for r in results:
+    lock = json.load(open(Path(__file__).resolve().parents[2] / "configs/eval/asi_bench.lock.json"))
+    want = {(i, lv) for i in lock["task_ids"] for lv in lock["prompt_levels"]}
+    rows, tot, tot_max, n_invalid = [], 0.0, 0.0, 0
+    for r in rep["results"]:
+        if (r["instance_id"], r["prompt_level"]) not in want:
+            continue
+        want.discard((r["instance_id"], r["prompt_level"]))
         st = r.get("evaluation_status")
-        score = r.get("final_score")
+        score, mx = r.get("final_score"), r.get("max_score") or 100.0
+        if score is None:
+            n_invalid += 1
+        else:
+            tot, tot_max = tot + score, tot_max + mx
         rows.append({"task": f"{r['instance_id']}__{r['prompt_level']}", "run": "seed31415",
-                     "score": (score or 0.0) / (r.get("max_score") or 100.0),
+                     "score": (score or 0.0) / mx,
                      "status": "ok" if st == "completed" and score is not None else "no_result",
                      "level": r["prompt_level"], "official_valid": score is not None})
-    mean = 100 * sum(r["final_score"] / (r.get("max_score") or 100.0) for r in valid) / len(valid) if valid else None
-    return rows, {"official_mean_percent": mean, "scorer_error_count": len(results) - len(valid),
-                  "instance_count": len(results)}
+    for i, lv in sorted(want):  # locked instance with no result (never ran): 0, invalid for the official mean
+        rows.append({"task": f"{i}__{lv}", "run": "seed31415", "score": 0.0, "status": "no_result",
+                     "level": lv, "official_valid": False})
+    # asibench's mean_percent (total score / total max over scorer-valid instances), on the locked set
+    return rows, {"official_mean_percent": 100 * tot / tot_max if tot_max else None,
+                  "scorer_error_count": n_invalid, "not_run_count": len(want), "instance_count": len(rows),
+                  "report_mean_percent_incl_extra_task": rep.get("mean_percent")}
