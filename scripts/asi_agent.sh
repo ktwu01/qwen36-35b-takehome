@@ -1,11 +1,10 @@
 #!/bin/bash
 # ASI-Bench file-exchange agent: mini-swe-agent (text-based bash actions) in the task workspace.
-# Invoked by `asibench run --agent-cmd 'bash scripts/asi_agent.sh {workspace}'` with
-#   ASI_MODEL (served name), ASI_API (OpenAI-compatible base URL), ASI_SEED, ASI_TRAJ_DIR.
+# Invoked by `asibench run --agent-cmd 'bash scripts/asi_agent.sh {workspace} MODEL API SEED TRAJ_DIR BASE'`
+# (arguments, not env vars: asibench sanitizes the agent environment).
 # Same harness and text format as the SWE-Pro eval; identical settings for every model.
 set -u
-W=$1
-BASE=${BASE:-/var/tmp/$USER}
+W=$1 ASI_MODEL=$2 ASI_API=$3 ASI_SEED=$4 ASI_TRAJ_DIR=$5 BASE=$6
 MINI=$BASE/venvs/harbor/bin/mini
 CFG=$("$BASE/venvs/harbor/bin/python" -c "import minisweagent,os;print(os.path.dirname(minisweagent.__file__))" 2>/dev/null | tail -1)/config/mini_textbased.yaml
 ID=$(basename "$(dirname "$W")")
