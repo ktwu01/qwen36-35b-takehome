@@ -101,7 +101,7 @@ def asi(base, model):
         st = r.get("evaluation_status")
         score = r.get("final_score")
         rows.append({"task": f"{r['instance_id']}__{r['prompt_level']}", "run": "seed31415",
-                     "score": (score or 0.0) / (r.get("max_possible_score") or 100.0),
+                     "score": (score or 0.0) / (r.get("max_score") or 100.0),
                      "status": "ok" if st == "completed" and score is not None else "no_result",
                      "level": r["prompt_level"], "official_valid": score is not None})
     return rows, {"official_mean_percent": rep.get("mean_percent"), "scorer_error_count": rep.get("scorer_error_count"),
