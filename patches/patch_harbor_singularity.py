@@ -56,8 +56,8 @@ HELPER = f'''
                 dest.touch()
         # musl (Alpine) images cannot run apptainer's glibc `faked`; rely on the root-mapped
         # user namespace alone for them.
-        self._musl = (copy / "lib/ld-musl-x86_64.so.1").exists() and not (
-            (copy / "lib64/ld-linux-x86-64.so.2").exists() or (copy / "lib/x86_64-linux-gnu/libc.so.6").exists())
+        # (Alpine images with gcompat also ship a glibc loader stub, so musl presence decides.)
+        self._musl = (copy / "lib/ld-musl-x86_64.so.1").exists()
         self._trial_copy = copy
         return copy
 
