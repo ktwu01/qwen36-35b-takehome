@@ -7,6 +7,7 @@ All checkpoints are public on Hugging Face (Apache-2.0). Base: [`Qwen/Qwen3.5-9B
 | SWE expert (target: SWE-bench Pro v2-hard) | adapter | [ktwu01/qwen35-9b-takehome-expert-swe](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe) | `387687daaec0db58727cb70ee59c7acb49c83d4c` |
 | Terminal expert (target: Terminal-Bench 2.0) | adapter | [ktwu01/qwen35-9b-takehome-expert-term](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term) | `16ae50eb52fc7458476fce134cecee107e909d13` |
 | Science expert (targets: HLE, ASI-Bench) | adapter | [ktwu01/qwen35-9b-takehome-expert-sci](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci) | `0e9ea7a01100f1a61f5a0eff7bf81eb52e1ede86` |
+| Final merged model (all four benchmarks) | merged | [ktwu01/qwen35-9b-takehome-merged](https://huggingface.co/ktwu01/qwen35-9b-takehome-merged) | `e85e8e8e149550f3874923ac6a1a72486b5d6151` |
 
 ## Loading
 
@@ -29,6 +30,59 @@ Merged model (full weights, same architecture and files as the base):
 vllm serve ktwu01/qwen35-9b-takehome-merged --revision <revision above> --quantization fp8 \
   --kv-cache-dtype fp8 --max-model-len 262144 --reasoning-parser qwen3 \
   --enable-auto-tool-choice --tool-call-parser qwen3_coder
+```
+
+## Merge recipe (final model)
+
+```json
+{
+ "name": "ties-d0.5-l1.0",
+ "merge_args": "--method ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 1.0",
+ "dev_mean_token_loss": 0.32781994345410975,
+ "dev_token_loss": {
+  "swe": 0.22026807381601063,
+  "term": 0.1873204659077618,
+  "sci": 0.5758712906385569
+ },
+ "rule": "lowest mean dev token loss over swe/term/sci among 3-expert merges; tie -> lower worst domain",
+ "ranking": [
+  {
+   "name": "ties-d0.5-l1.0",
+   "mean": 0.32782,
+   "worst": 0.57587
+  },
+  {
+   "name": "ties-d0.2-l1.0",
+   "mean": 0.32953,
+   "worst": 0.57779
+  },
+  {
+   "name": "ties-d0.5-l0.7",
+   "mean": 0.3317,
+   "worst": 0.57579
+  },
+  {
+   "name": "ta-l0.5",
+   "mean": 0.33197,
+   "worst": 0.58267
+  },
+  {
+   "name": "dare-d0.5-l1.0",
+   "mean": 0.3363,
+   "worst": 0.58989
+  },
+  {
+   "name": "ta-l0.7",
+   "mean": 0.33852,
+   "worst": 0.59366
+  },
+  {
+   "name": "ta-l1.0",
+   "mean": 0.36116,
+   "worst": 0.62241
+  }
+ ]
+}
 ```
 
 ## Licenses

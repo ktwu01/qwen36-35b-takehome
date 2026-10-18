@@ -16,5 +16,11 @@
   "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci",
   "revision": "0e9ea7a01100f1a61f5a0eff7bf81eb52e1ede86",
   "kind": "adapter"
+ },
+ "merged": {
+  "repo": "ktwu01/qwen35-9b-takehome-merged",
+  "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-merged",
+  "revision": "e85e8e8e149550f3874923ac6a1a72486b5d6151",
+  "kind": "merged"
  }
 }
