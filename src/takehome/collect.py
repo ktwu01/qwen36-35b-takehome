@@ -3,6 +3,7 @@
 Each collector returns a list of rows {task, run, score (0-1), status} with status one of
   ok            graded normally (score may be 0)
   agent_timeout agent hit its time budget (graded as is: counts in the denominator)
+  llm_call_timeout one model call exceeded the harness' 600 s LiteLLM timeout (counts as failure)
   env_error     environment / infrastructure failure (counted as failure, also reported apart)
   no_result     generation failed or judge failed (counted as failure)
 Failures are never dropped from denominators.
@@ -33,6 +34,8 @@ def harbor_trials(job_dir):
             status = "env_error"
         elif exc == "AgentTimeoutError":
             status = "agent_timeout"
+        elif exc == "Timeout":  # one LLM call exceeded LiteLLM's 600 s default (same for every model)
+            status = "llm_call_timeout"
         elif reward is None:
             status = "env_error" if exc else "no_result"
         else:
