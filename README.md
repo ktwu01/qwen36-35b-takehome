@@ -123,7 +123,9 @@ TIES' magnitude trim at the same density.
   but science gets worse than base (0.6312 vs 0.6242). Adding the science expert costs ~0.005-0.007 on the
   agent domains and buys a 0.055 science improvement.
 - **Training strength** (dev loss): term expert at 60% of training (checkpoint 75) vs final: term 0.1761
-  vs 0.1706. (The equivalent swe checkpoint-50 had been rotated out by `save_total_limit`; not run.)
+  vs 0.1706 (still improving); swe expert at 66% (checkpoint 75) vs final: swe 0.2094 vs 0.2083 (nearly
+  converged). The planned swe checkpoint 50 had been rotated out by `save_total_limit`, so checkpoint 75
+  was used.
 - **Union of the data in one adapter** (planned "merge vs single model"): attempted as a 3-GPU DDP run,
   failed at the first step (`DistributedDataParallel` hides `get_base_model`, used by the chunked loss;
   `logs/train-union/`), and was dropped for time. Not reported as a result.
