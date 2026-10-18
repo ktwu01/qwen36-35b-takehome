@@ -19,7 +19,10 @@ K0=${K0:-0}; NGPU=${NGPU:-3}
 V=$SCRATCH/qwen36/vserve
 CTRL=$SCRATCH/qwen36/serve
 mkdir -p "$CTRL" logs
-export HF_HOME=$SCRATCH/hf-cache HF_HUB_OFFLINE=1 VLLM_USE_FLASHINFER_SAMPLER=0
+# Stage weights on the node-local SSD: safetensors loading from Lustre takes ~17 min per model.
+mkdir -p /tmp/qwen36/hf-cache/hub /tmp/qwen36/models
+cp -rL "$SCRATCH/hf-cache/hub/models--Qwen--Qwen3.5-9B" /tmp/qwen36/hf-cache/hub/
+export HF_HOME=/tmp/qwen36/hf-cache HF_HUB_OFFLINE=1 VLLM_USE_FLASHINFER_SAMPLER=0
 export CUDA_HOME=$SCRATCH/qwen36/cuda-home PATH=$V/bin:$SCRATCH/qwen36/cuda-home/bin:$PATH
 export LIBRARY_PATH=$SCRATCH/qwen36/cuda-home/lib64
 export LD_LIBRARY_PATH=/opt/apps/gcc/9.4.0/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}  # numpy built from source with gcc 9.4
@@ -36,6 +39,10 @@ serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file 
       pid=""; cur=$want
       if [ -n "$want" ]; then
         read -r name model <<< "$want"
+        if [ -d "$model" ]; then  # a checkpoint directory: copy it to local SSD once
+          [ -d "/tmp/qwen36/models/$name" ] || cp -r "$model" "/tmp/qwen36/models/$name"
+          model=/tmp/qwen36/models/$name
+        fi
         rev=(); [[ "$model" == Qwen/* ]] && rev=(--revision c202236235762e1c871ad0ccb60c8ee5ba337b9a)
         CUDA_VISIBLE_DEVICES=$i "$V/bin/vllm" serve "$model" "${rev[@]}" --served-model-name "$name" \
           --port "$port" --host 127.0.0.1 --quantization fp8 --kv-cache-dtype fp8 --dtype bfloat16 \
