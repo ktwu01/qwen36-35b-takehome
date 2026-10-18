@@ -79,7 +79,7 @@ def swe_pro(base, model):
 
 
 def hle(results_root, model, run="run1"):
-    d = Path(results_root) / model / "hle" / run
+    d = Path(results_root) / "hle" / model / run  # scripts/run_hle.sh: results/<group>/hle/<model>/run1
     preds = {r["id"]: r for r in map(json.loads, open(d / "predictions.jsonl"))}
     rows = []
     for r in map(json.loads, open(d / "judged.jsonl")):
@@ -91,6 +91,12 @@ def hle(results_root, model, run="run1"):
                      "status": status, "has_image": p.get("has_image"), "finish_reason": p.get("finish_reason"),
                      "input_tokens": usage.get("prompt_tokens"), "output_tokens": usage.get("completion_tokens"),
                      "latency_s": p.get("latency_s")})
+    # every locked question is in the denominator: one never answered or never judged scores 0
+    seen = {r["task"] for r in rows}
+    for t in json.load(open(Path(__file__).resolve().parents[2] / "configs/eval/hle.lock.json"))["tasks"]:
+        if t["id"] not in seen:
+            rows.append({"task": t["id"], "run": run, "score": 0.0, "status": "no_result",
+                         "has_image": t["has_image"]})
     return rows
 
 
