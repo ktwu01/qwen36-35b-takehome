@@ -13,6 +13,7 @@ import argparse
 import json
 import os
 import subprocess
+import zlib
 from pathlib import Path
 
 BASE = Path(os.environ.get("BASE", f"/var/tmp/{os.environ['USER']}"))
@@ -70,6 +71,8 @@ def main():
     ap.add_argument("--jobs-dir", default=str(BASE / "tb2-jobs"))
     ap.add_argument("--reclaim", action="store_true", help="run claimed seeds too (resume after a crash)")
     ap.add_argument("--part", type=int, default=1, help=">1: continue a seed in a new job on unfinished tasks")
+    ap.add_argument("--shard", type=lambda x: tuple(map(int, x.split("/"))), default=None,
+                    help="k/m: with --part, only unfinished tasks with crc32(name) %% m == k")
     a = ap.parse_args()
     env = dict(os.environ, APPTAINER_CACHEDIR=str(BASE / "apptainer-cache"),
                APPTAINER_TMPDIR=str(BASE / "apptainer-tmp"), HOSTED_VLLM_API_KEY="EMPTY")
@@ -95,6 +98,9 @@ def main():
             sub.mkdir(parents=True, exist_ok=True)
             src = REPO / "data/bench/tb2/terminal-bench"
             for t in sorted(src.iterdir()):
+                # --shard k/m: disjoint subsets so two endpoints can work on one seed concurrently
+                if a.shard and zlib.crc32(t.name.encode()) % a.shard[1] != a.shard[0]:
+                    continue
                 if t.name not in done and not (sub / t.name).exists():
                     (sub / t.name).symlink_to(t)
             cfg["datasets"] = [{"path": str(sub)}]
