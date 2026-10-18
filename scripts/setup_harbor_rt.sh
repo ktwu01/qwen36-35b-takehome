@@ -29,8 +29,6 @@ SD=$("$HV/bin/python" -c "import harbor.environments.singularity as s, os; print
 [ -f "$SD/bootstrap.stock.sh" ] || cp "$SD/bootstrap.sh" "$SD/bootstrap.stock.sh"
 cp "$(dirname "$0")/../patches/harbor_singularity_bootstrap.sh" "$SD/bootstrap.sh"
 chmod +x "$SD/bootstrap.sh" "$SD/bootstrap.stock.sh"
-# singularity.py copies only bootstrap.sh into /staging; ship the stock one next to it.
-grep -q "bootstrap.stock.sh" "$SD/singularity.py" || sed -i \
-  's|        bootstrap_script.chmod(0o755)|        bootstrap_script.chmod(0o755)\n        shutil.copy(Path(__file__).parent / "bootstrap.stock.sh", self._staging_dir / "bootstrap.stock.sh")\n        (self._staging_dir / "bootstrap.stock.sh").chmod(0o755)|' \
-  "$SD/singularity.py"
+# Writable per-trial sandbox copies + stage the stock bootstrap (see the patch docstring).
+"$HV/bin/python" "$(dirname "$0")/../patches/patch_harbor_singularity.py" "$SD/singularity.py"
 echo "harbor runtime ready: $RT (mount with --mounts-json '[{\"type\":\"bind\",\"source\":\"$RT\",\"target\":\"/opt/harbor-rt\",\"read_only\":true}]')"
