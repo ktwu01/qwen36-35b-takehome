@@ -10,7 +10,7 @@ CFG=$("$BASE/venvs/harbor/bin/python" -c "import minisweagent,os;print(os.path.d
 ID=$(basename "$(dirname "$W")")
 mkdir -p "$ASI_TRAJ_DIR"
 cd "$W" || exit 1
-export HOSTED_VLLM_API_KEY=EMPTY MSWEA_COST_TRACKING=ignore_errors
+export HOSTED_VLLM_API_KEY=EMPTY MSWEA_COST_TRACKING=ignore_errors MSWEA_CONFIGURED=true MSWEA_GLOBAL_CONFIG_DIR=$BASE/mswea-config
 exec "$MINI" -m "hosted_vllm/$ASI_MODEL" -t "$(cat prompt.md)" -y -l 0 --exit-immediately --agent-class default \
   -c "$CFG" \
   -c "model.model_kwargs.api_base=$ASI_API" \
