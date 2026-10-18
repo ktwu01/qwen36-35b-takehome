@@ -136,13 +136,13 @@ def main():
     args = TrainingArguments(
         output_dir=str(out / "ckpt"), seed=cfg["seed"], max_steps=a.max_steps,
         num_train_epochs=lc["epochs"], learning_rate=lc["learning_rate"],
-        lr_scheduler_type=lc["lr_scheduler"], warmup_ratio=lc["warmup_ratio"],
+        lr_scheduler_type=lc["lr_scheduler"], warmup_steps=lc["warmup_ratio"],  # <1 is a ratio in transformers 5
         per_device_train_batch_size=lc["per_device_train_batch_size"], per_device_eval_batch_size=1,
         gradient_accumulation_steps=lc["gradient_accumulation_steps"], bf16=True,
         gradient_checkpointing=True, gradient_checkpointing_kwargs={"use_reentrant": False},
         logging_steps=1, eval_strategy="steps", eval_steps=lc.get("eval_steps", 20),
         save_strategy="steps", save_steps=lc.get("eval_steps", 20), save_total_limit=3,
-        report_to=[], remove_unused_columns=False, prediction_loss_only=True, group_by_length=True, dataloader_num_workers=2)
+        report_to=[], remove_unused_columns=False, prediction_loss_only=True, train_sampling_strategy="group_by_length", dataloader_num_workers=2)
     trainer = ChunkedLossTrainer(model=model, args=args, train_dataset=train, eval_dataset=dev,
                       data_collator=lambda b: collate(b, tok.pad_token_id), callbacks=[Recorder(out)])
     t0 = time.time()
