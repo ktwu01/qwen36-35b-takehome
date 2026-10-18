@@ -87,8 +87,16 @@ class ChunkedLossTrainer(Trainer):
 
         total = sum(torch.utils.checkpoint.checkpoint(piece, h[i:i + self.CHUNK], y[i:i + self.CHUNK], use_reentrant=False)
                     for i in range(0, len(y), self.CHUNK))
-        loss = total / max(1, len(y))
+        # The Trainer passes num_items_in_batch (labeled tokens across all accumulation
+        # micro-batches) and then skips its own 1/GA scaling, so normalize by it here.
+        denom = num_items_in_batch if num_items_in_batch is not None else max(1, len(y))
+        loss = total / denom
         return (loss, None) if return_outputs else loss
+
+    def prediction_step(self, model, inputs, prediction_loss_only, ignore_keys=None):
+        with torch.no_grad():
+            loss = self.compute_loss(model, inputs)
+        return loss.detach(), None, None
 
 
 class Recorder(TrainerCallback):
