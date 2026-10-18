@@ -1,8 +1,9 @@
 #!/bin/bash
 # Eval serving on one an HPC supercomputer gpu-a100 node (3x A100 40GB): one vLLM server per GPU with the
-# same flags as scripts/serve.sh, each exposed on seismic18 at 127.0.0.1:1810<gpu+1> through a
-# restricted reverse SSH tunnel (key may only open those listeners). A supervisor loop serves
-# whatever $SCRATCH/qwen36/serve/gpu<i>.model names ("<served name> <path or HF id>"), so GPUs
+# same flags as scripts/serve.sh, each exposed on seismic18 at 127.0.0.1:1810<k+1> through a
+# restricted reverse SSH tunnel (key may only open those listeners). SLOT=0|1 (sbatch
+# --export=ALL,SLOT=1) selects k = 3*SLOT + gpu, so two nodes can run at once. A supervisor loop
+# serves whatever $SCRATCH/qwen36/serve/gpu<k>.model names ("<served name> <path or HF id>"), so GPUs
 # can be retargeted (base -> expert -> merged) by editing that file. Allocation: the project allocation.
 #   sbatch scripts/hpc_serve.slurm            (from $SCRATCH/qwen36/repo)
 #SBATCH -J qwen36-serve
@@ -13,6 +14,7 @@
 #SBATCH -o logs/slurm-%x-%j.out
 set -u
 cd "$SCRATCH/qwen36/repo"
+SLOT=${SLOT:-0}
 V=$SCRATCH/qwen36/vserve
 CTRL=$SCRATCH/qwen36/serve
 mkdir -p "$CTRL" logs
@@ -23,9 +25,9 @@ nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.dr
   > "logs/gpu_${SLURM_JOB_ID}.csv" &
 
 serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file changes
-  local i=$1 port=$((18000 + $1)) cur="" pid=""
+  local i=$1 k=$((3 * SLOT + $1)) port=$((18000 + $1)) cur="" pid=""
   while true; do
-    want=$(cat "$CTRL/gpu$i.model" 2>/dev/null || true)
+    want=$(cat "$CTRL/gpu$k.model" 2>/dev/null || true)
     # relaunch on a control-file change, or when the server died (crash, venv not ready yet)
     if [ "$want" != "$cur" ] || { [ -n "$want" ] && ! kill -0 "${pid:-0}" 2>/dev/null; }; then
       [ -n "$pid" ] && kill "$pid" 2>/dev/null && wait "$pid" 2>/dev/null
@@ -37,7 +39,7 @@ serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file 
           --port "$port" --host 127.0.0.1 --quantization fp8 --kv-cache-dtype fp8 --dtype bfloat16 \
           --max-model-len 262144 --gpu-memory-utilization 0.92 --max-num-seqs 32 --enable-prefix-caching \
           --seed 0 --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_coder \
-          --limit-mm-per-prompt '{"image": 1}' >> "logs/vllm_hpc_gpu${i}_${name}.log" 2>&1 &
+          --limit-mm-per-prompt '{"image": 1}' >> "logs/vllm_hpc_gpu${k}_${name}.log" 2>&1 &
         pid=$!
       fi
     fi
@@ -45,12 +47,12 @@ serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file 
   done
 }
 
-tunnel() {  # tunnel <i>: keep 127.0.0.1:1810<i+1> on seismic18 -> local vLLM port
-  local i=$1
+tunnel() {  # tunnel <i>: keep 127.0.0.1:1810<k+1> on seismic18 -> local vLLM port of GPU i
+  local i=$1 k=$((3 * SLOT + $1))
   while true; do
     ssh -i ~/.ssh/id_ed25519_seismic_tunnel -o BatchMode=yes -o ExitOnForwardFailure=yes \
       -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -N \
-      -R "127.0.0.1:$((18101 + i)):127.0.0.1:$((18000 + i))" kw35262@seismic18.geo.utexas.edu \
+      -R "127.0.0.1:$((18101 + k)):127.0.0.1:$((18000 + i))" kw35262@seismic18.geo.utexas.edu \
       >> "logs/tunnel_${SLURM_JOB_ID}_$i.log" 2>&1
     sleep 10
   done
