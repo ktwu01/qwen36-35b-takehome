@@ -11,9 +11,13 @@
 #SBATCH -o logs/slurm-%x-%j.out
 set -u
 cd "$SCRATCH/qwen36/repo"
-export HF_HOME=$SCRATCH/hf-cache HF_HUB_OFFLINE=1 PYTHONPATH=src
+# Lustre ($SCRATCH) random reads make safetensors loading ~17 min per model; stage the base on the
+# node-local SSD and write merged checkpoints there.
+mkdir -p /tmp/qwen36/hf-cache/hub
+cp -rL "$SCRATCH/hf-cache/hub/models--Qwen--Qwen3.5-9B" /tmp/qwen36/hf-cache/hub/
+export HF_HOME=/tmp/qwen36/hf-cache HF_HUB_OFFLINE=1 PYTHONPATH=src
 PY=$SCRATCH/qwen36/venv/bin/python
-OUT=$SCRATCH/qwen36/merged
+OUT=/tmp/qwen36/merged
 mkdir -p logs results/dev "$OUT"
 lane() {  # lane <gpu> : configs whose row index % 3 == gpu
   local gpu=$1 i=0
