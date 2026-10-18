@@ -1,8 +1,9 @@
 #!/bin/bash
 # Eval serving on one an HPC supercomputer gpu-a100 node (3x A100 40GB): one vLLM server per GPU with the
 # same flags as scripts/serve.sh, each exposed on seismic18 at 127.0.0.1:1810<k+1> through a
-# restricted reverse SSH tunnel (key may only open those listeners). SLOT=0|1 (sbatch
-# --export=ALL,SLOT=1) selects k = 3*SLOT + gpu, so two nodes can run at once. A supervisor loop
+# restricted reverse SSH tunnel (key may only open those listeners). K0 (first slot, default 0) and
+# NGPU (default 3) via sbatch --export=ALL,K0=6,NGPU=1 select slots k = K0 + gpu, so several nodes
+# (gpu-a100 or 1-GPU gpu-a100-small) can serve at once. A supervisor loop
 # serves whatever $SCRATCH/qwen36/serve/gpu<k>.model names ("<served name> <path or HF id>"), so GPUs
 # can be retargeted (base -> expert -> merged) by editing that file. Allocation: the project allocation.
 #   sbatch scripts/hpc_serve.slurm            (from $SCRATCH/qwen36/repo)
@@ -14,7 +15,7 @@
 #SBATCH -o logs/slurm-%x-%j.out
 set -u
 cd "$SCRATCH/qwen36/repo"
-SLOT=${SLOT:-0}
+K0=${K0:-0}; NGPU=${NGPU:-3}
 V=$SCRATCH/qwen36/vserve
 CTRL=$SCRATCH/qwen36/serve
 mkdir -p "$CTRL" logs
@@ -26,7 +27,7 @@ nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.dr
   > "logs/gpu_${SLURM_JOB_ID}.csv" &
 
 serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file changes
-  local i=$1 k=$((3 * SLOT + $1)) port=$((18000 + $1)) cur="" pid=""
+  local i=$1 k=$((K0 + $1)) port=$((18000 + $1)) cur="" pid=""
   while true; do
     want=$(cat "$CTRL/gpu$k.model" 2>/dev/null || true)
     # relaunch on a control-file change, or when the server died (crash, venv not ready yet)
@@ -49,7 +50,7 @@ serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file 
 }
 
 tunnel() {  # tunnel <i>: keep 127.0.0.1:1810<k+1> on seismic18 -> local vLLM port of GPU i
-  local i=$1 k=$((3 * SLOT + $1))
+  local i=$1 k=$((K0 + $1))
   while true; do
     ssh -i ~/.ssh/id_ed25519_seismic_tunnel -o BatchMode=yes -o ExitOnForwardFailure=yes \
       -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -N \
@@ -59,5 +60,5 @@ tunnel() {  # tunnel <i>: keep 127.0.0.1:1810<k+1> on seismic18 -> local vLLM po
   done
 }
 
-for i in 0 1 2; do serve_gpu "$i" & tunnel "$i" & done
+for i in $(seq 0 $((NGPU - 1))); do serve_gpu "$i" & tunnel "$i" & done
 wait
