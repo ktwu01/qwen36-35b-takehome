@@ -43,6 +43,17 @@ HELPER = f'''
         proc = await asyncio.create_subprocess_exec("cp", "-a", "--reflink=auto", str(sandbox), str(copy))
         if await proc.wait() != 0:
             raise RuntimeError(f"failed to copy sandbox for {{self.session_id}}")
+        # --writable cannot create bind destinations; make every mount target exist.
+        targets = [("/staging", True)] + [
+            (m["target"], not Path(m["source"]).is_file())
+            for m in (self._mounts or []) if m.get("type") == "bind"]
+        for target, is_dir in targets:
+            dest = copy / target.lstrip("/")
+            if is_dir:
+                dest.mkdir(parents=True, exist_ok=True)
+            elif not dest.exists():
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.touch()
         self._trial_copy = copy
         return copy
 
