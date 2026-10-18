@@ -14,6 +14,16 @@ export HARBOR_STAGING="/staging/env_files"
 mkdir -p "$WORKDIR"
 export DEBIAN_FRONTEND=noninteractive
 
+# apptainer's fakeroot helper prepends system library dirs to LD_LIBRARY_PATH, which outranks
+# each binary's RUNPATH (e.g. PyQt5's bundled Qt then loads the older system Qt). Its
+# LD_PRELOAD is absolute, so drop exactly the entries the helper adds; the dynamic loader still
+# searches the system dirs by default.
+if [ -n "${FAKEROOTKEY:-}" ]; then
+  LD_LIBRARY_PATH=$(printf ':%s:' "${LD_LIBRARY_PATH:-}" | sed -e 's#:/usr/lib/x86_64-linux-gnu/libfakeroot:#:#' \
+    -e 's#:/usr/local/lib:#:#' -e 's#:/lib/x86_64-linux-gnu:#:#' -e 's#:/lib:#:#' -e 's#::*#:#g' -e 's#^:##' -e 's#:$##')
+  export LD_LIBRARY_PATH
+fi
+
 RT=/opt/harbor-rt
 # The host-built runtime is glibc; musl (Alpine) images fall back to the stock bootstrap.
 if ! "$RT/bin/python3" -c pass >/dev/null 2>&1; then
