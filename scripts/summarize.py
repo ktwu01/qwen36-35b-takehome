@@ -43,9 +43,13 @@ def metric(bench, rows, extra=None):
         seeds = defaultdict(list)
         for r in rows:
             seeds[r["run"]].append(r["score"])
-        per_seed = {s: 100 * sum(v) / 89 for s, v in seeds.items()}  # all 89 tasks per seed
-        m.update(primary=st.mean(per_seed.values()), seed_std=st.pstdev(per_seed.values()) if len(per_seed) > 1 else 0.0,
-                 per_seed=per_seed, n_seeds=len(per_seed), complete=all(len(v) == 89 for v in seeds.values()))
+        # only complete seeds (all 89 tasks finished) enter the mean/std; partial seeds are listed apart
+        full = {s: 100 * sum(v) / 89 for s, v in seeds.items() if len(v) == 89}
+        partial = {s: {"tasks_finished": len(v), "success_on_finished": 100 * sum(v) / len(v)}
+                   for s, v in seeds.items() if len(v) < 89}
+        m.update(primary=st.mean(full.values()) if full else None,
+                 seed_std=st.pstdev(full.values()) if len(full) > 1 else 0.0,
+                 per_seed=full, n_complete_seeds=len(full), partial_seeds=partial)
     elif bench == "asi":
         all_mean = 100 * sum(r["score"] for r in rows) / len(rows)
         lv = defaultdict(list)
@@ -116,7 +120,11 @@ def main():
                 w.writeheader()
                 w.writerows(fails)
             table[(model, bench)] = metric(bench, rows, extra)
-            tasks[(model, bench)] = per_task_means(rows)
+            if bench == "tb2":  # bootstrap over complete seeds only, like the primary metric
+                full = set(table[(model, bench)]["per_seed"])
+                rows = [r for r in rows if r["run"] in full]
+            if rows:
+                tasks[(model, bench)] = per_task_means(rows)
 
     with open(out / "summary.csv", "w", newline="") as f:
         w = csv.writer(f)
