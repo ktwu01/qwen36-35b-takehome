@@ -45,7 +45,15 @@ def load_adapter(path):
                 raise ValueError(f"unexpected adapter key {k}")
             layer, mod, ab = m.groups()
             parts[f"model.language_model.layers.{layer}.{mod}.weight"][ab] = f.get_tensor(k).float()
-    return {k: (v["B"] @ v["A"]) * scale for k, v in parts.items()}, cfg
+    # Keep the low-rank factors; dense deltas (~36 GB fp32 per adapter) are formed per module.
+    return {k: (v["B"], v["A"], scale) for k, v in parts.items()}, cfg
+
+
+def dense(factors, shape):
+    if factors is None:
+        return torch.zeros(shape)
+    b, a, scale = factors
+    return (b @ a) * scale
 
 
 def ties_merge(deltas, weights, density, lam, dare, gen):
@@ -117,7 +125,7 @@ def main():
                 w = f.get_tensor(name)
                 if name in keys:
                     layer = int(name.split(".layers.")[1].split(".")[0])
-                    deltas = [ad.get(name, torch.zeros(w.shape)) for ad in adapters]
+                    deltas = [dense(ad.get(name), w.shape) for ad in adapters]
                     if lo <= layer <= hi:
                         if a.method == "single":
                             delta = deltas[0]

@@ -1,0 +1,12 @@
+name	merge_args
+base	-
+expert-swe	--method single --experts outputs/swe
+expert-term	--method single --experts outputs/term
+expert-sci	--method single --experts outputs/sci
+ta-l0.5	--method task_arithmetic --experts outputs/swe outputs/term outputs/sci --lam 0.5
+ta-l0.7	--method task_arithmetic --experts outputs/swe outputs/term outputs/sci --lam 0.7
+ta-l1.0	--method task_arithmetic --experts outputs/swe outputs/term outputs/sci --lam 1.0
+ties-d0.2-l1.0	--method ties --experts outputs/swe outputs/term outputs/sci --density 0.2 --lam 1.0
+ties-d0.5-l1.0	--method ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 1.0
+ties-d0.5-l0.7	--method ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 0.7
+dare-d0.5-l1.0	--method dare_ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 1.0
