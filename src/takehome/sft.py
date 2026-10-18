@@ -21,7 +21,7 @@ import torch
 import torch.utils.checkpoint
 import yaml
 from datasets import load_dataset
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, get_peft_model
 from transformers import (AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, Trainer,
                           TrainerCallback, TrainingArguments)
 
@@ -128,7 +128,10 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(base["model"], revision=base["revision"], dtype=torch.bfloat16,
                                                  quantization_config=quant, device_map={"": 0},
                                                  attn_implementation="sdpa")
-    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+    # Not prepare_model_for_kbit_training: it upcasts embed_tokens and lm_head (248K x 4096 each,
+    # untied) to fp32, ~8 GB extra on a 24 GB card. Keep them frozen in bf16.
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    model.enable_input_require_grads()
     model = get_peft_model(model, LoraConfig(r=lc["r"], lora_alpha=lc["alpha"], lora_dropout=lc["dropout"],
                                              target_modules=lc["target_modules_regex"], task_type="CAUSAL_LM"))
     model.print_trainable_parameters()
