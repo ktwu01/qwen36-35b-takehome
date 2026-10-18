@@ -13,7 +13,7 @@ export VLLM_USE_FLASHINFER_SAMPLER=0
 REV_ARGS=()
 [[ "$MODEL" == Qwen/* ]] && REV_ARGS=(--revision "${BASE_REVISION:-c202236235762e1c871ad0ccb60c8ee5ba337b9a}")
 exec "$VLLM" serve "$MODEL" "${REV_ARGS[@]}" --served-model-name "$NAME" --port "$PORT" --host 0.0.0.0 \
-  --quantization fp8 --kv-cache-dtype fp8 --dtype bfloat16 --max-model-len 262144 --gpu-memory-utilization 0.92 \
+  --quantization fp8 --dtype bfloat16 --max-model-len 262144 --gpu-memory-utilization 0.92 \
   --max-num-seqs "${MAX_SEQS:-32}" --enable-prefix-caching --seed 0 \
   --reasoning-parser qwen3 --enable-auto-tool-choice --tool-call-parser qwen3_coder \
   --limit-mm-per-prompt '{"image": 1}'
