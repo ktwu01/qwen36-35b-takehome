@@ -72,17 +72,24 @@ def messages(q):
     return [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": content}]
 
 
-async def retry(fn, tries=5):
-    delay = 1.0
-    for i in range(tries):
+async def retry(fn, tries=5, conn_wait_s=3 * 3600):
+    """Exponential backoff (1 s .. 60 s). Connection failures (the serving endpoint is between
+    HPC job windows) are retried for up to conn_wait_s without consuming `tries`."""
+    import openai
+    delay, i, waited = 1.0, 0, 0.0
+    while True:
         try:
             return await fn()
-        except Exception as e:  # rate limits, transient server errors
-            if i == tries - 1:
+        except (openai.APIConnectionError, openai.APITimeoutError):
+            if waited > conn_wait_s:
                 raise
-            await asyncio.sleep(min(60.0, delay))
-            delay *= 2
-            last = e  # noqa: F841
+        except Exception:  # rate limits, transient server errors
+            i += 1
+            if i >= tries:
+                raise
+        await asyncio.sleep(min(60.0, delay))
+        waited += min(60.0, delay)
+        delay *= 2
 
 
 async def generate(a):
