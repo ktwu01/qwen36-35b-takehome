@@ -91,12 +91,23 @@ def lock_tb2(harbor_bin):
     out = subprocess.run([harbor_bin, "datasets", "download", TB2["dataset"], "-o", "data/bench/tb2"],
                          capture_output=True, text=True)
     print(out.stdout[-2000:], out.stderr[-2000:])
+    import tomllib
     root = Path("data/bench/tb2")
-    tasks = sorted({p.parent.name for p in root.rglob("task.toml")})
+    tasks = []
+    for toml in sorted(root.rglob("task.toml")):
+        d = toml.parent
+        h = hashlib.sha256()
+        for f in sorted(p for p in d.rglob("*") if p.is_file()):
+            h.update(str(f.relative_to(d)).encode()); h.update(f.read_bytes())
+        meta = tomllib.loads(toml.read_text())
+        env = meta.get("environment", {})
+        tasks.append({"task": d.name, "sha256": h.hexdigest(), "docker_image": env.get("docker_image"),
+                      "cpus": env.get("cpus"), "memory": env.get("memory") or env.get("memory_mb"),
+                      "agent_timeout_sec": meta.get("agent", {}).get("timeout_sec")})
     write("terminal_bench_2", {
         "benchmark": "Terminal-Bench 2.0", **TB2,
         "metric": "task success rate, mean and std over 5 runs",
-        "task_ids": tasks,
+        "task_ids": [t["task"] for t in tasks], "tasks": tasks,
     })
 
 
