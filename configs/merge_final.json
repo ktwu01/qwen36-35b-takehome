@@ -1,0 +1,48 @@
+{
+ "name": "ties-d0.5-l1.0",
+ "merge_args": "--method ties --experts outputs/swe outputs/term outputs/sci --density 0.5 --lam 1.0",
+ "dev_mean_token_loss": 0.32781994345410975,
+ "dev_token_loss": {
+  "swe": 0.22026807381601063,
+  "term": 0.1873204659077618,
+  "sci": 0.5758712906385569
+ },
+ "rule": "lowest mean dev token loss over swe/term/sci among 3-expert merges; tie -> lower worst domain",
+ "ranking": [
+  {
+   "name": "ties-d0.5-l1.0",
+   "mean": 0.32782,
+   "worst": 0.57587
+  },
+  {
+   "name": "ties-d0.2-l1.0",
+   "mean": 0.32953,
+   "worst": 0.57779
+  },
+  {
+   "name": "ties-d0.5-l0.7",
+   "mean": 0.3317,
+   "worst": 0.57579
+  },
+  {
+   "name": "ta-l0.5",
+   "mean": 0.33197,
+   "worst": 0.58267
+  },
+  {
+   "name": "dare-d0.5-l1.0",
+   "mean": 0.3363,
+   "worst": 0.58989
+  },
+  {
+   "name": "ta-l0.7",
+   "mean": 0.33852,
+   "worst": 0.59366
+  },
+  {
+   "name": "ta-l1.0",
+   "mean": 0.36116,
+   "worst": 0.62241
+  }
+ ]
+}
