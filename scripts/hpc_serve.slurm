@@ -26,7 +26,8 @@ serve_gpu() {  # serve_gpu <i>: restart vLLM on GPU i whenever its control file 
   local i=$1 port=$((18000 + $1)) cur="" pid=""
   while true; do
     want=$(cat "$CTRL/gpu$i.model" 2>/dev/null || true)
-    if [ "$want" != "$cur" ]; then
+    # relaunch on a control-file change, or when the server died (crash, venv not ready yet)
+    if [ "$want" != "$cur" ] || { [ -n "$want" ] && ! kill -0 "${pid:-0}" 2>/dev/null; }; then
       [ -n "$pid" ] && kill "$pid" 2>/dev/null && wait "$pid" 2>/dev/null
       pid=""; cur=$want
       if [ -n "$want" ]; then
