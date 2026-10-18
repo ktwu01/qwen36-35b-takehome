@@ -20,6 +20,11 @@ if [ ! -x "$RT/bin/python3" ]; then
 fi
 
 export HARBOR_PYTHON="$RT/bin/python3"
+# apt drops privileges to _apt for downloads; in a root-mapped namespace that user cannot
+# write the overlay, so let apt download as (namespaced) root.
+if [ -d /etc/apt/apt.conf.d ]; then
+  echo 'APT::Sandbox::User "root";' > /etc/apt/apt.conf.d/00harbor-apptainer-sandbox
+fi
 export TMUX_TMPDIR="${TMUX_TMPDIR:-/tmp/.harbor-tmux}"
 mkdir -p "$TMUX_TMPDIR"
 for f in "$HOME/.bashrc" "$HOME/.bash_profile"; do
