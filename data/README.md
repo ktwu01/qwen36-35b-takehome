@@ -61,6 +61,11 @@ because the source is; hard terminal trajectories (> 25 turns) are rare in OpenT
 ## Contamination checks
 
 - Benchmark texts are collected in `data/bench/contam_texts.jsonl` (git-ignored) only to filter;
-  they are never trained on. Counts: SWE-Pro 642, ASI-Bench 240, TB2 89 (HLE pending access).
+  they are never trained on. Counts: SWE-Pro 642, ASI-Bench 240, TB2 89 (HLE added post hoc, see below).
 - Removed by the 13-gram rule: swe 1, term 3, sci 4.
+- HLE became accessible only after the sets were built (2026-10-18 12:53). Post-hoc check
+  (`scripts/hle_contam_check.py`, `data/manifests/hle_contamination.json`): 13-gram hits in sci 18 train /
+  2 dev, term 4, swe 1, touching 10 HLE questions; every hit is boilerplate (multiple-choice option runs
+  such as "a 1 b 2 c 3 d 4 e 5 f 6 g", numeric sequences, complexity lists "o n o n log n o n 2"), not
+  shared question content. No example was removed and the experts were not retrained.
 - No dev set is drawn from any benchmark; checkpoint and merge selection use only these dev sets.

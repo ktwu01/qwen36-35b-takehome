@@ -1,0 +1,64 @@
+{
+ "hle_questions": 2500,
+ "experts": {
+  "swe": {
+   "train": {
+    "n_overlapping": 1,
+    "ids": [
+     "cool-RR__PySnooper.57472b46.lm_rewrite__g0pq8oow"
+    ]
+   },
+   "dev": {
+    "n_overlapping": 0,
+    "ids": []
+   }
+  },
+  "term": {
+   "train": {
+    "n_overlapping": 4,
+    "ids": [
+     "inferredbugs-4969__pMd5EbZ",
+     "inferredbugs-6041__P4zdCka",
+     "inferredbugs-8838__zRDcs8H",
+     "inferredbugs-0977__JiWSrN3"
+    ]
+   },
+   "dev": {
+    "n_overlapping": 0,
+    "ids": []
+   }
+  },
+  "sci": {
+   "train": {
+    "n_overlapping": 18,
+    "ids": [
+     "osr2-734593",
+     "osr2-1337465",
+     "osr2-962910",
+     "osr2-743179",
+     "osr2-1033785",
+     "osr2-79464",
+     "osr2-134904",
+     "osr2-1311029",
+     "osr2-1355929",
+     "osr2-275723",
+     "osr2-855440",
+     "osr2-961247",
+     "osr2-13037",
+     "osr2-1202212",
+     "osr2-1180347",
+     "osr2-1003647",
+     "osr2-1524353",
+     "osr2-73711"
+    ]
+   },
+   "dev": {
+    "n_overlapping": 2,
+    "ids": [
+     "osr2-186281",
+     "osr2-783963"
+    ]
+   }
+  }
+ }
+}
