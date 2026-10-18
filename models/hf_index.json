@@ -1,0 +1,20 @@
+{
+ "expert-swe": {
+  "repo": "ktwu01/qwen35-9b-takehome-expert-swe",
+  "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe",
+  "revision": "387687daaec0db58727cb70ee59c7acb49c83d4c",
+  "kind": "adapter"
+ },
+ "expert-term": {
+  "repo": "ktwu01/qwen35-9b-takehome-expert-term",
+  "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term",
+  "revision": "16ae50eb52fc7458476fce134cecee107e909d13",
+  "kind": "adapter"
+ },
+ "expert-sci": {
+  "repo": "ktwu01/qwen35-9b-takehome-expert-sci",
+  "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci",
+  "revision": "0e9ea7a01100f1a61f5a0eff7bf81eb52e1ede86",
+  "kind": "adapter"
+ }
+}
