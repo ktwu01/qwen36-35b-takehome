@@ -4,7 +4,7 @@
     python -m takehome.build_data --expert union      # concatenation of the three built experts
 
 Pipeline per expert: normalize to {"messages"} -> drop over-length -> exact dedup on the
-task prompt -> MinHash near-dup (Jaccard >= 0.8 on 5-shingles) -> 13-gram decontamination
+task-specific prompt span (task_text) -> MinHash near-dup (Jaccard >= 0.8 on 5-shingles) -> 13-gram decontamination
 against all four benchmarks (data/bench/contam_texts.jsonl, built by build_contam.py) ->
 SWE-Pro repo exclusion (swe only) -> difficulty tier -> stratified sample -> dev split by
 task group. Writes data/processed/<expert>/{train,dev}.jsonl and data/manifests/<expert>.json
@@ -60,6 +60,17 @@ def load_expert(name):
     return out
 
 
+def task_text(name, prompt):
+    """Task-specific span of the prompt, used for dedup (agent prompts share long templates)."""
+    if name == "term":
+        a, b = prompt.find("Task Description"), prompt.find("Current terminal state")
+        return prompt[a:b] if a >= 0 and b > a else prompt
+    if name == "swe":
+        a, b = prompt.find("<pr_description>"), prompt.find("</pr_description>")
+        return prompt[a:b] if a >= 0 and b > a else prompt
+    return prompt
+
+
 def tier(ex):
     n_asst = sum(m["role"] == "assistant" for m in ex["messages"])
     size = sum(len(m["content"]) for m in ex["messages"])
@@ -108,7 +119,7 @@ def build(name, n_train, seed, contam_path):
 
     seen, uniq = set(), []
     for r in rows:
-        h = hashlib.sha1(norm(r["prompt"]).encode()).hexdigest()
+        h = hashlib.sha1(norm(task_text(name, r["prompt"])).encode()).hexdigest()
         if h not in seen:
             seen.add(h)
             uniq.append(r)
@@ -129,7 +140,7 @@ def build(name, n_train, seed, contam_path):
     pool = rows[: max(4 * n_train, 20_000)]
     lsh, kept = MinHashLSH(threshold=0.8, num_perm=64), []
     for r in pool:
-        m = minhash(r["prompt"][:4000])
+        m = minhash(task_text(name, r["prompt"])[:4000])
         if not lsh.query(m):
             lsh.insert(r["id"], m)
             kept.append(r)
