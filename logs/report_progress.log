@@ -1,0 +1,6 @@
+2026-10-19 17:38 CDT phase A step 1 done (summarize, audit fix, failure_cases), commits c60c77b 85c3381
+2026-10-19 17:46 CDT phase A step 3 done (eval_lanes, hpc_sacct estimate, cost), commit 82ccb06; HLE judge-429 re-judge + refresh 650260c
+2026-10-19 17:49 CDT phase A step 2 done (failures.md, 41 cases), commit 6572f3a
+2026-10-19 17:53 CDT phase A step 4 done (README s5/s6/s8 preliminary), commit 85d33d1
+2026-10-19 17:55 CDT phase A step 5 done (report.pdf 1 page), commit 4215298
+2026-10-19 17:57 CDT phase A step 6 done (HF cards + revisions), commit 9751fa5
