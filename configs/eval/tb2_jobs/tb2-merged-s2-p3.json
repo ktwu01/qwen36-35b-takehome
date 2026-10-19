@@ -1,0 +1,66 @@
+{
+ "job_name": "tb2-merged-s2-p3",
+ "jobs_dir": "/var/tmp/kw35262/tb2-jobs",
+ "n_concurrent_trials": 6,
+ "n_attempts": 1,
+ "environment": {
+  "type": "singularity",
+  "override_cpus": 32,
+  "override_memory_mb": 49152,
+  "mounts": [
+   {
+    "type": "bind",
+    "source": "/var/tmp/kw35262/harbor-rt",
+    "target": "/opt/harbor-rt",
+    "read_only": true
+   },
+   {
+    "type": "bind",
+    "source": "/etc/resolv.conf",
+    "target": "/etc/resolv.conf",
+    "read_only": true
+   },
+   {
+    "type": "bind",
+    "source": "/var/tmp/kw35262/harbor-rt/hosts",
+    "target": "/etc/hosts",
+    "read_only": true
+   }
+  ],
+  "kwargs": {
+   "singularity_image_cache_dir": "/var/tmp/kw35262/sif-cache"
+  }
+ },
+ "agents": [
+  {
+   "name": "terminus-2",
+   "model_name": "hosted_vllm/merged",
+   "override_timeout_sec": 10800,
+   "kwargs": {
+    "api_base": "http://seismic17.geo.utexas.edu:18000/v1",
+    "temperature": 1.0,
+    "interleaved_thinking": false,
+    "model_info": {
+     "max_input_tokens": 262144,
+     "max_output_tokens": 81920,
+     "max_tokens": 81920,
+     "input_cost_per_token": 0.0,
+     "output_cost_per_token": 0.0
+    },
+    "llm_call_kwargs": {
+     "top_p": 0.95,
+     "max_tokens": 81920,
+     "seed": 2,
+     "extra_body": {
+      "top_k": 20
+     }
+    }
+   }
+  }
+ ],
+ "datasets": [
+  {
+   "path": "/var/tmp/kw35262/tb2-parts/merged-s2-p3"
+  }
+ ]
+}

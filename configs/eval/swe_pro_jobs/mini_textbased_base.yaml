@@ -16,7 +16,7 @@ agent:
     Your reasoning and analysis here. Explain why you want to perform the action.
 
 
-    ```mswea_bash_command
+    ```bash
 
     your_command_here
 
@@ -47,19 +47,18 @@ agent:
     \nHere is an example of a correct response:\n\n<example_response>\nTHOUGHT: I\
     \ need to understand the structure of the repository first. Let me check what\
     \ files are in the current directory to get a better understanding of the codebase.\n\
-    \n```mswea_bash_command\nls -la\n```\n</example_response>\n\n## Useful command\
-    \ examples\n\n### Create a new file:\n\n```mswea_bash_command\ncat <<'EOF' > newfile.py\n\
-    import numpy as np\nhello = \"world\"\nprint(hello)\nEOF\n```\n\n### Edit files\
-    \ with sed:\n\n{%- if system == \"Darwin\" -%}\n<important>\nYou are on MacOS.\
-    \ For all the below examples, you need to use `sed -i ''` instead of `sed -i`.\n\
-    </important>\n{%- endif -%}\n\n```mswea_bash_command\n# Replace all occurrences\n\
-    sed -i 's/old_string/new_string/g' filename.py\n\n# Replace only first occurrence\n\
-    sed -i 's/old_string/new_string/' filename.py\n\n# Replace first occurrence on\
-    \ line 1\nsed -i '1s/old_string/new_string/' filename.py\n\n# Replace all occurrences\
-    \ in lines 1-10\nsed -i '1,10s/old_string/new_string/g' filename.py\n```\n\n###\
-    \ View file content:\n\n```mswea_bash_command\n# View specific lines with numbers\n\
-    nl -ba filename.py | sed -n '10,20p'\n```\n\n### Any other command you want to\
-    \ run\n\n```mswea_bash_command\nanything\n```\n"
+    \n```bash\nls -la\n```\n</example_response>\n\n## Useful command examples\n\n\
+    ### Create a new file:\n\n```bash\ncat <<'EOF' > newfile.py\nimport numpy as np\n\
+    hello = \"world\"\nprint(hello)\nEOF\n```\n\n### Edit files with sed:\n\n{%- if\
+    \ system == \"Darwin\" -%}\n<important>\nYou are on MacOS. For all the below examples,\
+    \ you need to use `sed -i ''` instead of `sed -i`.\n</important>\n{%- endif -%}\n\
+    \n```bash\n# Replace all occurrences\nsed -i 's/old_string/new_string/g' filename.py\n\
+    \n# Replace only first occurrence\nsed -i 's/old_string/new_string/' filename.py\n\
+    \n# Replace first occurrence on line 1\nsed -i '1s/old_string/new_string/' filename.py\n\
+    \n# Replace all occurrences in lines 1-10\nsed -i '1,10s/old_string/new_string/g'\
+    \ filename.py\n```\n\n### View file content:\n\n```bash\n# View specific lines\
+    \ with numbers\nnl -ba filename.py | sed -n '10,20p'\n```\n\n### Any other command\
+    \ you want to run\n\n```bash\nanything\n```\n"
   step_limit: 0
   cost_limit: 3.0
   mode: confirm
@@ -132,7 +131,7 @@ model:
   model_kwargs:
     drop_params: true
     reasoning_effort: high
-    api_base: http://seismic15.geo.utexas.edu:18000/v1
+    api_base: http://localhost:18000/v1
     api_key: EMPTY
     temperature: 1.0
     top_p: 0.95
@@ -174,7 +173,7 @@ model:
     Here are some thoughts about why you want to perform the action.
 
 
-    ```mswea_bash_command
+    ```bash
 
     <action>
 
@@ -191,4 +190,5 @@ model:
 
     {%- endif %}'
   model_class: litellm_textbased
+  action_regex: '```bash\s*\n(.*?)\n```'
   cost_tracking: ignore_errors
