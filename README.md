@@ -83,7 +83,17 @@ All experts share one configuration (`configs/experiment.yaml`), seed `20261018`
 | Epochs | 1 |
 | Checkpoints | every 25 steps, last 3 kept; resumable across 2 h jobs; final adapter = end of epoch |
 
-Hardware, time, throughput, memory and adapter size per expert: pending (`logs/<run_id>/resources.csv`).
+Hardware, time, throughput, memory and adapter size per expert (`scripts/train_resources.py` ->
+`logs/train-<expert>/resources.csv`; each expert on one A100-PCIE-40GB of a `gpu-a100-dev` node, the three
+in parallel, resumed once across 2 h jobs; wall time includes periodic dev evaluation):
+
+| Expert | Steps (x16 seq) | Sessions | Wall h = GPU h | Peak memory GB | Train tokens | Tokens/s | Adapter MB |
+|---|---|---|---|---|---|---|---|
+| swe | 114 | 2 | 3.78 | 19.0 | 21,170,346 | 1554.2 | 325.1 |
+| term | 125 | 2 | 2.8 | 18.9 | 15,182,405 | 1506.9 | 325.1 |
+| sci | 240 | 2 | 3.23 | 19.0 | 17,783,081 | 1528.7 | 325.1 |
+
+Checkpoints: every 25 steps (last 3 kept, for resume); the adapter shipped is the end-of-epoch one.
 
 ## 4. Merging
 

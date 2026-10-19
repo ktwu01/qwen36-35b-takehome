@@ -1,0 +1,2 @@
+expert,gpu,n_gpu,sessions,wall_h,gpu_hours,steps,peak_mem_gb,train_tokens,tokens_per_s,adapter_mb
+term,NVIDIA A100-PCIE-40GB,1,2,2.8,2.8,125,18.92,15182405,1506.9,325.1
