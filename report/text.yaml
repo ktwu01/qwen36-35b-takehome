@@ -1,5 +1,5 @@
 abstract_zh: >-
-  （待结果填写）
+  本实验以 Qwen3.5-9B 为基座（算力不足，按题目降至七十亿级），按评测协议训练软件修复、终端操作与科学推理三个 QLoRA 专家，在独立开发集上消融后选定 TIES 合版，并在四项基准上比较基座、专家与合版模型。合版宏平均较基座下降约四个百分点，置信区间不含零，未达提升三个百分点的目标：HLE 小幅提升，其余三项退化。误差分析显示，退化主要来自智能体动作格式与评测框架不匹配，其次是过早宣布完成与超时。
 process_zh: >-
   因 24 GB 单卡与 HPC 队列限制，按题目允许降至同系列 7B 级基座 Qwen3.5-9B（与 Qwen3.6 同为
   Gated DeltaNet 混合注意力、262K 上下文、多模态）。按评测协议划分三个专家：swe（mini-swe-agent
@@ -8,6 +8,10 @@ process_zh: >-
   三专家在 HPC A100 上以相同 QLoRA 配置（r=32，lr 1e-4，16K 上下文，1 epoch，种子 20261018）训练。
   合版在独立开发集上比较任务算术、TIES、DARE-TIES 共 7 个配置，按预先固定的规则选出 TIES（密度 0.5，
   lambda 1.0）；对照为专家数量（2 vs 3）与训练强度（60%/66% 检查点）。四项评测在相同 FP8 权重与 KV、
-  256K 上下文、temperature 1.0 下进行，环境为 apptainer（以 oracle/nop 校验，SWE-Pro 达 50/51 与 0/51）。
+  256K 上下文、temperature 1.0 下进行，环境为 apptainer（oracle 校验：SWE-Pro 50/51，TB2 59/89，全部任务均计入分母）。
 notes_zh: >-
-  （待结果填写）
+  \textbf{说明}（初步结果，评测仍在运行）：ASI-Bench 智能体实际以 mini-swe-agent 工具调用模式运行，Base 用原生工具调用，
+  sci 与合版按提示输出文本 bash 块而被拒（合版 240 次中 206 次 RepeatedFormatError），故 ASI 退化主要反映协议不匹配；
+  SWE-Pro 的格式错误来自 vLLM qwen3 推理解析器把无 think 结束标记的回复整体归入 reasoning\_content。
+  HLE 中因 OpenAI 429 未判分的答案（sci 71、合版 139）已用同一判分器重判。逐题结果、41 个失败案例、
+  置信区间与日志见仓库 results/、analysis/failures.md、logs/。

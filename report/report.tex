@@ -1,0 +1,36 @@
+\documentclass[9pt]{extarticle}
+\usepackage[a4paper,margin=1.3cm]{geometry}
+\usepackage{fontspec,booktabs,array}
+\setmainfont{Noto Sans CJK SC}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\pagestyle{empty}\setlength{\parskip}{3pt}\setlength{\parindent}{0pt}
+\begin{document}
+{\large\bfseries Qwen3.5-9B 多专家训练与模型合版实验}\\[2pt]
+{\small github.com/ktwu01/qwen36-35b-takehome \quad 模型: huggingface.co/ktwu01}
+
+\textbf{摘要}\quad 本实验以 Qwen3.5-9B 为基座（算力不足，按题目降至七十亿级），按评测协议训练软件修复、终端操作与科学推理三个 QLoRA 专家，在独立开发集上消融后选定 TIES 合版，并在四项基准上比较基座、专家与合版模型。合版宏平均较基座下降约四个百分点，置信区间不含零，未达提升三个百分点的目标：HLE 小幅提升，其余三项退化。误差分析显示，退化主要来自智能体动作格式与评测框架不匹配，其次是过早宣布完成与超时。
+
+\textbf{过程}\quad 因 24 GB 单卡与 HPC 队列限制，按题目允许降至同系列 7B 级基座 Qwen3.5-9B（与 Qwen3.6 同为 Gated DeltaNet 混合注意力、262K 上下文、多模态）。按评测协议划分三个专家：swe（mini-swe-agent 文本动作轨迹，2,000 条，MIT）、term（Terminus-2 轨迹，2,000 条，Apache-2.0）、sci（科学推理，4,000 条，CC-BY-4.0），经长度过滤、去重、MinHash 近重复、对四项 benchmark 的 13-gram 去污染与难度分层。 三专家在 HPC A100 上以相同 QLoRA 配置（r=32，lr 1e-4，16K 上下文，1 epoch，种子 20261018）训练。 合版在独立开发集上比较任务算术、TIES、DARE-TIES 共 7 个配置，按预先固定的规则选出 TIES（密度 0.5， lambda 1.0）；对照为专家数量（2 vs 3）与训练强度（60\%/66\% 检查点）。四项评测在相同 FP8 权重与 KV、 256K 上下文、temperature 1.0 下进行，环境为 apptainer（oracle 校验：SWE-Pro 50/51，TB2 59/89，全部任务均计入分母）。
+
+\textbf{结果}\quad 主指标为百分制；TB2 为种子均值$\pm$标准差；最后一列为合版相对 Base 的配对 bootstrap 差值（百分点，95\% CI）。专家只评测其目标 benchmark（--）。
+
+\begin{center}\small
+\begin{tabular}{lcccccc}
+\toprule
+Benchmark & Base & \shortstack{swe 专家\\\scriptsize 仅 SWE-Pro} & \shortstack{term 专家\\\scriptsize 仅 TB2} & \shortstack{sci 专家\\\scriptsize 仅 HLE/ASI} & 合版 & 合版$-$Base \\
+\midrule
+SWE-bench Pro v2-hard & 5.9 & 0.0 & -- & -- & 0.0 & -5.9 [-13.7, +0.0] \\
+Terminal-Bench 2.0 & 19.1 (1种子) & -- & 9.0 (1种子) & -- & 12.4 (1种子) & -6.7 [-14.6, +1.1] \\
+HLE & 7.1 & -- & -- & 7.1 & 8.2 & +1.1 [-0.2, +2.3] \\
+ASI-Bench & 5.8 & -- & -- & 0.5 & 0.5 & -5.1 [-6.7, -3.7] \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{宏平均}: Base 9.46，合版 5.26；提升 -4.17 pp (95\% CI -6.92, -1.61)（目标 +3）。TB2 种子（题目要求 5 个）：base 完整 1 个（未完成：2 号 74/89，3 号 9/89）；term 完整 1 个（未完成：2 号 4/89）；merged 完整 1 个（未完成：2 号 77/89，3 号 12/89），均值只用完整种子。\quad \textbf{运行失败率}（非正常结束：超时、环境失败、无答案，均计入分母）: base/asi 2.5\%, base/hle 51.2\%, base/swe\_pro 0.0\%, base/tb2 26.7\%, merged/asi 0.4\%, merged/hle 18.0\%, merged/swe\_pro 0.0\%, merged/tb2 16.9\%, sci/asi 0.8\%, sci/hle 23.4\%, swe/swe\_pro 0.0\%, term/tb2 25.8\%。
+
+\textbf{成本}: HPC 估计共 181.8 SU（the project allocation；A100 GPU 时 139.5），评测在 seismic 工作站约 106.1 GPU 时；无云租用费用。
+
+\textbf{说明}（初步结果，评测仍在运行）：ASI-Bench 智能体实际以 mini-swe-agent 工具调用模式运行，Base 用原生工具调用， sci 与合版按提示输出文本 bash 块而被拒（合版 240 次中 206 次 RepeatedFormatError），故 ASI 退化主要反映协议不匹配； SWE-Pro 的格式错误来自 vLLM qwen3 推理解析器把无 think 结束标记的回复整体归入 reasoning\_content。 HLE 中因 OpenAI 429 未判分的答案（sci 71、合版 139）已用同一判分器重判。逐题结果、41 个失败案例、 置信区间与日志见仓库 results/、analysis/failures.md、logs/。
+\end{document}
