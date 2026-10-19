@@ -155,12 +155,19 @@ Terminal-Bench model-card setting). Max tokens: TB2 80K (81,920); HLE 32,768; ag
   server's Python and a static tmux, `/etc/hosts` and `/etc/resolv.conf` are bound in as Docker does,
   the image's `PATH` order is kept, `HOME=/root`, and musl (Alpine) images skip apptainer's glibc
   `faked`. Validation: the reference solutions (oracle) and empty patches (nop) are run through the same
-  environment; tasks the oracle cannot pass are counted as environment failures (pending).
+  environment. SWE-Pro: oracle 50/51, nop 0/51. Terminal-Bench: the oracle passes 59 of 89 tasks
+  (`tb2-jobs/oracle-full-env4`, 57, plus 2 more in a 3 h re-run of the 32 failures); 20 of the 30
+  failures are the reference solution itself running past the agent budget. Oracle failure does not
+  make a task unsolvable here (base, term and merged together solve 7 of those 30 tasks on seed 1), so
+  no task is dropped: all 89 stay in every denominator. On the 59 oracle-passing tasks, seed 1: base
+  20.34%, term 10.17%, merged 15.25%.
 - **CPU limit not enforced.** The apptainer backend has no cgroups; the 48 GB memory cap is enforced by
   Harbor's watchdog, 32 CPUs is requested but not enforced.
 - **SWE-Pro agent phase not network-isolated.** The locked protocol's `no-network` agent phase cannot be
   enforced by this backend; `configs/eval/swe_pro_task_modifications.json` records the one-line change
-  per task. Trajectories are audited for network use (pending).
+  per task. Trajectories are audited for network use (`scripts/audit_network_use.py`,
+  `analysis/network_audit.json`): network commands (`go get`, `curl`, `pip install`) appear in 6 of 51
+  base, 1 of 51 swe and 0 of 51 merged trajectories; none of base's 3 resolved tasks is among them.
 - **Serving hardware differs across hosts** (RTX PRO 4000 Blackwell, RTX A4500, A100) with identical
   vLLM flags and quantization; which host served each run is recorded in the claim files and logs.
 - **mini-swe-agent action fence.** SWE-Pro and ASI-Bench use the official text-based mini-swe-agent
@@ -181,21 +188,162 @@ Terminal-Bench model-card setting). Max tokens: TB2 80K (81,920); HLE 32,768; ag
   that exceeds it ends the trial (`llm_call_timeout`, counted as a failure and reported separately).
 - **Concurrency** is set per GPU so that the sessions' KV working set fits the cache (it does not change
   any per-task setting): oversubscription had dropped the prefix-cache hit rate to ~16% and wasted most
-  GPU time on re-prefill.
+  GPU time on re-prefill. HLE generation: at most 12 requests in flight per endpoint while that model's
+  ASI-Bench run shared the GPU, 24 after it, the same rule for every model; questions were routed to a
+  model's endpoints by a hash of the question id.
+- **Endpoint-unavailable rule** (fixed 2026-10-18 14:20 CDT, same for every model): a Terminal-Bench or
+  SWE-Pro trial that ends with `InternalServerError` (the model endpoint was unavailable: vLLM restart or
+  the end of a HPC serving window) is treated like an operator cancellation: not scored, the task is
+  re-run in a continuation part (`run_tb2.py --part N`, `PART=N scripts/run_swepro.sh`). Trials cancelled
+  by stopping a runner (no `finished_at`) are handled the same way. `ConnectError` / `RuntimeError`
+  (task-container exec-server failures) stay environment failures in the denominator. When the rule was
+  introduced it affected only 7 merged Terminal-Bench seed-1 trials. Every task is scored from exactly
+  one finished trial per seed; no finished task was re-run.
+- **ASI-Bench agent ran in mini-swe-agent's tool-calling mode.** `scripts/run_asi.sh` builds the
+  config from mini-swe-agent 2.4.6's builtin `mini_textbased.yaml`, which (unlike the SWE-Pro task
+  config) does not set `model_class: litellm_textbased`, so the default model class, which accepts only
+  native tool calls (vLLM `qwen3_coder` tool parser), was used while the prompt templates ask for a
+  ```` ```bash ```` block. This was found while writing the failure analysis, after all ASI runs; it is
+  identical for every model but not neutral: base mostly answers with native tool calls, sci and merged
+  answer with the requested text block and are rejected (`RepeatedFormatError` in 48 base, 197 sci and
+  206 merged runs of 240; `analysis/failures.md`, pattern 1). Not re-run; reported as measured.
+- **SWE-Pro and the `qwen3` reasoning parser.** When a model replies without closing its think block,
+  vLLM's `qwen3` reasoning parser returns the whole reply as `reasoning_content` with `content=null`, so
+  the agent sees no action and eventually exits with `RepeatedFormatError` (base 1, swe 9, merged 7 of
+  51 trials). Serving and agent configs were frozen and identical; counted as failures.
+- **ASI-Bench judge and scorer.** The task contracts name `openai/gpt-5.5` as judge with temperature
+  0.0, which the OpenAI API rejects for that model ("only the default (1) value is supported");
+  `LITELLM_DROP_PARAMS` drops it, so the judge runs at the API default for every model.
+  `computer_science.euclidean_tsp_tour_optimization`'s validity gate needs Docker (not available without
+  root): those instances are scorer-invalid for every model; the official mean excludes them and the
+  all-instances mean counts them 0. asibench's `run` writes outputs only; scoring is
+  `scripts/score_asi.sh` (asibench's local scorer) on the 236 locked instances.
+- **ASI-Bench contention period.** From 09:41 to 15:17 CDT on 2026-10-18 the A100 that served base was
+  also loaded by orphaned agent processes (asibench's timeout killed the sandbox but not mini-swe-agent;
+  fixed by `scripts/reap_asi_orphans.sh`, no score changes) and by 48 HLE requests. Timeouts were not
+  re-run (re-running only failures would be a biased extra draw). Instances stopped at the 1,800 s
+  budget, by start time (start = result-file time minus execution time): base 20/38 before 15:17 and
+  99/198 after; sci 9/63 and 21/173; merged 10/222 and 1/14.
+- **HLE judge errors.** 71 sci and 139 merged answers (0 base) were not judged on the first pass because
+  the OpenAI API returned HTTP 429; they were judged again with the same judge and prompt
+  (`eval_hle judge --retry-judge-errors`; the failed records are kept in `judged.errors.jsonl`). No model
+  output was regenerated. Answers with no final answer (32,768-token cap) score 0 and stay in the
+  denominator.
+- **Run placement and interruptions** (same serving flags and quantization everywhere; host per trial
+  in the job directories and logs):
+  - seismic18 stopped responding after 02:46 CDT on 2026-10-19 and was rebooted at 08:03; nothing ran on
+    it from ~03:00 to 11:20. Its in-flight trials have no result and were re-run as continuation parts.
+  - SWE-Pro: base ran on seismic18 (RTX PRO 4000), merged on seismic17 (RTX A4500), the swe expert in
+    4 disjoint task parts on 3 HPC A100s and seismic18 (`SBP_SHARD`, commit 3ab96db), same agent
+    config and budget.
+  - Terminal-Bench: base seed 1 on seismic18 and a HPC A100 slot; base seed 2 on seismic18, HPC dev windows
+    and, for its last 15 tasks, seismic15; base seed 3 split between seismic15 and dev windows. Merged seed 1
+    on seismic17 and dev windows, except 2 trials (caffe-cifar-10, feal-differential-cryptanalysis,
+    3 h budget) moved to the A100-small slot because a dev window (~1 h 45 min of serving) cut them every
+    time; merged seeds 2 and 3 in disjoint shards on seismic17 and seismic18. Re-splitting a stalled
+    shard cancelled its in-flight trials (unscored, re-run).
+  - term expert seed 2 was stopped at 4/89 finished on 2026-10-19 15:19 when seismic15 was reassigned to
+    base seed 2, so term has one complete seed.
+- **Terminal-Bench seeds < 5.** No model has 5 complete seeds (section 6 lists complete and partial
+  seeds per model); the mean is over complete seeds only and the seed std is not available with one.
 
 ## 6. Results
 
-Pending. The table below is filled by `scripts/summarize.py` (`results/summary.csv`).
+<!-- results:begin -->
+Status: **preliminary: runs in progress at 2026-10-19 17:51 CDT; Terminal-Bench seeds 2-3 are partial**. Generated by `scripts/results_table.py` from `results/summary.csv`,
+`analysis/uncertainty.json` and the per-task CSVs; per-task results in `results/<group>/<benchmark>/<model>/`,
+failed-task lists in `results/failures/`.
 
-| Benchmark | Base | swe | term | sci | Merged | Merged - Base (pp, 95% CI) |
+Primary metric, percent. Experts are evaluated on their target benchmarks only (n/e: not evaluated):
+swe on SWE-Pro, term on Terminal-Bench, sci on HLE and ASI-Bench. Terminal-Bench: mean +- std over
+complete seeds (all 89 tasks finished); partial seeds are listed below and are not in the mean.
+
+| Benchmark | Base | swe | term | sci | Merged | Merged - Base, pp (95% CI) |
 |---|---|---|---|---|---|---|
-| SWE-bench Pro v2-hard | pending | pending | n/e | n/e | pending | pending |
-| Terminal-Bench 2.0 | pending | n/e | pending | n/e | pending | pending |
-| HLE | pending | n/e | n/e | pending | pending | pending |
-| ASI-Bench | pending | n/e | n/e | pending | pending | pending |
-| Macro average | pending | | | | pending | pending |
+| SWE-bench Pro v2-hard (HARD-51) | 5.88 | 0.00 | n/e | n/e | 0.00 | -5.88 [-13.73, +0.00] (n=51) |
+| Terminal-Bench 2.0 (89 tasks) | 19.10 (1 seed) | n/e | 8.99 (1 seed) | n/e | 12.36 (1 seed) | -6.74 [-14.61, +1.12] (n=89) |
+| HLE (2,500) | 7.08 | n/e | n/e | 7.12 | 8.16 | +1.08 [-0.16, +2.32] (n=2500) |
+| ASI-Bench (59 x 4 = 236) | 5.78 | n/e | n/e | 0.48 | 0.51 | -5.13 [-6.70, -3.69] (n=236) |
+| Macro average (4 benchmarks, equal weight) | 9.46 | | | | 5.26 | -4.17 [-6.92, -1.61] |
 
-n/e: not evaluated (experts are evaluated on their target benchmarks).
+Merged - Base is a paired bootstrap over the same tasks (10,000 resamples); Terminal-Bench uses complete
+seeds only; for ASI-Bench the paired difference is over all 236 instances with scorer-invalid instances
+scored 0 (the all-instances mean below), so it can differ slightly from the difference of the official means.
+The macro CI resamples tasks within each benchmark jointly. The exam's target is +3 pp (excellent +5 pp).
+
+**Terminal-Bench seeds** (success rate, percent; partial = tasks finished so far, success on those):
+
+| Model | Complete seeds | Partial seeds |
+|---|---|---|
+| base | seed1: 19.10 | seed2: 74/89 finished, 28.4, seed3: 9/89 finished, 22.2 |
+| term | seed1: 8.99 | seed2: 4/89 finished, 0.0 |
+| merged | seed1: 12.36 | seed2: 77/89 finished, 11.7, seed3: 12/89 finished, 16.7 |
+
+The exam asks for 5 seeds per model; seeds 2-5 could not be completed in the compute available
+(section 5). The seed std of a single complete seed is not defined and is not reported.
+
+**Run outcomes and failure rate** (every finished trial / question / instance; failures stay in the
+denominator and score 0). Failure rate = share not `ok`.
+
+| Model | Benchmark | n | ok | agent_timeout | llm_call_timeout | env_error | no_result | failure rate |
+|---|---|---|---|---|---|---|---|---|
+| base | swe_pro | 51 | 51 | 0 | 0 | 0 | 0 | 0.0% |
+| base | tb2 | 172 | 126 | 36 | 1 | 9 | 0 | 26.7% |
+| base | hle | 2500 | 1220 | 0 | 0 | 0 | 1280 | 51.2% |
+| base | asi | 236 | 230 | 0 | 0 | 0 | 6 | 2.5% |
+| swe | swe_pro | 51 | 51 | 0 | 0 | 0 | 0 | 0.0% |
+| term | tb2 | 93 | 69 | 21 | 2 | 1 | 0 | 25.8% |
+| sci | hle | 2500 | 1916 | 0 | 0 | 0 | 584 | 23.4% |
+| sci | asi | 236 | 234 | 0 | 0 | 0 | 2 | 0.8% |
+| merged | swe_pro | 51 | 51 | 0 | 0 | 0 | 0 | 0.0% |
+| merged | tb2 | 178 | 148 | 20 | 0 | 10 | 0 | 16.9% |
+| merged | hle | 2500 | 2049 | 0 | 0 | 0 | 451 | 18.0% |
+| merged | asi | 236 | 235 | 0 | 0 | 0 | 1 | 0.4% |
+
+Status meaning: TB2 `agent_timeout` = 3 h agent budget, `llm_call_timeout` = one model call over 600 s,
+`env_error` = container / exec-server failure; SWE-Pro rows are the patch_replay regrade (agent exits are
+in `analysis/failures.md`); HLE `no_result` = no final answer (32,768-token cap reached, or empty answer);
+ASI `no_result` = scorer-invalid instance (Docker-only validity gate, section 5).
+
+**Secondary metrics**
+
+- base: HLE text-only subset 6.49; ASI all-instances mean 5.63; per level b1 8.18, b2 5.49, b3 4.46, b4 4.40; scorer-invalid 6; agent stopped at the 1,800 s budget 119/236 (graded as is).
+- sci: HLE text-only subset 6.86; ASI all-instances mean 0.47; per level b1 1.06, b2 0.39, b3 0.28, b4 0.16; scorer-invalid 2; agent stopped at the 1,800 s budget 30/236 (graded as is).
+- merged: HLE text-only subset 8.39; ASI all-instances mean 0.50; per level b1 0.33, b2 1.15, b3 0.04, b4 0.50; scorer-invalid 1; agent stopped at the 1,800 s budget 11/236 (graded as is).
+
+**Time and cost per task** (mean wall time; tokens are model tokens served by our vLLM, no API cost):
+
+| Model | Benchmark | mean time | mean output tokens |
+|---|---|---|---|
+| base | swe_pro | 36.5 min / agent trial | |
+| base | tb2 | 64.1 min / trial | 31,510 |
+| base | hle | 715 s / question | 25,938 |
+| base | asi | 1926 s / instance (incl. sandbox setup) | |
+| swe | swe_pro | 6.7 min / agent trial | |
+| term | tb2 | 77.9 min / trial | 53,022 |
+| sci | hle | 323 s / question | 16,744 |
+| sci | asi | 411 s / instance (incl. sandbox setup) | |
+| merged | swe_pro | 29.9 min / agent trial | |
+| merged | tb2 | 43.0 min / trial | 27,222 |
+| merged | hle | 332 s / question | 15,618 |
+| merged | asi | 215 s / instance (incl. sandbox setup) | |
+
+Compute: HPC estimated 181.8 SU (the project allocation; A100 GPU-hours: train-experts 10.0, merge-ablation 3.0, serve-slot6 36.5, serve-slot7 24.0, serve-slot8 24.0, serve-dev-windows-x7 42.0), seismic serving 106.1 GPU-hours (`logs/eval_lanes.json`), cloud rental 0 USD. The HPC figure is an
+estimate because sacct cannot be fetched from seismic (`logs/hpc_sacct.txt` states how it was built).
+API cost: HLE judge o3-mini and ASI-Bench judge gpt-5.5 calls on the OpenAI API (usage not logged per call).
+<!-- results:end -->
+
+**Reading the results.** The merged model is below base on the macro average, with a 95% CI that
+excludes 0, so the +3 pp target is not met. Per benchmark: SWE-Pro and Terminal-Bench regress (base
+solves 3 SWE-Pro tasks the merged model does not; on Terminal-Bench seed 1 the merged model loses 10
+base-solved tasks and gains 3), HLE improves slightly, mostly because the merged model stops within
+the 32,768-token cap far more often than base, and ASI-Bench drops sharply. The ASI drop is mainly a
+protocol mismatch, not lost science ability: the ASI agent ran in mini-swe-agent's tool-calling mode
+(section 5), base answers with native tool calls, while sci and merged answer with the text `bash`
+blocks the prompt asks for, which that mode rejects (`RepeatedFormatError` in 206 of 240 merged runs).
+The experts themselves do not beat base on their own targets (swe 0/51 on SWE-Pro, term below base
+on Terminal-Bench seed 1; sci within noise of base on HLE), so the merge had little expert gain to
+keep. Failure cases and next experiments: [analysis/failures.md](analysis/failures.md).
 
 ## 7. Reproduction
 
@@ -227,4 +375,15 @@ python scripts/summarize.py --base /var/tmp/$USER
 - 7B-class fallback instead of the 35B-A3B base (section 2).
 - Container environment differs from official Docker/Modal runs (section 5); official scores are not
   claimed and not comparable.
-- One training seed per expert; repeat-run variance is measured only on Terminal-Bench (5 seeds).
+- One training seed per expert. Repeat-run variance was planned on Terminal-Bench (5 seeds) but each
+  model has only one complete seed, so the Terminal-Bench numbers are single-seed and no seed std is
+  available; partial seeds are reported separately.
+- ASI-Bench results reflect the tool-calling agent mode (section 5): they measure the models' ability
+  to use that protocol as much as science ability, and they penalize the fine-tuned models, which
+  follow the prompt's text action format.
+- SWE-Pro and ASI-Bench format failures from the `qwen3` reasoning parser and the tool-call mode are
+  part of the measured scores; a parser or harness change would change them.
+- HLE accuracy depends strongly on the 32,768-token answer cap (base reaches it on 55% of questions).
+- HPC SU usage is an estimate (sacct not reachable from the eval hosts); seismic GPU-hours are
+  wall-clock serving time, not utilization.
+- ASI-Bench runs at a 1,800 s budget (asibench default 10,800 s); about half of base's instances reach it.

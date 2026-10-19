@@ -169,3 +169,5 @@ MemoryLimitExceededError,2026-10-19T17:55:56.550877Z,20691,3062,tb2-base-s2-p4,s
 ,2026-10-18T09:40:03.672886Z,7903,6850,tb2-base-s3,seed3,0.0,2026-10-18T09:32:55.717474Z,ok,cancel-async-tasks
 ,2026-10-18T10:03:23.261902Z,778278,31476,tb2-base-s3,seed3,0.0,2026-10-18T09:32:55.940757Z,ok,chess-best-move
 ConnectError,2026-10-18T10:27:59.589352Z,98548,4307,tb2-base-s3,seed3,0.0,2026-10-18T10:03:23.561334Z,env_error,configure-git-webserver
+,2026-10-19T22:50:48.933117Z,529635,8491,tb2-base-s3-p3,seed3,1.0,2026-10-19T22:46:53.175299Z,ok,fix-code-vulnerability
+,2026-10-19T22:49:21.397239Z,76935,9374,tb2-base-s3-p4,seed3,1.0,2026-10-19T22:46:51.654385Z,ok,multi-source-data-merger

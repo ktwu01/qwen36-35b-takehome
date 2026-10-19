@@ -70,11 +70,14 @@ def swe_pro(base, model):
     for job in [jobs / f"sbp-{model}-regrade"] + sorted(jobs.glob(f"sbp-{model}-p*-regrade")):
         # only tasks whose agent trial finished in this part (an interrupted part's regrade would
         # replay cancelled tasks with an empty patch)
-        agent_done = {t["task"] for t in harbor_trials(jobs / job.name.removesuffix("-regrade"))}
+        agent_done = {t["task"]: t for t in harbor_trials(jobs / job.name.removesuffix("-regrade"))}
         for t in harbor_trials(job):
             if t["task"] in agent_done and t["task"] not in seen:
                 seen.add(t["task"])
-                rows.append({**t, "run": "regrade", "part": job.name})
+                ag = agent_done[t["task"]]
+                rows.append({**t, "run": "regrade", "part": job.name, "agent_started_at": ag["started_at"],
+                             "agent_finished_at": ag["finished_at"], "input_tokens": ag["input_tokens"],
+                             "output_tokens": ag["output_tokens"]})
     return rows
 
 
@@ -117,10 +120,15 @@ def asi(base, model):
             n_invalid += 1
         else:
             tot, tot_max = tot + score, tot_max + mx
+        try:  # wall time of the agent run, from asibench's per-instance result file
+            ex = json.loads((Path(base) / "asi-runs" / model / r["source_result"]).read_text()).get(
+                "execution_time_seconds")
+        except (OSError, ValueError, KeyError):
+            ex = None
         rows.append({"task": f"{r['instance_id']}__{r['prompt_level']}", "run": "seed31415",
                      "score": (score or 0.0) / mx,
                      "status": "ok" if st == "completed" and score is not None else "no_result",
-                     "level": r["prompt_level"], "official_valid": score is not None})
+                     "level": r["prompt_level"], "official_valid": score is not None, "execution_s": ex})
     for i, lv in sorted(want):  # locked instance with no result (never ran): 0, invalid for the official mean
         rows.append({"task": f"{i}__{lv}", "run": "seed31415", "score": 0.0, "status": "no_result",
                      "level": lv, "official_valid": False})

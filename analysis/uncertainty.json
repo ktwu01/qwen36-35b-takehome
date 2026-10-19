@@ -1,9 +1,9 @@
 {
  "metrics": {
   "base/tb2": {
-   "n_rows": 170,
+   "n_rows": 172,
    "failure_counts": {
-    "ok": 124,
+    "ok": 126,
     "llm_call_timeout": 1,
     "agent_timeout": 36,
     "env_error": 9
@@ -20,8 +20,8 @@
      "success_on_finished": 28.37837837837838
     },
     "seed3": {
-     "tasks_finished": 7,
-     "success_on_finished": 0.0
+     "tasks_finished": 9,
+     "success_on_finished": 22.22222222222222
     }
    }
   },
@@ -119,11 +119,11 @@
    "report_mean_percent_incl_extra_task": 0.4708307433474673
   },
   "merged/tb2": {
-   "n_rows": 177,
+   "n_rows": 178,
    "failure_counts": {
     "ok": 148,
     "env_error": 10,
-    "agent_timeout": 19
+    "agent_timeout": 20
    },
    "primary": 12.359550561797754,
    "seed_std": 0.0,
@@ -133,8 +133,8 @@
    "n_complete_seeds": 1,
    "partial_seeds": {
     "seed2": {
-     "tasks_finished": 76,
-     "success_on_finished": 11.842105263157896
+     "tasks_finished": 77,
+     "success_on_finished": 11.688311688311689
     },
     "seed3": {
      "tasks_finished": 12,

@@ -1,6 +1,6 @@
 # Failure analysis of the merged model
 
-Status: preliminary (runs in progress at 2026-10-19 18:40 CDT; Terminal-Bench seed 2 and 3 are partial).
+Status: preliminary (runs in progress at 2026-10-19 17:50 CDT; Terminal-Bench seed 2 and 3 are partial).
 Evidence: `analysis/failure_evidence.jsonl` (built by `scripts/failure_cases.py` from the raw runs:
 exception, agent exit status, last agent turns, patch size, verifier tail for TB2 and SWE-Pro; score,
 agent exit status and assistant turns for ASI-Bench; finish reason, output tokens and the judge's
