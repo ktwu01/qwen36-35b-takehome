@@ -26,7 +26,7 @@ export HF_HOME=/tmp/qwen36/hf-cache HF_HUB_OFFLINE=1 VLLM_USE_FLASHINFER_SAMPLER
 export CUDA_HOME=$SCRATCH/qwen36/cuda-home PATH=$V/bin:$SCRATCH/qwen36/cuda-home/bin:$PATH
 export LIBRARY_PATH=$SCRATCH/qwen36/cuda-home/lib64
 export LD_LIBRARY_PATH=/opt/apps/gcc/9.4.0/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}  # numpy built from source with gcc 9.4
-# Dev windows (gpu-a100-dev, 2 h) are chained from the login node with scripts/hpc_dev_chain.sh:
+# Dev windows (gpu-a100-dev, 2 h) are chained from the login node (scripts/hpc_dev_chain.sh, run by hpc_dev_keeper.sh):
 # sbatch is refused on compute nodes ("Job submission is not allowed from this host").
 HF_HOME=/tmp/qwen36/hf-cache bash scripts/hpc_build_models.sh >> "logs/build_models_${SLURM_JOB_ID}.log" 2>&1
 nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.draw --format=csv -l 60 \
