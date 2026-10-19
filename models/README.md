@@ -4,10 +4,10 @@ All checkpoints are public on Hugging Face (Apache-2.0). Base: [`Qwen/Qwen3.5-9B
 
 | Model | Kind | Hugging Face | Revision |
 |---|---|---|---|
-| SWE expert (target: SWE-bench Pro v2-hard) | adapter | [ktwu01/qwen35-9b-takehome-expert-swe](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe) | `387687daaec0db58727cb70ee59c7acb49c83d4c` |
-| Terminal expert (target: Terminal-Bench 2.0) | adapter | [ktwu01/qwen35-9b-takehome-expert-term](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term) | `16ae50eb52fc7458476fce134cecee107e909d13` |
-| Science expert (targets: HLE, ASI-Bench) | adapter | [ktwu01/qwen35-9b-takehome-expert-sci](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci) | `0e9ea7a01100f1a61f5a0eff7bf81eb52e1ede86` |
-| Final merged model (all four benchmarks) | merged | [ktwu01/qwen35-9b-takehome-merged](https://huggingface.co/ktwu01/qwen35-9b-takehome-merged) | `e85e8e8e149550f3874923ac6a1a72486b5d6151` |
+| SWE expert (target: SWE-bench Pro v2-hard) | adapter | [ktwu01/qwen35-9b-takehome-expert-swe](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe) | `a342fb301c16160369e2d6bb8ec4c03fbda1cf37` |
+| Terminal expert (target: Terminal-Bench 2.0) | adapter | [ktwu01/qwen35-9b-takehome-expert-term](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term) | `16ecf91bc90c725d0f46b21e9ef2485eac0caae4` |
+| Science expert (targets: HLE, ASI-Bench) | adapter | [ktwu01/qwen35-9b-takehome-expert-sci](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci) | `abb8b5d2450152538eacb958a8a0027ddb43ab16` |
+| Final merged model (all four benchmarks) | merged | [ktwu01/qwen35-9b-takehome-merged](https://huggingface.co/ktwu01/qwen35-9b-takehome-merged) | `7362186b42638010f79363bfe467b42165b9ad17` |
 
 ## Loading
 

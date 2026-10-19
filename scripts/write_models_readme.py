@@ -43,3 +43,12 @@ lines += ["## Licenses", "", "Weights: Apache-2.0 (as the base). Training data: 
           "OpenThoughts-Agent v1 SFT (Apache-2.0), OpenScienceReasoning-2 (CC-BY-4.0, attribution to NVIDIA).", ""]
 Path("models/README.md").write_text("\n".join(lines))
 print("\n".join(lines[:12]))
+
+# the same table in the candidate README (between markers), as the exam asks for links and revisions there
+readme = Path("README.md")
+s = readme.read_text()
+if "<!-- models:begin -->" in s:
+    i, j = s.index("<!-- models:begin -->"), s.index("<!-- models:end -->")
+    tab = "\n".join(l for l in lines if l.startswith("|"))
+    s = s[:i] + "<!-- models:begin -->\n" + tab + "\n" + s[j:]
+    readme.write_text(s)

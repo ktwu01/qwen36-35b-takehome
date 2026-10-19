@@ -7,7 +7,17 @@ ASI-Bench, merged into one checkpoint with task arithmetic / TIES / DARE-TIES, a
 untouched base on all four benchmarks under fixed, identical protocols.
 
 - Candidate repo: https://github.com/ktwu01/qwen36-35b-takehome (this repository)
-- Hugging Face checkpoints: see [models/README.md](models/README.md) (links and revisions)
+- Hugging Face checkpoints (public; loading, merge recipe and licenses in [models/README.md](models/README.md)):
+
+<!-- models:begin -->
+| Model | Kind | Hugging Face | Revision |
+|---|---|---|---|
+| SWE expert (target: SWE-bench Pro v2-hard) | adapter | [ktwu01/qwen35-9b-takehome-expert-swe](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe) | `a342fb301c16160369e2d6bb8ec4c03fbda1cf37` |
+| Terminal expert (target: Terminal-Bench 2.0) | adapter | [ktwu01/qwen35-9b-takehome-expert-term](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term) | `16ecf91bc90c725d0f46b21e9ef2485eac0caae4` |
+| Science expert (targets: HLE, ASI-Bench) | adapter | [ktwu01/qwen35-9b-takehome-expert-sci](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci) | `abb8b5d2450152538eacb958a8a0027ddb43ab16` |
+| Final merged model (all four benchmarks) | merged | [ktwu01/qwen35-9b-takehome-merged](https://huggingface.co/ktwu01/qwen35-9b-takehome-merged) | `7362186b42638010f79363bfe467b42165b9ad17` |
+<!-- models:end -->
+
 - One-page report: [report.pdf](report.pdf)
 
 > Status markers in this file: every number is produced by `scripts/summarize.py` from the raw runs in
