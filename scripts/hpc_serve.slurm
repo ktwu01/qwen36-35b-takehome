@@ -26,19 +26,8 @@ export HF_HOME=/tmp/qwen36/hf-cache HF_HUB_OFFLINE=1 VLLM_USE_FLASHINFER_SAMPLER
 export CUDA_HOME=$SCRATCH/qwen36/cuda-home PATH=$V/bin:$SCRATCH/qwen36/cuda-home/bin:$PATH
 export LIBRARY_PATH=$SCRATCH/qwen36/cuda-home/lib64
 export LD_LIBRARY_PATH=/opt/apps/gcc/9.4.0/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}  # numpy built from source with gcc 9.4
-# Self-resubmitting dev windows (so the chain needs no login session): if $CTRL/RESUBMIT_DEV exists
-# (it holds a cutoff time), this is a gpu-a100-dev job, it is before the cutoff, the window budget in
-# $CTRL/RESUBMIT_DEV_LEFT (windows, 6 SU each; set from the login node, where the the project allocation balance is
-# visible: the allocation balance command does not exist on compute nodes) is > 0, and no other serve job is pending there,
-# queue the next window now (afterany this one) and decrement the budget.
-left=$(cat "$CTRL/RESUBMIT_DEV_LEFT" 2>/dev/null || echo 0)
-if [ -f "$CTRL/RESUBMIT_DEV" ] && [ "$SLURM_JOB_PARTITION" = gpu-a100-dev ] \
-   && [ "$(date +%s)" -lt "$(date -d "$(cat "$CTRL/RESUBMIT_DEV")" +%s)" ] && [ "$left" -gt 0 ] \
-   && [ -z "$(squeue -u "$USER" -h -t PD -n qwen36-serve -p gpu-a100-dev -o %i)" ]; then
-  sbatch -p gpu-a100-dev -t 02:00:00 -d "afterany:$SLURM_JOB_ID" --export=ALL,K0=$K0,NGPU=$NGPU \
-    scripts/hpc_serve.slurm >> "logs/resubmit_${SLURM_JOB_ID}.log" 2>&1 \
-    && echo $((left - 1)) > "$CTRL/RESUBMIT_DEV_LEFT"
-fi
+# Dev windows (gpu-a100-dev, 2 h) are chained from the login node with scripts/hpc_dev_chain.sh:
+# sbatch is refused on compute nodes ("Job submission is not allowed from this host").
 HF_HOME=/tmp/qwen36/hf-cache bash scripts/hpc_build_models.sh >> "logs/build_models_${SLURM_JOB_ID}.log" 2>&1
 nvidia-smi --query-gpu=timestamp,index,name,memory.used,utilization.gpu,power.draw --format=csv -l 60 \
   > "logs/gpu_${SLURM_JOB_ID}.csv" &
