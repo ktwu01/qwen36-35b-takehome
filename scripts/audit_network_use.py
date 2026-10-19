@@ -5,8 +5,9 @@ is not enforced by the apptainer backend; see README).
 
 Scans every executed action in mini-swe-agent trajectories (sbp-<model>[-pN]/*/agent/
 mini-swe-agent.trajectory.json) for network-capable commands and writes
-analysis/network_audit.json: per model, the tasks with any hit, the matching commands, and
-whether the task was resolved after regrade.
+analysis/network_audit.json: per model, the tasks with any hit and the matching commands.
+Heredoc bodies (file contents written with `cat <<EOF`) are dropped before matching, and a bare URL
+is not a hit: license headers and docstrings contain URLs without any network access.
 """
 
 import argparse
@@ -17,7 +18,8 @@ from pathlib import Path
 
 NET = re.compile(r"\b(curl|wget|git\s+(fetch|clone|pull|ls-remote|remote\s+add)|pip3?\s+(install|download)|"
                  r"uv\s+(pip|add|sync)|npm\s+(install|i)\b|yarn\s+add|go\s+(get|mod\s+download)|apt(-get)?\s+install|"
-                 r"https?://)", re.I)
+                 r"python3?\s+-m\s+pip\s+install|requests\.get|urllib\.request|socket\.connect)", re.I)
+HEREDOC = re.compile(r"<<-?\s*['\"]?(\w+)['\"]?[^\n]*\n.*?\n\s*\1\b", re.S)
 ACTION = re.compile(r"```(?:bash|mswea_bash_command)\s*\n(.*?)\n```", re.S)
 
 
@@ -40,7 +42,7 @@ def main():
                 if m.get("role") != "assistant":
                     continue
                 for cmd in ACTION.findall(str(m.get("content") or "")):
-                    if NET.search(cmd):
+                    if NET.search(HEREDOC.sub("<<heredoc", cmd)):
                         hits[task].append(cmd.strip()[:300])
         out[model] = {"tasks_scanned": n_tasks, "tasks_with_network_commands": len(hits),
                       "examples": {t: c[:5] for t, c in sorted(hits.items())}}

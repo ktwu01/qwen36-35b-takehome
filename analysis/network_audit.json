@@ -1,0 +1,53 @@
+{
+ "base": {
+  "tasks_scanned": 51,
+  "tasks_with_network_commands": 6,
+  "examples": {
+   "instance_flipt-io__flipt-2ca5dfb3513e4e786d2b037075617cccc286d5c3": [
+    "cd /app && go get go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc@latest 2>&1 | head -20",
+    "cd /app && go get go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc@v1.28.0 2>&1",
+    "cd /app && go get go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp@v1.28.0 2>&1"
+   ],
+   "instance_flipt-io__flipt-c1728053367c753688f114ec26e703c8fdeda125": [
+    "cd /app && go get cuelang.org/go/cue... && go get cuelang.org/go/cue/yaml",
+    "cd /app && go get cuelang.org/go@v0.6.1 && go get cuelang.org/go/cue/yaml",
+    "cd /app && go get cuelang.org/go@v0.7.0"
+   ],
+   "instance_future-architect__vuls-ef2be3d6ea4c0a13674aaab08b182eca4e2b9a17-v264a82e2f4818e30f5a25e4da53b27ba119f62b5": [
+    "curl -s \"https://api.github.com/repos/vulsio/goval-dictionary/releases\" 2>/dev/null | grep -o '\"tag_name\":\"v0.9.5\"' || echo \"Release info not available\"",
+    "curl -s \"https://proxy.golang.org/github.com/vulsio/goval-dictionary/@v/v0.9.5.json\" 2>/dev/null | head -50",
+    "cd /app && go get github.com/vulsio/goval-dictionary@v0.9.5 2>&1 | head -20"
+   ],
+   "instance_internetarchive__openlibrary-a48fd6ba9482c527602bc081491d9e8ae6e8226c-vfa6ff903cb27f336e17654595dd900fa943dcd91": [
+    "cat <<'EOF' > /app/openlibrary/plugins/worksearch/code.py\nfrom datetime import datetime\nimport copy\nimport json\nimport logging\nimport random\nimport re\nimport string\nfrom typing import List, Tuple, Any, Union, Optional, Iterable, Dict\nfrom unicodedata import normalize\nfrom json import JSONDecodeError"
+   ],
+   "instance_navidrome__navidrome-874b17b8f614056df0ef021b5d4f977341084185": [
+    "go doc github.com/deluan/rest 2>/dev/null || cd /app && go mod download github.com/deluan/rest && go doc github.com/deluan/rest",
+    "cd /app && go mod download && find ~/go/pkg/mod/github.com/deluan/rest* -name \"*.go\" -exec grep -l \"ValidationError\" {} \\; 2>/dev/null | head -5"
+   ],
+   "instance_qutebrowser__qutebrowser-e70f5b03187bdd40e8bf70f5f3ead840f52d1f42-v02ad04386d5238fe2d1a1be450df257370de4b6a": [
+    "cd /app && pip install pytest pytest-qt 2>&1 | tail -10",
+    "pip install PyQt5 2>&1 | tail -10",
+    "apt-get update && apt-get install -y python3-pyqt5 2>&1 | tail -20",
+    "apt-get install -y python3-pyqt5 2>&1 | tail -10"
+   ]
+  }
+ },
+ "swe": {
+  "tasks_scanned": 51,
+  "tasks_with_network_commands": 1,
+  "examples": {
+   "instance_flipt-io__flipt-c1728053367c753688f114ec26e703c8fdeda125": [
+    "cd /app && go get cuelang.org/go/cue cuelang.org/go/cue/cuecontext",
+    "cd /app && go get gopkg.in/yaml.v3",
+    "cd /app && go get cuelang.org/go@v0.16.0",
+    "cd /app && GOTOOLCHAIN=auto go get cuelang.org/go@v0.16.0"
+   ]
+  }
+ },
+ "merged": {
+  "tasks_scanned": 51,
+  "tasks_with_network_commands": 0,
+  "examples": {}
+ }
+}
