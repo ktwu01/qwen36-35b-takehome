@@ -28,12 +28,19 @@ PY
 while [ "$(left)" -gt 0 ]; do
   until up; do sleep 60; done
   echo "[$(date '+%F %T')] window up; $(left) shard-1 tasks left; parts $PART..$((PART + 2))"
-  for j in 0 1 2; do
+  for j in 0 1 2; do  # a restarted lane adopts runners still alive from the same part numbers
+    ~/.local/bin/tmux has-session -t "dev$j" 2>/dev/null ||
     ~/.local/bin/tmux new-session -d -s "dev$j" "/usr/bin/python3.12 scripts/run_tb2.py --name $NAME \
       --api http://127.0.0.1:$((18101 + j))/v1 --seeds $SEED --reclaim --part $((PART + j)) --shard 1/2:$j/3 -n 8 \
       >> logs/tb2/$NAME-dev.log 2>&1"
   done
-  while up && [ "$(left)" -gt 0 ]; do sleep 60; done
+  # the window is over only after 3 failed checks in a row: single failed checks (tunnel blips while the
+  # servers kept running) had stopped the runners mid-trial
+  miss=0
+  while [ "$(left)" -gt 0 ] && [ $miss -lt 3 ]; do
+    if up; then miss=0; else miss=$((miss + 1)); fi
+    sleep 60
+  done
   for j in 0 1 2; do ~/.local/bin/tmux send-keys -t "dev$j" C-c 2>/dev/null; done
   sleep 30
   for j in 0 1 2; do ~/.local/bin/tmux kill-session -t "dev$j" 2>/dev/null; done
