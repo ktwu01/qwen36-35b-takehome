@@ -1,0 +1,45 @@
+[2026-10-19 02:17:18] merged seed 1 complete; A100 slot 8 (18109) idle; second merged runner for seeds 3-5 (seed claims keep it disjoint from seismic17) (qwen36 loop)
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s3.json
+02:18:15 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18109 ssl:<ssl.SSLContext object at 0x7f372590fb50> [Connect call failed ('127.0.0.1', 18109)]

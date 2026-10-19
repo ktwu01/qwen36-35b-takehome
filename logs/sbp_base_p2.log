@@ -1,0 +1,6 @@
+part: 34 unfinished tasks
+/home/users3/kw35262/projects/qwen36-takehome/configs/eval/swe_pro_jobs/mini_textbased_base.yaml
+This is mini-swe-agent version 2.4.6.
+Check the v2 migration guide at https://klieret.short.gy/mini-v2-migration
+Loading global config from '/home/users3/kw35262/.config/mini-swe-agent/.env'
+⠋  3/34 Mean: 0.000 ━━━╸                                     0:04:34 0:00:01

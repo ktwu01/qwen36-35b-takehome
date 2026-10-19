@@ -1,0 +1,388 @@
+[2026-10-18 18:58:10] base seed 1 complete; starting seeds 2-5
+part 2: 81 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2-p2.json
+18:59:04 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Failed to install asciinema using pip
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fb49c2861e0>
+Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fb48c674ed0>, 1157785.151190406)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fb4d059cf80>
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Failed to install asciinema using pip
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Memory explosion detected: 45866MB, growing 180MB/s, ~4.6s until limit
+Memory explosion detected: 46119MB, growing 181MB/s, ~3.2s until limit
+Memory explosion detected: 46369MB, growing 178MB/s, ~1.8s until limit
+Memory explosion detected: 46601MB, growing 165MB/s, ~0.6s until limit
+Memory limit exceeded: 46851MB > 46694MB (95%). Killing container.
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fb4d03cad80>
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Failed to install asciinema using pip
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+SUMMARIZATION: Short summary failed: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=696.906 seconds
+Even fallback chat failed: 
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=2786.007 seconds

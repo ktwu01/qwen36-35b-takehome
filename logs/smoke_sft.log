@@ -1,0 +1,23 @@
+data/smoke/train.jsonl: kept 32/32 within 16384 tokens
+data/smoke/dev.jsonl: kept 4/4 within 16384 tokens
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<01:02,  6.81it/s]Loading weights:   0%|          | 2/427 [00:00<01:05,  6.46it/s]Loading weights:   9%|▊         | 37/427 [00:00<00:03, 124.87it/s]Loading weights:  16%|█▌        | 67/427 [00:00<00:01, 181.59it/s]Loading weights:  23%|██▎       | 100/427 [00:00<00:01, 223.06it/s]Loading weights:  32%|███▏      | 135/427 [00:00<00:01, 260.89it/s]Loading weights:  40%|████      | 172/427 [00:00<00:00, 288.82it/s]Loading weights:  48%|████▊     | 205/427 [00:00<00:00, 294.41it/s]Loading weights:  56%|█████▋    | 241/427 [00:01<00:00, 311.84it/s]Loading weights:  65%|██████▌   | 279/427 [00:01<00:00, 328.88it/s]Loading weights:  73%|███████▎  | 313/427 [00:01<00:00, 323.22it/s]Loading weights:  83%|████████▎ | 356/427 [00:01<00:00, 351.87it/s]Loading weights:  92%|█████████▏| 392/427 [00:01<00:00, 350.08it/s]Loading weights: 100%|██████████| 427/427 [00:01<00:00, 270.81it/s]
+[RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+trainable params: 80,216,064 || all params: 9,034,019,328 || trainable%: 0.8879
+  0%|          | 0/3 [00:00<?, ?it/s][transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+ 33%|███▎      | 1/3 [01:27<02:55, 87.69s/it]                                              33%|███▎      | 1/3 [01:27<02:55, 87.69s/it] 67%|██████▋   | 2/3 [02:58<01:29, 89.56s/it]                                              67%|██████▋   | 2/3 [02:58<01:29, 89.56s/it]{'loss': '0.4392', 'grad_norm': '0.9946', 'learning_rate': '0', 'epoch': '0.5'}
+{'loss': '0.4313', 'grad_norm': '0.9759', 'learning_rate': '0.0001', 'epoch': '1'}
+100%|██████████| 3/3 [04:28<00:00, 89.83s/it]                                             100%|██████████| 3/3 [04:28<00:00, 89.83s/it]{'loss': '0.3524', 'grad_norm': '0.4122', 'learning_rate': '5e-05', 'epoch': '1.5'}
+
+  0%|          | 0/4 [00:00<?, ?it/s][A
+ 50%|█████     | 2/4 [00:01<00:01,  1.66it/s][A
+ 75%|███████▌  | 3/4 [00:02<00:00,  1.13it/s][A
+100%|██████████| 4/4 [00:03<00:00,  1.05s/it][A                                             
+                                             [A100%|██████████| 3/3 [04:33<00:00, 89.83s/it]
+100%|██████████| 4/4 [00:03<00:00,  1.05s/it][A
+                                             [A/var/tmp/kw35262/venvs/train/lib64/python3.12/site-packages/peft/utils/save_and_load.py:313: UserWarning: Could not find a config file in Qwen/Qwen3.5-9B - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                             100%|██████████| 3/3 [04:37<00:00, 89.83s/it]100%|██████████| 3/3 [04:37<00:00, 92.45s/it]
+/var/tmp/kw35262/venvs/train/lib64/python3.12/site-packages/peft/utils/save_and_load.py:313: UserWarning: Could not find a config file in Qwen/Qwen3.5-9B - will assume that the vocabulary was not modified.
+  warnings.warn(
+{'eval_loss': '0.315', 'eval_runtime': '5.227', 'eval_samples_per_second': '0.765', 'eval_steps_per_second': '0.765', 'epoch': '1.5'}
+{'train_runtime': '277.3', 'train_samples_per_second': '0.173', 'train_steps_per_second': '0.011', 'train_loss': '0.4076', 'epoch': '1.5'}

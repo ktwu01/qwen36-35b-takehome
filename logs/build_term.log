@@ -1,0 +1,26 @@
+{
+ "expert": "term",
+ "source": [
+  "open-thoughts/OpenThoughts-Agent-v1-SFT",
+  "Apache-2.0"
+ ],
+ "filters": {
+  "raw": 15209,
+  "after_length": 14471,
+  "after_exact_dedup": 14464,
+  "after_13gram_decontam": 14461,
+  "pool_after_near_dedup": 8614,
+  "near_dup_removed_in_pool": 5847,
+  "train": 2000,
+  "dev": 200
+ },
+ "train_tiers": {
+  "easy": 1317,
+  "medium": 666,
+  "hard": 17
+ },
+ "sha256": {
+  "train": "3e4b6b9acbb7fffbdee3f2ec6a0a925b4174ddbb470a7d068ff10384dc3a6fd1",
+  "dev": "acebdb1085772e268166b22bdd029824868560de20ebac38a9e6a9e06e6c8bd1"
+ }
+}

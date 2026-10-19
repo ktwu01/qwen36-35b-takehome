@@ -1,0 +1,59 @@
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /var/tmp/kw35262/venvs/harbor/lib64/python3.12/site-packages/harbor/cli/jobs │
+│ .py:1946 in start                                                            │
+│                                                                              │
+│   1943 │   options = signature(build_job_config).bind(*args, **kwargs)       │
+│   1944 │   options.apply_defaults()                                          │
+│   1945 │   try:                                                              │
+│ ❱ 1946 │   │   config = build_job_config(**options.arguments)                │
+│   1947 │   │   return _execute_job(                                          │
+│   1948 │   │   │   config,                                                   │
+│   1949 │   │   │   diff_sources=options.arguments["diff_sources"],           │
+│                                                                              │
+│ /var/tmp/kw35262/venvs/harbor/lib64/python3.12/site-packages/harbor/cli/jobs │
+│ .py:1744 in build_job_config                                                 │
+│                                                                              │
+│   1741 │   if override_tpu is not None:                                      │
+│   1742 │   │   config["environment"]["override_tpu"] =                       │
+│        parse_tpu_spec(override_tpu)                                          │
+│   1743 │   if mounts is not None:                                            │
+│ ❱ 1744 │   │   config["environment"]["mounts"] = json.loads(mounts)          │
+│   1745 │   if extra_docker_compose is not None:                              │
+│   1746 │   │   config["environment"].setdefault("extra_docker_compose",      │
+│        []).extend(                                                           │
+│   1747 │   │   │   extra_docker_compose                                      │
+│                                                                              │
+│ /usr/lib64/python3.12/json/__init__.py:346 in loads                          │
+│                                                                              │
+│   343 │   if (cls is None and object_hook is None and                        │
+│   344 │   │   │   parse_int is None and parse_float is None and              │
+│   345 │   │   │   parse_constant is None and object_pairs_hook is None and   │
+│       not kw):                                                               │
+│ ❱ 346 │   │   return _default_decoder.decode(s)                              │
+│   347 │   if cls is None:                                                    │
+│   348 │   │   cls = JSONDecoder                                              │
+│   349 │   if object_hook is not None:                                        │
+│                                                                              │
+│ /usr/lib64/python3.12/json/decoder.py:338 in decode                          │
+│                                                                              │
+│   335 │   │   containing a JSON document).                                   │
+│   336 │   │                                                                  │
+│   337 │   │   """                                                            │
+│ ❱ 338 │   │   obj, end = self.raw_decode(s, idx=_w(s, 0).end())              │
+│   339 │   │   end = _w(s, end).end()                                         │
+│   340 │   │   if end != len(s):                                              │
+│   341 │   │   │   raise JSONDecodeError("Extra data", s, end)                │
+│                                                                              │
+│ /usr/lib64/python3.12/json/decoder.py:354 in raw_decode                      │
+│                                                                              │
+│   351 │   │                                                                  │
+│   352 │   │   """                                                            │
+│   353 │   │   try:                                                           │
+│ ❱ 354 │   │   │   obj, end = self.scan_once(s, idx)                          │
+│   355 │   │   except StopIteration as err:                                   │
+│   356 │   │   │   raise JSONDecodeError("Expecting value", s, err.value)     │
+│       from None                                                              │
+│   357 │   │   return obj, end                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+JSONDecodeError: Expecting property name enclosed in double quotes: line 1 
+column 3 (char 2)

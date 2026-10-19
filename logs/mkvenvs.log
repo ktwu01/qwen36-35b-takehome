@@ -1,0 +1,6 @@
++ export PIP_CACHE_DIR=/home/users3/kw35262/.pip-cache
++ PIP_CACHE_DIR=/home/users3/kw35262/.pip-cache
++ /usr/bin/python3.12 -m venv /home/users3/kw35262/venvs/qwen-train
++ /home/users3/kw35262/venvs/qwen-train/bin/pip install -q -U pip
++ /home/users3/kw35262/venvs/qwen-train/bin/pip install -q -r logs/pg_venv_freeze.txt
++ /home/users3/kw35262/venvs/qwen-train/bin/pip install -q mergekit pandas pyarrow matplotlib scipy datasketch

@@ -1,0 +1,27 @@
+{
+ "expert": "swe",
+ "source": [
+  "Kwai-Klear/SWE-smith-mini_swe_agent_plus-trajectories-66k",
+  "MIT"
+ ],
+ "filters": {
+  "raw": 65994,
+  "after_length": 29466,
+  "after_exact_dedup": 8151,
+  "after_swe_pro_repo_exclusion": 8151,
+  "after_13gram_decontam": 8150,
+  "pool_after_near_dedup": 8150,
+  "near_dup_removed_in_pool": 0,
+  "train": 2000,
+  "dev": 200
+ },
+ "train_tiers": {
+  "medium": 1253,
+  "hard": 666,
+  "easy": 81
+ },
+ "sha256": {
+  "train": "032afe361ec91b5eb404a5fe2c7d5c5ae5641d913cedc17f9121a3b58d19d10b",
+  "dev": "b967d63f628e2b80991dc921a835b8d7b860d7adcffa64d5b5df1739b836e2c9"
+ }
+}

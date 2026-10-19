@@ -1,0 +1,1347 @@
+Server failed to start on port 21687, will retry with new port
+Server failed to start on port 21041, will retry with new port
+Server failed to start on port 22887, will retry with new port
+Server failed to start on port 30553, will retry with new port
+Server failed to start on port 13061, will retry with new port
+Server failed to start on port 29677, will retry with new port
+Server failed to start on port 16139, will retry with new port
+Server failed to start on port 24547, will retry with new port
+Server failed to start on port 30539, will retry with new port
+Server failed to start on port 26027, will retry with new port
+Server failed to start on port 31559, will retry with new port
+Server failed to start on port 25311, will retry with new port
+Server failed to start on port 2921, will retry with new port
+Server failed to start on port 9929, will retry with new port
+Server failed to start on port 31709, will retry with new port
+Server failed to start on port 5553, will retry with new port
+Server failed to start on port 13349, will retry with new port
+Server failed to start on port 27981, will retry with new port
+Server failed to start on port 3433, will retry with new port
+Server failed to start on port 17919, will retry with new port
+Server failed to start on port 23183, will retry with new port
+Server failed to start on port 10951, will retry with new port
+Server failed to start on port 18889, will retry with new port
+Server failed to start on port 24625, will retry with new port
+Server failed to start on port 12215, will retry with new port
+Server failed to start on port 16923, will retry with new port
+Server failed to start on port 4669, will retry with new port
+Server failed to start on port 29749, will retry with new port
+Server failed to start on port 3687, will retry with new port
+Server failed to start on port 32245, will retry with new port
+  51/51 Mean: 0.569 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:45:41 0:00:00
+sbp-hard51-apptainer • oracle
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│     41 │         10 │ 0.569 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │    29 │
+│ 0.0    │    12 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception    ┃ Count ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━┩
+│ RuntimeError │    10 │
+└──────────────┴───────┘
+
+Job Info
+Total runtime: 45m 41s
+Results written to 
+/var/tmp/kw35262/sbp-jobs/sbp-hard51-oracle-apptainer/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/sbp-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/sbp-jobs/sbp-hard51-oracle-apptainer`
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f62a19c9440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Server failed to start on port 17153, will retry with new port
+Server failed to start on port 7595, will retry with new port
+Server failed to start on port 32149, will retry with new port
+Server failed to start on port 26875, will retry with new port
+Server failed to start on port 5643, will retry with new port
+Server failed to start on port 1969, will retry with new port
+Server failed to start on port 1465, will retry with new port
+Server failed to start on port 16827, will retry with new port
+Server failed to start on port 27785, will retry with new port
+Server failed to start on port 4149, will retry with new port
+Server failed to start on port 24253, will retry with new port
+Server failed to start on port 7881, will retry with new port
+Server failed to start on port 7383, will retry with new port
+Server failed to start on port 8091, will retry with new port
+Server failed to start on port 15079, will retry with new port
+Server failed to start on port 19439, will retry with new port
+Server failed to start on port 2679, will retry with new port
+Server failed to start on port 12063, will retry with new port
+Server failed to start on port 19717, will retry with new port
+Server failed to start on port 26321, will retry with new port
+Server failed to start on port 10759, will retry with new port
+Server failed to start on port 28179, will retry with new port
+Server failed to start on port 7125, will retry with new port
+Server failed to start on port 7177, will retry with new port
+Server failed to start on port 22429, will retry with new port
+Server failed to start on port 30059, will retry with new port
+Server failed to start on port 6999, will retry with new port
+Server failed to start on port 9405, will retry with new port
+Server failed to start on port 28305, will retry with new port
+Server failed to start on port 29479, will retry with new port
+  51/51 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:05:27 0:00:00
+sbp-hard51-apptainer • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│     41 │         10 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │    41 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception    ┃ Count ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━┩
+│ RuntimeError │    10 │
+└──────────────┴───────┘
+
+Job Info
+Total runtime: 5m 27s
+Results written to 
+/var/tmp/kw35262/sbp-jobs/sbp-hard51-nop-apptainer/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/sbp-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/sbp-jobs/sbp-hard51-nop-apptainer`
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fbbdf745440>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed

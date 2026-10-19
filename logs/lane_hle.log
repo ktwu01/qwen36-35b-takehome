@@ -1,0 +1,33 @@
+[2026-10-18 12:53:20] HLE access granted
+hf user: ktwu01
+Generating test split:   0%|          | 0/2500 [00:00<?, ? examples/s]Generating test split:   4%|▍         | 100/2500 [00:00<00:02, 944.11 examples/s]Generating test split:  16%|█▌        | 400/2500 [00:00<00:01, 1801.90 examples/s]Generating test split:  36%|███▌      | 900/2500 [00:00<00:00, 2534.10 examples/s]Generating test split:  52%|█████▏    | 1300/2500 [00:00<00:00, 2083.64 examples/s]Generating test split:  76%|███████▌  | 1900/2500 [00:00<00:00, 2255.88 examples/s]Generating test split: 100%|██████████| 2500/2500 [00:00<00:00, 2772.93 examples/s]
+configs/eval/hle.lock.json: 2500 tasks sha256=ca7099526029aedf
+Fetching 244 files:   0%|          | 0/244 [00:00<?, ?it/s]Fetching 244 files: 100%|██████████| 244/244 [00:00<00:00, 4673.96it/s]
+data/bench/contam_texts.jsonl {'swe_pro': 642, 'hle': 2500, 'asi': 240, 'tb2': 89}
+swe {'train': 1, 'dev': 0}
+term {'train': 4, 'dev': 0}
+sci {'train': 18, 'dev': 2}
+[2026-10-18 13:01:06] HLE access granted
+[2026-10-18 13:01:06] HLE base -> http://127.0.0.1:18107/v1
+[2026-10-18 13:02:00] HLE access granted
+[2026-10-18 13:02:00] HLE base -> http://127.0.0.1:18107/v1
+[2026-10-18 13:02:00] HLE merged -> http://127.0.0.1:18109/v1,http://127.0.0.1:18101/v1,http://127.0.0.1:18102/v1,http://127.0.0.1:18103/v1
+[2026-10-18 14:09:02] HLE sci -> http://127.0.0.1:18108/v1
+[2026-10-18 15:10:37] HLE access granted
+[2026-10-18 15:10:37] HLE base -> http://127.0.0.1:18107/v1
+[2026-10-18 15:10:37] HLE merged -> http://127.0.0.1:18109/v1,http://127.0.0.1:18101/v1,http://127.0.0.1:18102/v1,http://127.0.0.1:18103/v1
+[2026-10-18 15:10:37] HLE sci -> http://127.0.0.1:18108/v1
+[2026-10-18 15:34:35] HLE access granted
+[2026-10-18 15:34:35] HLE base -> http://127.0.0.1:18107/v1
+[2026-10-18 15:34:35] HLE merged -> http://127.0.0.1:18109/v1,http://127.0.0.1:18101/v1,http://127.0.0.1:18102/v1,http://127.0.0.1:18103/v1
+[2026-10-18 15:34:35] HLE sci -> http://127.0.0.1:18108/v1
+[2026-10-18 15:56:35] ASI merged scored: HLE merged -> 24 per endpoint
+scripts/lane_hle.sh: line 21: 2819607 Terminated              bash scripts/run_hle.sh "$1" "$2" "$3" $((12 * n_ep)) >> "logs/hle_$1.log" 2>&1
+[2026-10-18 17:20:35] ASI sci scored: HLE sci -> 24 per endpoint
+scripts/lane_hle.sh: line 21: 2819626 Terminated              bash scripts/run_hle.sh "$1" "$2" "$3" $((12 * n_ep)) >> "logs/hle_$1.log" 2>&1
+[2026-10-18 22:42:37] ASI base scored: HLE base -> 24 per endpoint
+scripts/lane_hle.sh: line 21: 2819576 Terminated              bash scripts/run_hle.sh "$1" "$2" "$3" $((12 * n_ep)) >> "logs/hle_$1.log" 2>&1
+[2026-10-19 01:08:42] HLE access granted
+[2026-10-19 01:08:45] HLE base -> http://127.0.0.1:18107/v1,http://127.0.0.1:18108/v1,http://127.0.0.1:18101/v1,http://127.0.0.1:18102/v1,http://127.0.0.1:18103/v1
+[2026-10-19 11:22:46] HLE access granted
+[2026-10-19 11:22:46] HLE base -> http://127.0.0.1:18107/v1,http://127.0.0.1:18108/v1,http://127.0.0.1:18101/v1,http://127.0.0.1:18102/v1,http://127.0.0.1:18103/v1

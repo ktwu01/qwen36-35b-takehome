@@ -1,0 +1,2 @@
+02:23:30 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+  2/2 Mean: 0.500 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:48:43 0:00:00

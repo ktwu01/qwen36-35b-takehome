@@ -1,0 +1,793 @@
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s1.json
+08:22:33 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 110, in <module>
+    if a.shard and not in_shard(t.name, a.shard):
+
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 106, in main
+    sub.mkdir(parents=True, exist_ok=True)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+part 2: 37 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s1-p2.json
+10:37:52 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f501011b2c0>
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f5010424920>
+Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7f5002d31350>, 1134911.703450813)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7f50104241d0>
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f5011fc57f0>
+  37/37 Mean: 0.081 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10:13:42 0:00:00
+merged-s1-p2 • terminus-2 • merged
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│     36 │         13 │ 0.081 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │    33 │
+│ 1.0    │     3 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception         ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ AgentTimeoutError │    12 │
+│ ConnectError      │     1 │
+└───────────────────┴───────┘
+
+Job Info
+Total runtime: 10h 13m 49s
+Results written to /var/tmp/kw35262/tb2-jobs/tb2-merged-s1-p2/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/tb2-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/tb2-jobs/tb2-merged-s1-p2`
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f5036bbd300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+[2026-10-18 22:17:16] merged seed 1 shard 0 complete, 2 shard-1 tasks wait on a HPC dev window; seismic17 idle, starting seeds 2-5 now (operator, qwen36 loop)
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s2.json
+22:18:30 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.002 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+part 2: 71 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s2-p2.json
+11:23:02 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.002 seconds
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 124, in <module>
+    main()
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 120, in main
+    subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+part 2: 77 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s3-p2.json
+part 3: 26 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s2-p3.json
+13:18:13 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 124, in <module>
+    main()
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 120, in main
+    subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+part 3: 33 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s3-p3.json
+16:12:22 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 124, in <module>
+    main()
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 120, in main
+    subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+part 5: 6 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s2-p5.json
+16:13:16 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+part 7: 13 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-merged-s2-p7.json
+16:14:21 - LiteLLM:WARNING: utils.py:3395 - register_model: model=merged has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).

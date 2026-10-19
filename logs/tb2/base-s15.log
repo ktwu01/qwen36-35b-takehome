@@ -1,0 +1,105 @@
+seed already claimed: /var/tmp/kw35262/tb2-jobs/tb2-base-s1.claim
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2.json
+03:54:33 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 82, in <module>
+    main()
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 78, in main
+    subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+seed already claimed: /var/tmp/kw35262/tb2-jobs/tb2-base-s1.claim
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2.json
+04:01:25 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 83, in <module>
+    main()
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 79, in main
+    subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+seed already claimed: /var/tmp/kw35262/tb2-jobs/tb2-base-s1.claim
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2.json
+04:32:54 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Traceback (most recent call last):
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 83, in <module>
+    main()
+  File "/home/users3/kw35262/projects/qwen36-takehome/scripts/run_tb2.py", line 79, in main
+    subprocess.run([str(BASE / "venvs/harbor/bin/harbor"), "run", "-c", str(path), "-y"], env=env, check=False)
+  File "/usr/lib64/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 1201, in communicate
+    self.wait()
+  File "/usr/lib64/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+part 10: 15 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2-p10.json
+15:18:34 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.004 seconds

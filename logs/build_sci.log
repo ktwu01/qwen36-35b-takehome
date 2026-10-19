@@ -1,0 +1,27 @@
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 107772 examples [00:13, 7937.81 examples/s]Generating train split: 200099 examples [00:25, 7993.76 examples/s]Generating train split: 307862 examples [00:25, 14712.34 examples/s]Generating train split: 400198 examples [00:33, 13458.31 examples/s]Generating train split: 493840 examples [00:34, 19317.05 examples/s]Generating train split: 577178 examples [00:37, 20679.98 examples/s]Generating train split: 600297 examples [00:46, 11732.94 examples/s]Generating train split: 694627 examples [00:47, 18351.56 examples/s]Generating train split: 796154 examples [00:48, 25159.62 examples/s]Generating train split: 902555 examples [00:51, 27882.65 examples/s]Generating train split: 1000495 examples [01:07, 13032.30 examples/s]Generating train split: 1102717 examples [01:10, 16965.75 examples/s]Generating train split: 1200594 examples [01:11, 22021.08 examples/s]Generating train split: 1302540 examples [01:15, 23026.50 examples/s]Generating train split: 1400693 examples [01:18, 25739.24 examples/s]Generating train split: 1502910 examples [01:18, 34976.56 examples/s]Generating train split: 1600792 examples [01:19, 46669.66 examples/s]Generating train split: 1600812 examples [01:19, 20125.66 examples/s]
+{
+ "expert": "sci",
+ "source": [
+  "nvidia/OpenScienceReasoning-2",
+  "CC-BY-4.0"
+ ],
+ "filters": {
+  "raw": 1600812,
+  "after_length": 1538163,
+  "after_exact_dedup": 1537418,
+  "after_13gram_decontam": 1537414,
+  "pool_after_near_dedup": 19976,
+  "near_dup_removed_in_pool": 24,
+  "train": 4000,
+  "dev": 200
+ },
+ "train_tiers": {
+  "medium": 1334,
+  "easy": 1333,
+  "hard": 1333
+ },
+ "sha256": {
+  "train": "78dab8bcb5fa651176a01d9e4823882d5c023e05594b5e023514ac15bf87fec8",
+  "dev": "7cb0e9be1e441da7c119c16e7da8aec9b1231576e77f7d21731f0fb7ba9a9696"
+ }
+}

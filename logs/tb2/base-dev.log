@@ -1,0 +1,2751 @@
+part 3: 16 unfinished tasks
+part 4: 16 unfinished tasks
+part 5: 14 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2-p4.json
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2-p3.json
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-base-s2-p5.json
+12:19:58 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+12:19:58 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+12:19:58 - LiteLLM:WARNING: utils.py:3395 - register_model: model=base has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Memory explosion detected: 24083MB, growing 7292MB/s, ~3.1s until limit
+Memory explosion detected: 43390MB, growing 6209MB/s, ~0.5s until limit
+Even fallback chat failed: 
+Memory limit exceeded: 49339MB > 46694MB (100%). Killing container.
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.001 seconds
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fd9ccb587a0>
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Memory explosion detected: 37528MB, growing 6555MB/s, ~1.4s until limit
+Even fallback chat failed: 
+Memory explosion detected: 42016MB, growing 3901MB/s, ~1.2s until limit
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fac804c7800>
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Memory explosion detected: 34380MB, growing 4656MB/s, ~2.6s until limit
+Memory explosion detected: 41819MB, growing 6231MB/s, ~0.8s until limit
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Memory explosion detected: 33494MB, growing 4695MB/s, ~2.8s until limit
+Memory explosion detected: 38014MB, growing 3745MB/s, ~2.3s until limit
+Even fallback chat failed: 
+Memory explosion detected: 41460MB, growing 2781MB/s, ~1.9s until limit
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.003 seconds
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Server disconnected
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+SUMMARIZATION: Short summary failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Even fallback chat failed: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18101 ssl:<ssl.SSLContext object at 0x7fac84293ad0> [Connect call failed ('127.0.0.1', 18101)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+  16/16 Mean: 0.250 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1:53:22 0:00:00
+base-s2-p3 • terminus-2 • base
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│     12 │          4 │ 0.250 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     8 │
+│ 1.0    │     4 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception           ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ RemoteProtocolError │     1 │
+│ InternalServerError │     3 │
+└─────────────────────┴───────┘
+
+Job Info
+Total runtime: 1h 53m 24s
+Results written to /var/tmp/kw35262/tb2-jobs/tb2-base-s2-p3/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/tb2-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/tb2-jobs/tb2-base-s2-p3`
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fac90075300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18102 ssl:<ssl.SSLContext object at 0x7fd66508bad0> [Connect call failed ('127.0.0.1', 18102)]
+  16/16 Mean: 0.188 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1:53:31 0:00:00
+base-s2-p4 • terminus-2 • base
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      9 │          7 │ 0.188 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     3 │
+│ 0.0    │     6 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception                ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ InternalServerError      │     6 │
+│ MemoryLimitExceededError │     1 │
+└──────────────────────────┴───────┘
+
+Job Info
+Total runtime: 1h 53m 32s
+Results written to /var/tmp/kw35262/tb2-jobs/tb2-base-s2-p4/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/tb2-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/tb2-jobs/tb2-base-s2-p4`
+
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd670ea1300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Unknown Error in LLM interaction: litellm.InternalServerError: InternalServerError: Hosted_vllmException - Cannot connect to host 127.0.0.1:18103 ssl:<ssl.SSLContext object at 0x7fd9cccd7ad0> [Connect call failed ('127.0.0.1', 18103)]
+  14/14 Mean: 0.286 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1:53:44 0:00:00
+base-s2-p5 • terminus-2 • base
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      8 │          6 │ 0.286 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     4 │
+│ 1.0    │     4 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception           ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ InternalServerError │     6 │
+└─────────────────────┴───────┘
+
+Job Info
+Total runtime: 1h 53m 47s
+Results written to /var/tmp/kw35262/tb2-jobs/tb2-base-s2-p5/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/tb2-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/tb2-jobs/tb2-base-s2-p5`
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7fd9d8ac5300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed

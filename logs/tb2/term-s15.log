@@ -1,0 +1,354 @@
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-term-s1.json
+06:40:03 - LiteLLM:WARNING: utils.py:3395 - register_model: model=term has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Failed to install asciinema using pip
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.002 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.003 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f45479f6390>
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Even fallback chat failed: 
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.098 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.004 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.002 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f4547374bc0>
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.002 seconds
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.001 seconds
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.003 seconds
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.003 seconds
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=616.401 seconds
+part 2: 2 unfinished tasks
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-term-s1-p2.json
+11:22:48 - LiteLLM:WARNING: utils.py:3395 - register_model: model=term has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.003 seconds
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.002 seconds
+Unknown Error in LLM interaction: litellm.Timeout: Timeout Error: Hosted_vllmException - litellm.Timeout: Connection timed out. Timeout passed=600.0, time taken=600.014 seconds
+  2/2 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3:00:30 0:00:00
+term-s1-p2 • terminus-2 • term
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          2 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception         ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ AgentTimeoutError │     1 │
+│ Timeout           │     1 │
+└───────────────────┴───────┘
+
+Job Info
+Total runtime: 3h 0m 30s
+Results written to /var/tmp/kw35262/tb2-jobs/tb2-term-s1-p2/result.json
+Inspect results by running `harbor view /var/tmp/kw35262/tb2-jobs`
+Share results by running `harbor upload 
+/var/tmp/kw35262/tb2-jobs/tb2-term-s1-p2`
+
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f9630055300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x7f9630055300>
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/usr/lib64/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/usr/lib64/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/usr/lib64/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+running /home/users3/kw35262/projects/qwen36-takehome/configs/eval/tb2_jobs/tb2-term-s2.json
+14:24:24 - LiteLLM:WARNING: utils.py:3395 - register_model: model=term has custom pricing but not in built-in cost map and no prefix/region variant matched; cache_creation_input_token_cost and cache_read_input_token_cost will default to 0 for this model (input/output cost tracking is unaffected). To track cache cost, add them to model_info
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).
+Failed to install asciinema using pip
+Tool installation exceeded its 240s budget; proceeding without guaranteed tmux/asciinema (session recording may be unavailable).

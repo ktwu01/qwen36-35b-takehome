@@ -1,0 +1,34 @@
+/var/tmp/kw35262/asi-runs/merged/mini_config.yaml
+
+Sandbox mode: --sandbox linux_ns  [Linux Namespace Sandbox]
+  Lightweight isolation using Linux namespaces (unshare + bind mounts). No Docker required; suitable for HPC clusters and RL training loops.
+  Pros:  No Docker dependency; ~5% disk overhead vs Docker; fast environment preparation; filesystem isolation via bind mounts.
+  Cons:  Linux only (not supported on macOS/Windows); requires user namespace privileges; less mature than Docker isolation; no built-in network policy.
+
+
+==============================================================
+  Agent Configuration (affects reproducibility)
+==============================================================
+  Agent    CLIAgentAdapter
+  Model    N/A
+  Effort   N/A (default)
+  Timeout  1800s
+  Tools    N/A
+==============================================================
+
+============================================================
+  ASI-Bench Produce-Only Summary
+  Agent: CLIAgentAdapter
+  Tasks: 60  |  Instances: 240
+============================================================
+  Scoring: submit to https://asibench.apexin.ai/
+
+  Unscored submissions (submit mode): 240
+
+  Model Calls:
+    Attempted: unknown (0 observed)
+    Responses: 0
+    Empty response rate: unknown
+
+  Total execution time: 51687s
+============================================================
