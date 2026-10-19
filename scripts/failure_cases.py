@@ -4,7 +4,8 @@
 
 For each benchmark, every failed task of the merged model gets: exception / exit status, the last
 agent turns (truncated), patch size (SWE-Pro), verifier tail, and whether base or the matching expert
-solved the same task (flag `merge_regression`). Writes analysis/failure_evidence.jsonl; the
+solved the same task (flag `merge_regression`). ASI-Bench: score, first failed gate and the agent's
+exit status; HLE: finish reason, output tokens, the judge's extracted answer and reasoning. Writes analysis/failure_evidence.jsonl; the
 categorization itself (localization, patch, test understanding, merge-induced regression,
 environment/tool, timeout, other) is done by reading this evidence and is recorded in failures.md.
 """
@@ -12,6 +13,7 @@ environment/tool, timeout, other) is done by reading this evidence and is record
 import argparse
 import json
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -36,9 +38,13 @@ def tail(path, n=1500):
 
 
 def harbor_evidence(base, job_glob, task):
-    for res in Path(base).glob(job_glob + "/*/result.json"):
+    """Evidence from the scored trial: job_glob names the part the collector took the row from, and
+    trials the collector skips (cancelled, endpoint unavailable) are skipped here too."""
+    for res in sorted(Path(base).glob(job_glob + "/*/result.json")):
         r = json.loads(res.read_text())
-        if Path((r.get("task_id") or {}).get("path", "")).name != task:
+        if Path((r.get("task_id") or {}).get("path", "")).name != task or not r.get("finished_at"):
+            continue
+        if (r.get("exception_info") or {}).get("exception_type") in ("CancelledError", "InternalServerError"):
             continue
         d = res.parent
         traj = d / "agent" / "mini-swe-agent.trajectory.json"
@@ -55,6 +61,40 @@ def harbor_evidence(base, job_glob, task):
                 "patch_bytes": patch.stat().st_size if patch.exists() else None,
                 "verifier_tail": tail(d / "verifier" / "test-stdout.txt", 1200)}
     return {}
+
+
+def asi_evidence(base, task):
+    """task = <instance_id>__<level>; per-instance result written by asibench, trajectory found via the
+    path the agent printed."""
+    inst, lv = task.rsplit("__", 1)
+    res = Path(base) / "asi-runs" / "merged" / inst.split("__")[0] / f"{task}.json"
+    try:
+        r = json.loads(res.read_text())
+    except (OSError, ValueError):
+        return {}
+    gate = next((g for g in r.get("gate_results") or [] if not g.get("passed")), None)
+    log = str((r.get("agent_output") or {}).get("log") or "")
+    m = re.search(r"trajectories/(\S+?\.traj\.json)", log.replace("\n", ""))
+    exit_status, n_turns = None, None
+    if m:
+        try:
+            msgs = json.loads((res.parents[1] / "trajectories" / m.group(1)).read_text()).get("messages", [])
+            exit_status = next((x.get("content") for x in msgs if x.get("role") == "exit"), None)
+            n_turns = sum(x.get("role") == "assistant" for x in msgs)
+        except (OSError, ValueError):
+            pass
+    return {"score": r.get("final_score"), "agent_exit": exit_status, "assistant_turns": n_turns,
+            "execution_s": r.get("execution_time_seconds"),
+            "first_failed_gate": (gate or {}).get("message") or str((gate or {}).get("details"))[:300] if gate else None}
+
+
+def hle_evidence(results_root, task):
+    d = Path(results_root) / "merged" / "hle" / "merged" / "run1"
+    p = next((x for x in map(json.loads, open(d / "predictions.jsonl")) if x["id"] == task), {})
+    j = next((x for x in map(json.loads, open(d / "judged.jsonl")) if x["id"] == task), {})
+    return {"finish_reason": p.get("finish_reason"), "output_tokens": (p.get("usage") or {}).get("completion_tokens"),
+            "has_image": p.get("has_image"), "model_answer": j.get("model_answer"),
+            "judge_reasoning": (j.get("reasoning") or j.get("judge_error") or "")[:400]}
 
 
 def main():
@@ -86,9 +126,15 @@ def main():
             ev = {"benchmark": bench, "task": r["task"], "run": r.get("run"), "status": r["status"],
                   "merge_regression": r["task"] in ref}
             if bench == "tb2":
-                ev.update(harbor_evidence(a.base, f"tb2-jobs/tb2-merged-s{str(r['run'])[-1]}*", r["task"]))
+                ev.update(harbor_evidence(a.base, f"tb2-jobs/{r['part']}", r["task"]))
             elif bench == "swe_pro":
-                ev.update(harbor_evidence(a.base, "sbp-jobs/sbp-merged*", r["task"]))
+                # agent trajectory from the part whose regrade was scored
+                ev.update(harbor_evidence(a.base, f"sbp-jobs/{r['part'].removesuffix('-regrade')}", r["task"]))
+                ev["regrade_part"] = r["part"]
+            elif bench == "asi":
+                ev.update(asi_evidence(a.base, r["task"]))
+            elif bench == "hle":
+                ev.update(hle_evidence(a.results_root, r["task"]))
             out.append(ev)
     Path("analysis").mkdir(exist_ok=True)
     with open("analysis/failure_evidence.jsonl", "w") as f:
