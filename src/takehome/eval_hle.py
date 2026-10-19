@@ -130,6 +130,16 @@ async def judge(a):
     out = Path(a.out)
     preds = {r["id"]: r for r in map(json.loads, open(out / "predictions.jsonl"))}
     judged_path = out / "judged.jsonl"
+    if a.retry_judge_errors and judged_path.exists():
+        # judge API failures (e.g. 429 rate limits) are not model outcomes: move those records to
+        # judged.errors.jsonl (kept for audit) and judge the same responses again
+        keep, errs = [], []
+        for line in open(judged_path):
+            (errs if json.loads(line).get("correct") not in ("yes", "no") else keep).append(line)
+        with open(out / "judged.errors.jsonl", "a") as e:
+            e.writelines(errs)
+        judged_path.write_text("".join(keep))
+        print(f"re-judging {len(errs)} records with judge errors")
     judged = {json.loads(l)["id"] for l in open(judged_path)} if judged_path.exists() else set()
     key = Path(a.key_file).expanduser().read_text().strip()
     client = AsyncOpenAI(api_key=key, timeout=300, max_retries=0)
@@ -170,6 +180,8 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--concurrency", type=int, default=48)
     ap.add_argument("--key-file", default="~/.config/openai/api_key")
+    ap.add_argument("--retry-judge-errors", action="store_true",
+                    help="judge stage: re-judge records whose judge call failed (same responses, same judge)")
     a = ap.parse_args()
     asyncio.run(generate(a) if a.stage == "generate" else judge(a))
 
