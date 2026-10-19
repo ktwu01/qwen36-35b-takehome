@@ -1,0 +1,21 @@
+# an HPC supercomputer usage for this experiment, allocation the project allocation (a second allocation and a third allocation untouched).
+# sacct could NOT be fetched: HPC requires Duo two-factor login, and the seismic hosts that ran the
+# write-up cannot ssh to hpc. The rows below are an ESTIMATE in sacct's pipe format, built from:
+#   recorded balances: the project allocation 245 SU at start; 226 SU at 2026-10-18 12:40 CDT; 220 SU at 15:30 CDT
+#   (HPC charges a job when it ends, so these balances exclude the serving jobs still running then);
+#   recorded per-job figures: expert training ~10 SU, merge ablation ~3 SU (gpu-a100-dev, 3 A100 40GB,
+#   3 SU per node-hour); a100-small serving 1.5 SU/h per job (1 A100); dev serving windows 6 SU per 2 h.
+#   Serving job end times are from the run notes (slot 6 job 3518236 ended 2026-10-19 08:46 and its
+#   follow-on 3518874 runs to ~21:15; slots 7/8 jobs 3518366/3518367 ended 2026-10-19 13:45);
+#   their durations assume the 24 h a100-small limit. Dev windows: 7 windows observed in the lane logs
+#   (10-18 ~11:30, 13:32, 15:33, 20:13, 22:24; 10-19 ~01:00, 12:19).
+#   Not itemized (each well under 1 SU): gpu-a100-small probe, the union-control attempt that failed at
+#   its first step, CUDA/serving smoke tests.
+JobID|JobName|Account|Partition|State|Elapsed|AllocTRES
+n/a|qwen36-train-experts|the project allocation|gpu-a100-dev|ESTIMATE|03:20:00|gres/gpu=3
+n/a|qwen36-merge-ablation|the project allocation|gpu-a100-dev|ESTIMATE|01:00:00|gres/gpu=3
+3518236|qwen36-serve-slot6|the project allocation|gpu-a100-small|ESTIMATE|1-00:00:00|gres/gpu=1
+3518874|qwen36-serve-slot6|the project allocation|gpu-a100-small|ESTIMATE|12:30:00|gres/gpu=1
+3518366|qwen36-serve-slot7|the project allocation|gpu-a100-small|ESTIMATE|1-00:00:00|gres/gpu=1
+3518367|qwen36-serve-slot8|the project allocation|gpu-a100-small|ESTIMATE|1-00:00:00|gres/gpu=1
+n/a|qwen36-serve-dev-windows-x7|the project allocation|gpu-a100-dev|ESTIMATE|14:00:00|gres/gpu=3

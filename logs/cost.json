@@ -1,0 +1,176 @@
+{
+ "hpc_su_charged": 181.8,
+ "hpc_su_is_estimate": true,
+ "hpc_allocation": "the project allocation",
+ "hpc_gpu_hours_by_job_kind": {
+  "train-experts": 10.0,
+  "merge-ablation": 3.0,
+  "serve-slot6": 36.5,
+  "serve-slot7": 24.0,
+  "serve-slot8": 24.0,
+  "serve-dev-windows-x7": 42.0
+ },
+ "seismic_eval_gpu_hours": 106.1,
+ "cloud_rental_usd": 0,
+ "jobs": [
+  {
+   "JobID": "n/a",
+   "JobName": "qwen36-train-experts",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-dev",
+   "State": "ESTIMATE",
+   "Elapsed": "03:20:00",
+   "AllocTRES": "gres/gpu=3",
+   "hours": 3.333,
+   "su": 10.0,
+   "gpu_hours": 10.0
+  },
+  {
+   "JobID": "n/a",
+   "JobName": "qwen36-merge-ablation",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-dev",
+   "State": "ESTIMATE",
+   "Elapsed": "01:00:00",
+   "AllocTRES": "gres/gpu=3",
+   "hours": 1.0,
+   "su": 3.0,
+   "gpu_hours": 3.0
+  },
+  {
+   "JobID": "3518236",
+   "JobName": "qwen36-serve-slot6",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-small",
+   "State": "ESTIMATE",
+   "Elapsed": "1-00:00:00",
+   "AllocTRES": "gres/gpu=1",
+   "hours": 24.0,
+   "su": 36.0,
+   "gpu_hours": 24.0
+  },
+  {
+   "JobID": "3518874",
+   "JobName": "qwen36-serve-slot6",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-small",
+   "State": "ESTIMATE",
+   "Elapsed": "12:30:00",
+   "AllocTRES": "gres/gpu=1",
+   "hours": 12.5,
+   "su": 18.75,
+   "gpu_hours": 12.5
+  },
+  {
+   "JobID": "3518366",
+   "JobName": "qwen36-serve-slot7",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-small",
+   "State": "ESTIMATE",
+   "Elapsed": "1-00:00:00",
+   "AllocTRES": "gres/gpu=1",
+   "hours": 24.0,
+   "su": 36.0,
+   "gpu_hours": 24.0
+  },
+  {
+   "JobID": "3518367",
+   "JobName": "qwen36-serve-slot8",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-small",
+   "State": "ESTIMATE",
+   "Elapsed": "1-00:00:00",
+   "AllocTRES": "gres/gpu=1",
+   "hours": 24.0,
+   "su": 36.0,
+   "gpu_hours": 24.0
+  },
+  {
+   "JobID": "n/a",
+   "JobName": "qwen36-serve-dev-windows-x7",
+   "Account": "the project allocation",
+   "Partition": "gpu-a100-dev",
+   "State": "ESTIMATE",
+   "Elapsed": "14:00:00",
+   "AllocTRES": "gres/gpu=3",
+   "hours": 14.0,
+   "su": 42.0,
+   "gpu_hours": 42.0
+  }
+ ],
+ "lanes": [
+  {
+   "host": "seismic18",
+   "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+   "model": "base",
+   "pid": 429161,
+   "start": "2026-10-18T03:50:23",
+   "end": "2026-10-19T04:18:12",
+   "log": "logs/vllm_base.log"
+  },
+  {
+   "host": "seismic15",
+   "gpu": "NVIDIA RTX A4500",
+   "model": "base",
+   "pid": 1942372,
+   "start": "2026-10-18T03:37:42",
+   "end": "2026-10-18T06:27:14",
+   "log": "logs/vllm_base_seismic15.log"
+  },
+  {
+   "host": "seismic15",
+   "gpu": "NVIDIA RTX A4500",
+   "model": "base",
+   "pid": 2937893,
+   "start": "2026-10-19T15:14:15",
+   "end": "2026-10-19T17:32:32",
+   "log": "logs/vllm_base_seismic15.log"
+  },
+  {
+   "host": "seismic17",
+   "gpu": "NVIDIA RTX A4500",
+   "model": "base",
+   "pid": 304351,
+   "start": "2026-10-18T03:49:56",
+   "end": "2026-10-18T08:10:31",
+   "log": "logs/vllm_base_seismic17.log"
+  },
+  {
+   "host": "seismic17",
+   "gpu": "NVIDIA RTX A4500",
+   "model": "merged",
+   "pid": 397587,
+   "start": "2026-10-18T08:16:45",
+   "end": "2026-10-19T17:43:53",
+   "log": "logs/vllm_merged_seismic17.log"
+  },
+  {
+   "host": "seismic18",
+   "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+   "model": "merged",
+   "pid": 2656007,
+   "start": "2026-10-19T13:16:56",
+   "end": "2026-10-19T17:32:33",
+   "log": "logs/vllm_merged_seismic18.log"
+  },
+  {
+   "host": "seismic18",
+   "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+   "model": "swe",
+   "pid": 656757,
+   "start": "2026-10-19T11:25:46",
+   "end": "2026-10-19T13:16:32",
+   "log": "logs/vllm_swe_seismic18.log"
+  },
+  {
+   "host": "seismic15",
+   "gpu": "NVIDIA RTX A4500",
+   "model": "term",
+   "pid": 2008605,
+   "start": "2026-10-18T06:33:49",
+   "end": "2026-10-19T15:12:58",
+   "log": "logs/vllm_term_seismic15.log"
+  }
+ ],
+ "summary_zh": "HPC 估计共 181.8 SU（the project allocation；A100 GPU 时 139.5），评测在 seismic 工作站约 106.1 GPU 时；无云租用费用。"
+}

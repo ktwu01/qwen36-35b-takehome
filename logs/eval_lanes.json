@@ -1,0 +1,74 @@
+[
+ {
+  "host": "seismic18",
+  "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+  "model": "base",
+  "pid": 429161,
+  "start": "2026-10-18T03:50:23",
+  "end": "2026-10-19T04:18:12",
+  "log": "logs/vllm_base.log"
+ },
+ {
+  "host": "seismic15",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "base",
+  "pid": 1942372,
+  "start": "2026-10-18T03:37:42",
+  "end": "2026-10-18T06:27:14",
+  "log": "logs/vllm_base_seismic15.log"
+ },
+ {
+  "host": "seismic15",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "base",
+  "pid": 2937893,
+  "start": "2026-10-19T15:14:15",
+  "end": "2026-10-19T17:32:32",
+  "log": "logs/vllm_base_seismic15.log"
+ },
+ {
+  "host": "seismic17",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "base",
+  "pid": 304351,
+  "start": "2026-10-18T03:49:56",
+  "end": "2026-10-18T08:10:31",
+  "log": "logs/vllm_base_seismic17.log"
+ },
+ {
+  "host": "seismic17",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "merged",
+  "pid": 397587,
+  "start": "2026-10-18T08:16:45",
+  "end": "2026-10-19T17:43:53",
+  "log": "logs/vllm_merged_seismic17.log"
+ },
+ {
+  "host": "seismic18",
+  "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+  "model": "merged",
+  "pid": 2656007,
+  "start": "2026-10-19T13:16:56",
+  "end": "2026-10-19T17:32:33",
+  "log": "logs/vllm_merged_seismic18.log"
+ },
+ {
+  "host": "seismic18",
+  "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+  "model": "swe",
+  "pid": 656757,
+  "start": "2026-10-19T11:25:46",
+  "end": "2026-10-19T13:16:32",
+  "log": "logs/vllm_swe_seismic18.log"
+ },
+ {
+  "host": "seismic15",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "term",
+  "pid": 2008605,
+  "start": "2026-10-18T06:33:49",
+  "end": "2026-10-19T15:12:58",
+  "log": "logs/vllm_term_seismic15.log"
+ }
+]
