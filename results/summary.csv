@@ -4,10 +4,10 @@ base,hle,7.08,0,2500,"{""no_result"": 1280, ""ok"": 1220}",all
 base,swe_pro,5.88,0,51,"{""ok"": 51}",all
 base,tb2,19.1,0.0,170,"{""ok"": 124, ""llm_call_timeout"": 1, ""agent_timeout"": 36, ""env_error"": 9}",all
 merged,asi,0.51,0,236,"{""ok"": 235, ""no_result"": 1}",all
-merged,hle,7.68,0,2500,"{""no_result"": 590, ""ok"": 1910}",all
+merged,hle,8.16,0,2500,"{""no_result"": 451, ""ok"": 2049}",all
 merged,swe_pro,0.0,0,51,"{""ok"": 51}",all
 merged,tb2,12.36,0.0,177,"{""ok"": 148, ""env_error"": 10, ""agent_timeout"": 19}",all
 sci,asi,0.48,0,236,"{""ok"": 234, ""no_result"": 2}",target
-sci,hle,6.84,0,2500,"{""no_result"": 655, ""ok"": 1845}",target
+sci,hle,7.12,0,2500,"{""no_result"": 584, ""ok"": 1916}",target
 swe,swe_pro,0.0,0,51,"{""ok"": 51}",target
 term,tb2,8.99,0.0,93,"{""ok"": 69, ""agent_timeout"": 21, ""env_error"": 1, ""llm_call_timeout"": 2}",target
