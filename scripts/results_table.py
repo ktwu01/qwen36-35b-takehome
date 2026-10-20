@@ -85,8 +85,8 @@ def main():
           "scored 0 (the all-instances mean below), so it can differ slightly from the difference of the official means.",
           "The macro CI resamples tasks within each benchmark jointly. The exam's target is +3 pp (excellent +5 pp).", ""]
 
-    L += ["**Terminal-Bench seeds** (success rate, percent; partial = tasks finished so far, success on those):", "",
-          "| Model | Complete seeds | Partial seeds |", "|---|---|---|"]
+    L += ["**Terminal-Bench seeds** (success rate, percent; incomplete seeds: tasks scored when the runners stopped, success on those):", "",
+          "| Model | Complete seeds | Incomplete seeds |", "|---|---|---|"]
     for m in ("base", "term", "merged"):
         t = met.get(f"{m}/tb2")
         if not t:
@@ -96,7 +96,18 @@ def main():
                          for s, p in sorted(t["partial_seeds"].items())) or "none"
         L.append(f"| {m} | {full} | {part} |")
     L += ["", "The exam asks for 5 seeds per model; seeds 2-5 could not be completed in the compute available",
-          "(section 5). The seed std of a single complete seed is not defined and is not reported.", ""]
+          "(section 5). The seed std of a single complete seed is not defined and is not reported.", "",
+          "Repeat-run variation instead: seed 1 vs seed 2 on the tasks scored in both seeds (seed 2 incomplete):", ""]
+    for m in ("base", "term", "merged"):
+        by = {}
+        for r in per_task(m, "tb2"):
+            by.setdefault(r["task"], {})[r["run"]] = float(r["score"])
+        both = [v for v in by.values() if "seed1" in v and "seed2" in v]
+        if len(both) >= 20:
+            s1, s2 = (100 * sum(v[k] for v in both) / len(both) for k in ("seed1", "seed2"))
+            flip = sum(v["seed1"] != v["seed2"] for v in both)
+            L.append(f"- {m}: {len(both)} tasks, seed 1 {s1:.1f}%, seed 2 {s2:.1f}%; outcome differs between seeds on {flip} tasks.")
+    L.append("")
 
     L += ["**Run outcomes and failure rate** (every finished trial / question / instance; failures stay in the",
           "denominator and score 0). Failure rate = share not `ok`.", "",
