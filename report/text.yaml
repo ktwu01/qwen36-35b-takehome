@@ -10,7 +10,7 @@ process_zh: >-
   lambda 1.0）；对照为专家数量（2 vs 3）与训练强度（60%/66% 检查点）。四项评测在相同 FP8 权重与 KV、
   256K 上下文、temperature 1.0 下进行，环境为 apptainer（oracle 校验：SWE-Pro 50/51，TB2 59/89，全部任务均计入分母）。
 notes_zh: >-
-  \textbf{说明}（初步结果，评测仍在运行）：ASI-Bench 智能体实际以 mini-swe-agent 工具调用模式运行，Base 用原生工具调用，
+  \textbf{说明}（评测于 2026-10-19 20:20 CDT 停止；TB2 第 2、3 号种子未完成，计数见上）：ASI-Bench 智能体实际以 mini-swe-agent 工具调用模式运行，Base 用原生工具调用，
   sci 与合版按提示输出文本 bash 块而被拒（合版 240 次中 206 次 RepeatedFormatError），故 ASI 退化主要反映协议不匹配；
   SWE-Pro 的格式错误来自 vLLM qwen3 推理解析器把无 think 结束标记的回复整体归入 reasoning\_content。
   HLE 中因 OpenAI 429 未判分的答案（sci 71、合版 139）已用同一判分器重判。逐题结果、41 个失败案例、
