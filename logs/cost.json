@@ -10,7 +10,7 @@
   "serve-slot8": 24.0,
   "serve-dev-windows-x7": 42.0
  },
- "seismic_eval_gpu_hours": 106.1,
+ "seismic_eval_gpu_hours": 108.7,
  "cloud_rental_usd": 0,
  "jobs": [
   {
@@ -141,7 +141,7 @@
    "model": "merged",
    "pid": 397587,
    "start": "2026-10-18T08:16:45",
-   "end": "2026-10-19T17:43:53",
+   "end": "2026-10-19T20:16:54",
    "log": "logs/vllm_merged_seismic17.log"
   },
   {
@@ -172,5 +172,5 @@
    "log": "logs/vllm_term_seismic15.log"
   }
  ],
- "summary_zh": "HPC 估计共 181.8 SU（the project allocation；A100 GPU 时 139.5），评测在 seismic 工作站约 106.1 GPU 时；无云租用费用。"
+ "summary_zh": "HPC 估计共 181.8 SU（the project allocation；A100 GPU 时 139.5），评测在 seismic 工作站约 108.7 GPU 时；无云租用费用。"
 }

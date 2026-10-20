@@ -41,7 +41,7 @@
   "model": "merged",
   "pid": 397587,
   "start": "2026-10-18T08:16:45",
-  "end": "2026-10-19T17:43:53",
+  "end": "2026-10-19T20:16:54",
   "log": "logs/vllm_merged_seismic17.log"
  },
  {

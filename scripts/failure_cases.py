@@ -1,6 +1,6 @@
 """Collect evidence for the merged model's failures (input to analysis/failures.md).
 
-    python scripts/failure_cases.py --base /var/tmp/$USER --n 40
+    python scripts/failure_cases.py --base /var/tmp/$USER --n 40     # --n 0: every failed task
 
 For each benchmark, every failed task of the merged model gets: exception / exit status, the last
 agent turns (truncated), patch size (SWE-Pro), verifier tail, and whether base or the matching expert
@@ -88,10 +88,14 @@ def asi_evidence(base, task):
             "first_failed_gate": (gate or {}).get("message") or str((gate or {}).get("details"))[:300] if gate else None}
 
 
+_HLE = {}
+
+
 def hle_evidence(results_root, task):
     d = Path(results_root) / "merged" / "hle" / "merged" / "run1"
-    p = next((x for x in map(json.loads, open(d / "predictions.jsonl")) if x["id"] == task), {})
-    j = next((x for x in map(json.loads, open(d / "judged.jsonl")) if x["id"] == task), {})
+    if d not in _HLE:  # read once: {id: record} for predictions and judgments
+        _HLE[d] = tuple({x["id"]: x for x in map(json.loads, open(d / f))} for f in ("predictions.jsonl", "judged.jsonl"))
+    p, j = (m.get(task, {}) for m in _HLE[d])
     return {"finish_reason": p.get("finish_reason"), "output_tokens": (p.get("usage") or {}).get("completion_tokens"),
             "has_image": p.get("has_image"), "model_answer": j.get("model_answer"),
             "judge_reasoning": (j.get("reasoning") or j.get("judge_error") or "")[:400]}
@@ -122,7 +126,7 @@ def main():
                 pass
         fails = [r for r in merged if r["score"] < 1.0]
         rng.shuffle(fails)
-        for r in fails[: a.n]:
+        for r in (fails if a.n == 0 else fails[: a.n]):
             ev = {"benchmark": bench, "task": r["task"], "run": r.get("run"), "status": r["status"],
                   "merge_regression": r["task"] in ref}
             if bench == "tb2":

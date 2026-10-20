@@ -1,12 +1,15 @@
 # Failure analysis of the merged model
 
-Status: preliminary (runs in progress at 2026-10-19 17:50 CDT; Terminal-Bench seed 2 and 3 are partial).
+Status: final data (runners stopped 2026-10-19 20:20 CDT). Terminal-Bench has one complete seed per model;
+seeds 2-3 are incomplete (base s2 83/89, s3 41/89; merged s2 88/89, s3 12/89; term s2 4/89 tasks scored).
 Evidence: `analysis/failure_evidence.jsonl` (built by `scripts/failure_cases.py` from the raw runs:
 exception, agent exit status, last agent turns, patch size, verifier tail for TB2 and SWE-Pro; score,
 agent exit status and assistant turns for ASI-Bench; finish reason, output tokens and the judge's
 extracted answer for HLE; for every case whether base or the matching expert solved the same task).
-Cases are sampled uniformly at random (seed 0, 40 per benchmark) from the merged model's failed tasks;
-41 of them are attributed below, each to one primary category, by reading its evidence. Aggregate
+The cases below were sampled uniformly at random (seed 0, 40 per benchmark) from the merged model's
+failed tasks as of 17:50 CDT (`--n 40`); 41 of them are attributed, each to one primary category, by
+reading its evidence. The committed evidence file now holds every failed task of the merged model
+(`--n 0`, 2,750 records), so each case below can be looked up there by benchmark, task and run. Aggregate
 numbers in "Patterns" are over all tasks, not only the sample.
 
 ## Categories
@@ -108,9 +111,11 @@ over all 2,500 questions, merged lost 113 base-correct questions and gained 140.
    Serving and agent config were frozen and identical for all models. Merged: 0/51 resolved; agent
    exits Submitted 23, time budget 21, RepeatedFormatError 7; 7 empty patches. Base resolves 3
    (2 ansible, 1 teleport); merged loses all 3 (cases 19, 21, 22).
-3. **TB2: fewer timeouts, more early "task complete".** Seed 1: merged 11/89, base 17/89, term 8/89.
-   AgentTimeoutError in seed 1: base 25, term 21, merged 12. The merged model ends trials sooner, and
-   in the sample 6 of 15 TB2 failures are a declared completion with the requirement unmet (cases 4, 5,
+3. **TB2: early "task complete".** Seed 1: merged 11/89, base 17/89, term 8/89. AgentTimeoutError in
+   seed 1: base 25, term 21, merged 12; in the incomplete seed 2: base 17 of 83, merged 16 of 88, so
+   fewer timeouts for the merged model is not stable across seeds. Mean trial time is shorter for the
+   merged model (README section 6), and in the sample 6 of 15 TB2 failures are a declared completion
+   with the requirement unmet (cases 4, 5,
    7, 8, 11, 12). Merged loses 10 base-solved seed-1 tasks and solves 3 that neither base nor term
    solved (constraints-scheduling, log-summary-date-ranges, portfolio-optimization).
 4. **Environment failures are a small, model-independent share.** Merged TB2 env errors over seeds 1-2:
