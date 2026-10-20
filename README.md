@@ -257,11 +257,15 @@ Terminal-Bench model-card setting). Max tokens: TB2 80K (81,920); HLE 32,768; ag
     4 disjoint task parts on 3 HPC A100s and seismic18 (`SBP_SHARD`, commit 3ab96db), same agent
     config and budget.
   - Terminal-Bench: base seed 1 on seismic18 and a HPC A100 slot; base seed 2 on seismic18, HPC dev windows
-    and, for its last 15 tasks, seismic15; base seed 3 split between seismic15 and dev windows. Merged seed 1
+    and, for its last 15 tasks, seismic15 (6) and HPC slot 6 (9, part 11); base seed 3 split between seismic15 and dev windows. Merged seed 1
     on seismic17 and dev windows, except 2 trials (caffe-cifar-10, feal-differential-cryptanalysis,
     3 h budget) moved to the A100-small slot because a dev window (~1 h 45 min of serving) cut them every
     time; merged seeds 2 and 3 in disjoint shards on seismic17 and seismic18. Re-splitting a stalled
     shard cancelled its in-flight trials (unscored, re-run).
+  - The runners were stopped at 20:16 CDT on 2026-10-19 (end of the evaluation window). Trials still
+    running were cancelled and are unscored: base seed 2 polyglot-rust-c, regex-chess,
+    schemelike-metacircular-eval, tune-mjcf, winning-avg-corewars, write-compressor (83/89 scored);
+    merged seed 2 winning-avg-corewars (88/89 scored). Seed 3 is partial for base (41/89) and merged (12/89).
   - term expert seed 2 was stopped at 4/89 finished on 2026-10-19 15:19 when seismic15 was reassigned to
     base seed 2, so term has one complete seed.
 - **Terminal-Bench seeds < 5.** No model has 5 complete seeds (section 6 lists complete and partial
