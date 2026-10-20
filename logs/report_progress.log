@@ -5,3 +5,6 @@
 2026-10-19 17:55 CDT phase A step 5 done (report.pdf 1 page), commit 4215298
 2026-10-19 17:57 CDT phase A step 6 done (HF cards + revisions), commit 9751fa5
 2026-10-19 17:58 CDT phase A complete (also README s3 training resources 2ea45f5); waiting for RUNNERS STOPPED for phase B
+2026-10-19 20:35 CDT phase B step 1 + failures.md refresh, commit 8b493dd
+2026-10-19 20:35 CDT phase B README s6 refresh, commit 9ac38f9
+2026-10-19 20:36 CDT phase B done (results, README s5/s6, failures.md, report.pdf, HF cards refreshed on final data). DONE final commit 82b251d
