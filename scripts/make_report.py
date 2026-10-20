@@ -70,6 +70,8 @@ def main():
 
     header = " & ".join(rf"\shortstack{{{n}\\\scriptsize {SCOPE[m]}}}" if m in SCOPE else n for m, n in MODELS)
     mac = platform.system() == "Darwin"
+    hf = json.loads(Path("models/hf_index.json").read_text())  # published repos and revisions
+    hf_links = r" \\ ".join(f"{k}: https://huggingface.co/{v['repo']} (revision {v['revision'][:7]})" for k, v in hf.items())
     CJK = "Hiragino Sans GB" if mac else "Noto Sans CJK SC"  # CJK font also covers Latin
     body = rf"""\documentclass[9pt]{{extarticle}}
 \usepackage[a4paper,margin=1.3cm]{{geometry}}
@@ -80,7 +82,8 @@ def main():
 \pagestyle{{empty}}\setlength{{\parskip}}{{3pt}}\setlength{{\parindent}}{{0pt}}
 \begin{{document}}
 {{\large\bfseries Qwen3.5-9B 多专家训练与模型合版实验}}\\[2pt]
-{{\small github.com/ktwu01/qwen36-35b-takehome \quad 模型: huggingface.co/ktwu01}}
+{{\small 代码: https://github.com/ktwu01/qwen36-35b-takehome}}\\
+{{\footnotesize {hf_links}}}
 
 \textbf{{摘要}}\quad {text['abstract_zh']}
 
