@@ -362,6 +362,12 @@ estimate because sacct cannot be fetched from seismic (`logs/hpc_sacct.txt` stat
 API cost: HLE judge o3-mini and ASI-Bench judge gpt-5.5 calls on the OpenAI API (usage not logged per call).
 <!-- results:end -->
 
+Active working time: about 3 hours of the candidate's own hands-on time (design decisions, reviews,
+account and allocation setup, approvals). Implementation, training, merging, evaluation operation and the
+write-up were carried out by Claude Code agent sessions under the candidate's direction, from
+2026-10-17 21:33 to 2026-10-19 20:36 CDT (first to last repository commit); their instructions and
+decision log are in `logs/handoff_progress.log` and `logs/report_progress.log`.
+
 **Reading the results.** The merged model is below base on the macro average, with a 95% CI that
 excludes 0, so the +3 pp target is not met. Per benchmark: SWE-Pro and Terminal-Bench regress (base
 solves 3 SWE-Pro tasks the merged model does not; on Terminal-Bench seed 1 the merged model loses 10
