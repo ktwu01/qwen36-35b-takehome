@@ -422,3 +422,39 @@ python scripts/summarize.py --base /var/tmp/$USER
 - HPC SU usage is an estimate (sacct not reachable from the eval hosts); seismic GPU-hours are
   wall-clock serving time, not utilization.
 - ASI-Bench runs at a 1,800 s budget (asibench default 10,800 s); about half of base's instances reach it.
+
+## 9. Logs
+
+Index of every log (location, format, how to view): [logs/README.md](logs/README.md). Raw per-trial
+records of all agent evaluations (trajectories, `result.json`, verifier output, patches; 79 MB compressed)
+are the asset `eval_raw_trials.tar.gz` of release
+[`eval-raw-v1`](https://github.com/ktwu01/qwen36-35b-takehome/releases/tag/eval-raw-v1) (sha256 in
+`logs/eval_raw_trials.tar.gz.sha256`); `scripts/summarize.py --base <extracted dir>` regenerates the tables.
+
+## 10. References (links checked 2026-10-19)
+
+Models and training
+- Qwen3.6-35B-A3B model card (exam base), https://huggingface.co/Qwen/Qwen3.6-35B-A3B, revision `995ad96`.
+- Qwen3.5-9B model card (base used), https://huggingface.co/Qwen/Qwen3.5-9B, revision `c202236`.
+- Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs", 2023, https://arxiv.org/abs/2305.14314.
+- Hugging Face PEFT documentation, https://huggingface.co/docs/peft (accessed 2026-10).
+- Hugging Face TRL documentation, https://huggingface.co/docs/trl (accessed 2026-10).
+
+Model merging
+- Ilharco et al., "Editing Models with Task Arithmetic", 2022, https://arxiv.org/abs/2212.04089.
+- Yadav et al., "TIES-Merging: Resolving Interference When Merging Models", 2023, https://arxiv.org/abs/2306.01708.
+- Yu et al., "Language Models are Super Mario: Absorbing Abilities from Homologous Models as a Free Lunch" (DARE), 2023, https://arxiv.org/abs/2311.03099.
+- Yang et al., "Model Merging in LLMs, MLLMs, and Beyond: Methods, Theories, Applications and Opportunities", 2024, https://arxiv.org/abs/2408.07666.
+
+Training data (section 3, data/README.md)
+- `Kwai-Klear/SWE-smith-mini_swe_agent_plus-trajectories-66k` (MIT), https://huggingface.co/datasets/Kwai-Klear/SWE-smith-mini_swe_agent_plus-trajectories-66k.
+- `open-thoughts/OpenThoughts-Agent-v1-SFT` (Apache-2.0), https://huggingface.co/datasets/open-thoughts/OpenThoughts-Agent-v1-SFT.
+- `nvidia/OpenScienceReasoning-2` (CC-BY-4.0), https://huggingface.co/datasets/nvidia/OpenScienceReasoning-2.
+
+Benchmarks and harnesses (versions as locked in `configs/eval/*.lock.json`)
+- SWE-bench Pro: https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro (config `hard`, revision `2d52cb3`); evaluator https://github.com/scaleapi/SWE-bench_Pro-os at `66f9276` (v2.0.0).
+- Terminal-Bench 2.0: https://github.com/harbor-framework/terminal-bench (dataset `terminal-bench@2.0`); Harbor 0.24.0, https://github.com/harbor-framework/harbor.
+- Humanity's Last Exam: https://huggingface.co/datasets/cais/hle (test, revision `5a81a4c`); prompts and judge protocol https://github.com/centerforaisafety/hle at `22ed307`.
+- ASI-Bench: https://github.com/apexin-ai/ASI-Bench at `684ac2c`, `asibench==0.2.0`; instances https://huggingface.co/datasets/Apexintelligence-AI/ASI-Bench-seed31415 (revision `0fa1421`).
+- mini-swe-agent 2.4.6, https://github.com/SWE-agent/mini-swe-agent.
+- vLLM 0.31.0, https://github.com/vllm-project/vllm.
