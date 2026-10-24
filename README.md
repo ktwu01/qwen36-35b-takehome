@@ -399,7 +399,8 @@ for e in swe term; do PYTHONPATH=src python -m takehome.build_data --expert $e -
 PYTHONPATH=src python -m takehome.build_data --expert sci --n-train 4000
 PYTHONPATH=src python -m takehome.build_data --expert union
 # 2. train (HPC) and merge-ablate on dev sets
-sbatch scripts/hpc_train_experts.slurm; sbatch scripts/hpc_merge_ablation.slurm; sbatch scripts/hpc_train_union.slurm
+sbatch scripts/hpc_train_experts.slurm; sbatch scripts/hpc_merge_ablation.slurm
+PYTHONPATH=src python -m takehome.sft --expert union --data data/processed/union --out outputs/union  # union control, one GPU
 # 3. evaluate a served model (repeat per model)
 bash scripts/serve.sh <path> <name> 18000
 python scripts/run_tb2.py --name <name> --seeds 1 2 3 4 5

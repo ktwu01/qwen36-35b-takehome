@@ -2,6 +2,9 @@
 # Control: one LoRA on the union of the three expert datasets (same LoRA config and data, one
 # adapter), DDP on the 3 A100s of a gpu-a100-dev node: per-device batch 1 x grad-accum 5 x 3 GPUs
 # = global batch 15 (experts: 16). 2 h jobs, chained; resumes from the last checkpoint.
+# NOT what produced the reported union adapter: this DDP run failed at the first step
+# (DistributedDataParallel hides get_base_model). The reported run is single-GPU, batch 1 x 16:
+#   PYTHONPATH=src python -m takehome.sft --expert union --data data/processed/union --out outputs/union
 # (gpu-a100-small VMs mask x86-64-v2 CPU flags, which numpy 2.x requires.) Allocation: the project allocation.
 #   sbatch scripts/hpc_train_union.slurm            (from $SCRATCH/qwen36/repo)
 #SBATCH -J qwen36-union
