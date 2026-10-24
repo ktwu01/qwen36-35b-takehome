@@ -12,7 +12,7 @@ import csv
 import json
 from pathlib import Path
 
-for e in ("swe", "term", "sci"):
+for e in ("swe", "term", "sci", "union"):
     rows = [json.loads(l) for l in open(f"logs/train-{e}/metrics.jsonl")]
     sessions, prev = [], None
     for r in rows:

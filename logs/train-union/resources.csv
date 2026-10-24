@@ -1,0 +1,2 @@
+expert,gpu,n_gpu,sessions,wall_h,gpu_hours,steps,peak_mem_gb,train_tokens,tokens_per_s,adapter_mb
+union,NVIDIA RTX PRO 4000 Blackwell,1,1,20.49,20.49,478,19.08,54135832,734.0,325.1
