@@ -1,18 +1,18 @@
 \documentclass[9pt]{extarticle}
 \usepackage[a4paper,margin=1.3cm]{geometry}
 \usepackage{fontspec,booktabs,array}
-\setmainfont{Hiragino Sans GB}
+\setmainfont{Noto Sans CJK SC}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 \pagestyle{empty}\setlength{\parskip}{9pt}\setlength{\parindent}{0pt}
 \begin{document}
 {\large\bfseries Qwen3.5-9B 多专家训练与模型合版实验}\\[2pt]
 {\small 代码: https://github.com/ktwu01/qwen36-35b-takehome}\\
-{\footnotesize expert-swe: https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe (revision 6e499da) \\ expert-term: https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term (revision 3cde28a) \\ expert-sci: https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci (revision cd65629) \\ merged: https://huggingface.co/ktwu01/qwen35-9b-takehome-merged (revision e1f112a)}
+{\footnotesize expert-swe: https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-swe (revision 6e499da) \\ expert-term: https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term (revision 3cde28a) \\ expert-sci: https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci (revision cd65629) \\ merged: https://huggingface.co/ktwu01/qwen35-9b-takehome-merged (revision e1f112a) \\ union-control: https://huggingface.co/ktwu01/qwen35-9b-takehome-union-control (revision 2b9606c)}
 
 \textbf{摘要}\quad 本实验以 Qwen3.5-9B 为基座（算力不足，按题目降至七十亿级），按评测协议训练软件修复、终端操作与科学推理三个 QLoRA 专家，在独立开发集上消融后选定 TIES 合版，并在四项基准上比较基座、专家与合版模型。合版宏平均较基座下降约四个百分点，置信区间不含零，未达提升三个百分点的目标：HLE 小幅提升，其余三项退化。误差分析显示，退化主要来自智能体动作格式与评测框架不匹配，其次是过早宣布完成与超时。
 
-\textbf{过程}\quad 因 24 GB 单卡与 超算 队列限制，按题目允许降至同系列 7B 级基座 Qwen3.5-9B（与 Qwen3.6 同为 Gated DeltaNet 混合注意力、262K 上下文、多模态）。按评测协议划分三个专家：swe（mini-swe-agent 文本动作轨迹，2,000 条，MIT）、term（Terminus-2 轨迹，2,000 条，Apache-2.0）、sci（科学推理，4,000 条，CC-BY-4.0），经长度过滤、去重、MinHash 近重复、对四项 benchmark 的 13-gram 去污染与难度分层。 三专家在 超算 A100 上以相同 QLoRA 配置（r=32，lr 1e-4，16K 上下文，1 epoch，种子 20261018）训练。 合版在独立开发集上比较任务算术、TIES、DARE-TIES 共 7 个配置，按预先固定的规则选出 TIES（密度 0.5， lambda 1.0）；对照为专家数量（2 vs 3）与训练强度（60\%/66\% 检查点）。四项评测在相同 FP8 权重与 KV、 256K 上下文、temperature 1.0 下进行，环境为 apptainer（oracle 校验：SWE-Pro 50/51，TB2 59/89，全部任务均计入分母）。
+\textbf{过程}\quad 因 24 GB 单卡与 超算 队列限制，按题目允许降至同系列 7B 级基座 Qwen3.5-9B（与 Qwen3.6 同为 Gated DeltaNet 混合注意力、262K 上下文、多模态）。按评测协议划分三个专家：swe（mini-swe-agent 文本动作轨迹，2,000 条，MIT）、term（Terminus-2 轨迹，2,000 条，Apache-2.0）、sci（科学推理，4,000 条，CC-BY-4.0），经长度过滤、去重、MinHash 近重复、对四项 benchmark 的 13-gram 去污染与难度分层。 三专家在 超算 A100 上以相同 QLoRA 配置（r=32，lr 1e-4，16K 上下文，1 epoch，种子 20261018）训练。 合版在独立开发集上比较任务算术、TIES、DARE-TIES 共 7 个配置，按预先固定的规则选出 TIES（密度 0.5， lambda 1.0）；对照为专家数量（2 vs 3）、训练强度（60\%/66\% 检查点）与三份数据并集上的单个 LoRA（同配置，单卡批量 16）：并集模型开发集平均损失 0.314，低于合版 0.328，三个领域均更低，接近各专家本领域损失；该对照未在四项基准上评测。四项评测在相同 FP8 权重与 KV、 256K 上下文、temperature 1.0 下进行，环境为 apptainer（oracle 校验：SWE-Pro 50/51，TB2 59/89，全部任务均计入分母）。
 
 \textbf{结果}\quad 主指标为百分制；TB2 为种子均值$\pm$标准差；最后一列为合版相对 Base 的配对 bootstrap 差值（百分点，95\% CI）。专家只评测其目标 benchmark（--）。
 
