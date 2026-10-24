@@ -134,6 +134,7 @@ dev loss among 3-expert merges. Per-module sign-conflict rates and pairwise task
 | TIES d 0.5 lam 0.7 | 0.2207 | 0.1987 | 0.5758 | 0.3317 |
 | TIES d 0.2 lam 1.0 | 0.2214 | 0.1894 | 0.5778 | 0.3295 |
 | **TIES d 0.5 lam 1.0 (selected, `configs/merge_final.json`)** | 0.2203 | 0.1873 | 0.5759 | **0.3278** |
+| union control (one adapter on all three sets; not a merge, see Controls) | 0.2091 | 0.1716 | 0.5607 | 0.3138 |
 
 What the merge does on dev: it keeps 85% (swe), 88% (term) and 78% (sci) of each expert's own-domain
 loss reduction relative to base, inside one model. The task vectors are nearly orthogonal (mean cosine
@@ -153,9 +154,17 @@ TIES' magnitude trim at the same density.
   vs 0.1706 (still improving); swe expert at 66% (checkpoint 75) vs final: swe 0.2094 vs 0.2083 (nearly
   converged). The planned swe checkpoint 50 had been rotated out by `save_total_limit`, so checkpoint 75
   was used.
-- **Union of the data in one adapter** (planned "merge vs single model"): attempted as a 3-GPU DDP run,
-  failed at the first step (`DistributedDataParallel` hides `get_base_model`, used by the chunked loss;
-  `logs/train-union/`), and was dropped for time. Not reported as a result.
+- **Union of the data in one adapter** (merge vs single model, dev loss): one LoRA trained on all 8,000
+  examples with the experts' configuration, batch 1 x 16, one epoch, same seed (section 3; trained on one
+  RTX PRO 4000 after a first 3-GPU DDP attempt failed at step 1 because `DistributedDataParallel` hides
+  `get_base_model`, `logs/train-union/train.log`). Merged into the base with `takehome.merge --method single`
+  and scored by `takehome.dev_loss` on the same dev examples (on the RTX PRO 4000; the experts and merges
+  were scored on an A100): swe 0.2091, term 0.1716, sci 0.5607, mean 0.3138, vs the selected TIES merge
+  0.2203, 0.1873, 0.5759, mean 0.3278, and the experts in their own domain 0.2083, 0.1706, 0.5619. The
+  union adapter keeps 99% (swe), 99% (term) and 102% (sci) of each expert's own-domain loss reduction
+  relative to base, against 85%, 88% and 78% for the merge (`results/dev/union.json`). On dev loss, then,
+  the merge does not beat one adapter trained on the union of the data: it is worse on all three domains,
+  by 0.011-0.016. This is dev loss only; the union adapter was not run on the four benchmarks.
 
 ## 5. Benchmarks (locked before training)
 
