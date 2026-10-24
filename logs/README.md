@@ -8,6 +8,7 @@ All paths are relative to the repository root. Text logs are plain UTF-8 (`less`
 | File | Format | Content |
 |---|---|---|
 | `train.log` | text | trainer stdout/stderr of every session (resumed jobs appended) |
+| `train_seismic18.log` | text | union only: the reported single-GPU run (its `train.log` is the failed 3-GPU DDP attempt) |
 | `metrics.jsonl` | JSON lines | per-step train loss, learning rate, grad norm, elapsed time, peak GPU memory; `eval_loss` rows = dev loss (source of `curves/`) |
 | `resources.csv` | CSV | per session: GPU model, wall time, peak memory, tokens, tokens/s, adapter size (README section 3) |
 | `run_meta.json` | JSON | resolved training config snapshot (incl. seed), host, selected checkpoint |
