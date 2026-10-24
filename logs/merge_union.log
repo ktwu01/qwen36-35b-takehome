@@ -1,0 +1,6 @@
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]Fetching 16 files:   6%|▋         | 1/16 [00:01<00:20,  1.36s/it]Fetching 16 files:  44%|████▍     | 7/16 [00:01<00:01,  5.03it/s]Fetching 16 files:  75%|███████▌  | 12/16 [00:01<00:00,  8.28it/s]Fetching 16 files: 100%|██████████| 16/16 [00:02<00:00,  7.72it/s]
+model.safetensors-00001-of-00004.safetensors: 14 tensors
+model.safetensors-00002-of-00004.safetensors: 53 tensors
+model.safetensors-00003-of-00004.safetensors: 63 tensors
+model.safetensors-00004-of-00004.safetensors: 645 tensors
+{"method": "single", "experts": ["outputs/union"], "weights": [1.0], "lam": 1.0, "density": 0.5, "layers": "all", "seed": 20261018, "base": "Qwen/Qwen3.5-9B", "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a", "modules_merged": 200}
