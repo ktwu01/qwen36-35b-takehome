@@ -22,5 +22,11 @@
   "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-merged",
   "revision": "e1f112a11ffb987084e87cf6cd1d47a2b93e7520",
   "kind": "merged"
+ },
+ "union-control": {
+  "repo": "ktwu01/qwen35-9b-takehome-union-control",
+  "url": "https://huggingface.co/ktwu01/qwen35-9b-takehome-union-control",
+  "revision": "2b9606c29428cced9cf3f6cd6419d46115ef9f7a",
+  "kind": "adapter"
  }
 }

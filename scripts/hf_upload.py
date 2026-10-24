@@ -63,7 +63,7 @@ Code, configs, logs and the full protocol: https://github.com/ktwu01/qwen36-35b-
 
 QLoRA (nf4 base, bf16 compute), r=32, alpha=64, dropout 0, targets: full-attention q/k/v/o_proj,
 Gated DeltaNet in_proj_qkv/in_proj_z/out_proj, MLP gate/up/down_proj (language model only), lr 1e-4
-cosine, 3% warmup, global batch 16 (union: 15), 16,384-token context, 1 epoch, assistant-only loss,
+cosine, 3% warmup, global batch 16, 16,384-token context, 1 epoch, assistant-only loss,
 seed 20261018.
 
 ## Data

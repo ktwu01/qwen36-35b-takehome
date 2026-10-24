@@ -8,6 +8,7 @@ All checkpoints are public on Hugging Face (Apache-2.0). Base: [`Qwen/Qwen3.5-9B
 | Terminal expert (target: Terminal-Bench 2.0) | adapter | [ktwu01/qwen35-9b-takehome-expert-term](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-term) | `3cde28a537c70f9f26a7fe3f0fbc89f946a67f30` |
 | Science expert (targets: HLE, ASI-Bench) | adapter | [ktwu01/qwen35-9b-takehome-expert-sci](https://huggingface.co/ktwu01/qwen35-9b-takehome-expert-sci) | `cd65629977f9dd36db71a955c6c45d8ed82459dd` |
 | Final merged model (all four benchmarks) | merged | [ktwu01/qwen35-9b-takehome-merged](https://huggingface.co/ktwu01/qwen35-9b-takehome-merged) | `e1f112a11ffb987084e87cf6cd1d47a2b93e7520` |
+| Control: one adapter on the union of the three datasets | adapter | [ktwu01/qwen35-9b-takehome-union-control](https://huggingface.co/ktwu01/qwen35-9b-takehome-union-control) | `2b9606c29428cced9cf3f6cd6419d46115ef9f7a` |
 
 ## Loading
 
