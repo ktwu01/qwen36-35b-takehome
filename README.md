@@ -68,7 +68,7 @@ Thinking mode: on (model default) for every model and benchmark.
 
 Data construction, cleaning, dedup, difficulty tiers and decontamination: [data/README.md](data/README.md).
 
-All experts share one configuration (`configs/experiment.yaml`), seed `20261018`:
+All experts and the union control share one configuration (`configs/experiment.yaml`), seed `20261018`:
 
 | Setting | Value |
 |---|---|
@@ -77,7 +77,7 @@ All experts share one configuration (`configs/experiment.yaml`), seed `20261018`
 | Target modules | language model only: full-attention `q/k/v/o_proj` (8 layers), Gated DeltaNet `in_proj_qkv`, `in_proj_z`, `out_proj` (24 layers), MLP `gate/up/down_proj` (32 layers); vision tower frozen |
 | Rank / alpha / dropout | 32 / 64 / 0.0 (80.2M trainable params, 0.89%) |
 | LR / schedule | 1e-4, cosine, 3% warmup |
-| Batch | 1 x grad-accum 16 = 16 sequences (union: 3 GPUs x 1 x 5 = 15) |
+| Batch | 1 x grad-accum 16 = 16 sequences (union control included) |
 | Context | 16,384 tokens; longer examples dropped |
 | Loss | assistant tokens only (chat-template spans), token-level mean over the accumulated batch |
 | Epochs | 1 |
@@ -85,13 +85,19 @@ All experts share one configuration (`configs/experiment.yaml`), seed `20261018`
 
 Hardware, time, throughput, memory and adapter size per expert (`scripts/train_resources.py` ->
 `logs/train-<expert>/resources.csv`; each expert on one A100-PCIE-40GB of a `gpu-a100-dev` node, the three
-in parallel, resumed once across 2 h jobs; wall time includes periodic dev evaluation):
+in parallel, resumed once across 2 h jobs; wall time includes periodic dev evaluation). The union control
+was trained after the experts, not on the HPC A100s: one uninterrupted run on a single RTX PRO 4000
+Blackwell 24 GB workstation GPU, same configuration, data, seed and pinned packages (`requirements.lock`),
+batch 1 x 16, one epoch (`logs/train-union/train_seismic18.log`). Its 478 steps and token count equal the
+three experts combined (114 + 125 + 240 = 479 steps; the one-step difference is each expert rounding up
+its own last partial batch); its lower tokens/s reflects the slower GPU:
 
-| Expert | Steps (x16 seq) | Sessions | Wall h = GPU h | Peak memory GB | Train tokens | Tokens/s | Adapter MB |
+| Run | Steps (x16 seq) | Sessions | Wall h = GPU h | Peak memory GB | Train tokens | Tokens/s | Adapter MB |
 |---|---|---|---|---|---|---|---|
 | swe | 114 | 2 | 3.78 | 19.0 | 21,170,346 | 1554.2 | 325.1 |
 | term | 125 | 2 | 2.8 | 18.9 | 15,182,405 | 1506.9 | 325.1 |
 | sci | 240 | 2 | 3.23 | 19.0 | 17,783,081 | 1528.7 | 325.1 |
+| union (RTX PRO 4000) | 478 | 1 | 20.49 | 19.1 | 54,135,832 | 734.0 | 325.1 |
 
 Checkpoints: every 25 steps (last 3 kept, for resume); the adapter shipped is the end-of-epoch one.
 
