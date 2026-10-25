@@ -17,7 +17,8 @@ from pathlib import Path
 BENCH = [("swe_pro", "SWE-bench Pro v2-hard (HARD-51)"), ("tb2", "Terminal-Bench 2.0 (89 tasks)"),
          ("hle", "HLE (2,500)"), ("asi", "ASI-Bench (59 x 4 = 236)")]
 MODELS = ["base", "swe", "term", "sci", "merged"]
-GROUP = {"base": "base", "merged": "merged"}
+GROUP = {"base": "base", "merged": "merged", "union": "controls"}
+CONTROLS = ["union"]
 STATUSES = ["ok", "agent_timeout", "llm_call_timeout", "env_error", "no_result"]
 
 
@@ -85,9 +86,19 @@ def main():
           "scored 0 (the all-instances mean below), so it can differ slightly from the difference of the official means.",
           "The macro CI resamples tasks within each benchmark jointly. The exam's target is +3 pp (excellent +5 pp).", ""]
 
+    u, ub = met.get("union/tb2"), unc.get("paired_bootstrap_union_tb2", {})
+    if u:
+        def ci(d):
+            return f"{d['diff_pp']:+.2f} [{d['ci95'][0]:+.2f}, {d['ci95'][1]:+.2f}] (n={d['n_tasks']})" if d else ""
+        L += ["**Control: union adapter** (one LoRA on all three training sets, section 4; not a merge), Terminal-Bench",
+              "seed 1 only, same serving and harness; paired bootstrap against seed 1 of base and merged:", "",
+              "| Model | Terminal-Bench 2.0 (89 tasks) | Union - Base, pp (95% CI) | Union - Merged, pp (95% CI) |",
+              "|---|---|---|---|",
+              f"| union (control) | {cell(u, 'tb2')} | {ci(ub.get('union_minus_base'))} | {ci(ub.get('union_minus_merged'))} |", ""]
+
     L += ["**Terminal-Bench seeds** (success rate, percent; incomplete seeds: tasks scored when the runners stopped, success on those):", "",
           "| Model | Complete seeds | Incomplete seeds |", "|---|---|---|"]
-    for m in ("base", "term", "merged"):
+    for m in ("base", "term", "merged", "union"):
         t = met.get(f"{m}/tb2")
         if not t:
             continue
@@ -113,7 +124,7 @@ def main():
           "denominator and score 0). Failure rate = share not `ok`.", "",
           "| Model | Benchmark | n | ok | agent_timeout | llm_call_timeout | env_error | no_result | failure rate |",
           "|---|---|---|---|---|---|---|---|---|"]
-    for m in MODELS:
+    for m in MODELS + CONTROLS:
         for b, _ in BENCH:
             t = met.get(f"{m}/{b}")
             if not t:
@@ -144,7 +155,7 @@ def main():
 
     L += ["**Time and cost per task** (mean wall time; tokens are model tokens served by our vLLM, no API cost):", "",
           "| Model | Benchmark | mean time | mean output tokens |", "|---|---|---|---|"]
-    for m in MODELS:
+    for m in MODELS + CONTROLS:
         for b, _ in BENCH:
             rows = per_task(m, b)
             if not rows:
@@ -165,7 +176,10 @@ def main():
         L += ["", f"Compute: HPC {'estimated ' if cost.get('hpc_su_is_estimate') else ''}{cost['hpc_su_charged']} SU "
               "(the project allocation; A100 GPU-hours: " + ", ".join(f"{k} {v}" for k, v in cost["hpc_gpu_hours_by_job_kind"].items()) +
               f"), seismic serving "
-              f"{cost['seismic_eval_gpu_hours']} GPU-hours (`logs/eval_lanes.json`), cloud rental 0 USD. The HPC figure is an",
+              f"{cost['seismic_eval_gpu_hours']} GPU-hours (`logs/eval_lanes.json`"
+              + (f"; of which union control Terminal-Bench {cost['seismic_eval_gpu_hours_by_model']['union']}"
+                 if "union" in cost.get("seismic_eval_gpu_hours_by_model", {}) else "") +
+              "), cloud rental 0 USD. The HPC figure is an",
               "estimate because sacct cannot be fetched from seismic (`logs/hpc_sacct.txt` states how it was built).",
               "API cost: HLE judge o3-mini and ASI-Bench judge gpt-5.5 calls on the OpenAI API (usage not logged per call)."]
     readme = Path("README.md").read_text()

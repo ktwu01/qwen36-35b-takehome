@@ -24,7 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from takehome import collect  # noqa: E402
 
-GROUP = {"base": "base", "merged": "merged"}
+GROUP = {"base": "base", "merged": "merged", "union": "controls"}
 TARGETS = {"swe": {"swe_pro"}, "term": {"tb2"}, "sci": {"hle", "asi"}}
 
 
@@ -130,7 +130,7 @@ def main():
         w = csv.writer(f)
         w.writerow(["model", "benchmark", "primary_percent", "seed_std", "n_rows", "failure_counts", "scope"])
         for (model, bench), m in sorted(table.items()):
-            scope = "target" if bench in TARGETS.get(model, set()) else ("all" if model in GROUP else "extra")
+            scope = "control" if model == "union" else "target" if bench in TARGETS.get(model, set()) else ("all" if model in GROUP else "extra")
             w.writerow([model, bench, round(m["primary"], 2) if m["primary"] is not None else "",
                         round(m.get("seed_std", 0), 2), m["n_rows"], json.dumps(m["failure_counts"]), scope])
 
@@ -138,6 +138,11 @@ def main():
     benches = [b for b in ("tb2", "swe_pro", "hle", "asi") if ("base", b) in tasks and ("merged", b) in tasks]
     for bench in benches:
         unc["paired_bootstrap_merged_minus_base"][bench] = paired_bootstrap(tasks[("base", bench)], tasks[("merged", bench)])
+    # union control (one adapter on all three training sets): Terminal-Bench seed 1 only; base and
+    # merged have seed 1 as their only complete seed, so this pairs the same tasks and seed
+    if ("union", "tb2") in tasks:
+        unc["paired_bootstrap_union_tb2"] = {f"union_minus_{m}": paired_bootstrap(tasks[(m, "tb2")], tasks[("union", "tb2")])
+                                             for m in ("base", "merged") if (m, "tb2") in tasks}
     if len(benches) == 4:
         rng = random.Random(1)
         per = {b: (sorted(set(tasks[("base", b)]) & set(tasks[("merged", b)]))) for b in benches}

@@ -45,12 +45,16 @@ def main():
         gpu_h[kind] = gpu_h.get(kind, 0) + h * GPUS.get(part, 0)
         jobs.append({**r, "hours": round(h, 3), "su": round(cost, 2), "gpu_hours": round(h * GPUS.get(part, 0), 2)})
     lanes = json.loads(Path(a.eval_lanes).read_text()) if Path(a.eval_lanes).exists() else []
-    eval_gpu_h = sum((datetime.fromisoformat(l["end"]) - datetime.fromisoformat(l["start"])).total_seconds() / 3600
-                     for l in lanes)
+    by_model = {}
+    for l in lanes:
+        h = (datetime.fromisoformat(l["end"]) - datetime.fromisoformat(l["start"])).total_seconds() / 3600
+        by_model[l["model"]] = by_model.get(l["model"], 0) + h
+    eval_gpu_h = sum(by_model.values())
     estimated = any(j["State"] == "ESTIMATE" for j in jobs)
     out = {"hpc_su_charged": round(su, 1), "hpc_su_is_estimate": estimated, "hpc_allocation": "the project allocation",
            "hpc_gpu_hours_by_job_kind": {k: round(v, 1) for k, v in gpu_h.items()},
-           "seismic_eval_gpu_hours": round(eval_gpu_h, 1), "cloud_rental_usd": 0, "jobs": jobs, "lanes": lanes}
+           "seismic_eval_gpu_hours": round(eval_gpu_h, 1),
+           "seismic_eval_gpu_hours_by_model": {k: round(v, 1) for k, v in by_model.items()}, "cloud_rental_usd": 0, "jobs": jobs, "lanes": lanes}
     out["summary_zh"] = (f"HPC {'估计' if estimated else ''}共 {out['hpc_su_charged']} SU（the project allocation；A100 GPU 时 "
                          f"{round(sum(gpu_h.values()), 1)}），评测在 seismic 工作站约 {out['seismic_eval_gpu_hours']} GPU 时；"
                          "无云租用费用。")
