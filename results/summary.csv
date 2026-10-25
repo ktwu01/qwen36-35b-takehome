@@ -11,3 +11,4 @@ sci,asi,0.48,0,236,"{""ok"": 234, ""no_result"": 2}",target
 sci,hle,7.12,0,2500,"{""no_result"": 584, ""ok"": 1916}",target
 swe,swe_pro,0.0,0,51,"{""ok"": 51}",target
 term,tb2,8.99,0.0,93,"{""ok"": 69, ""agent_timeout"": 21, ""env_error"": 1, ""llm_call_timeout"": 2}",target
+union,tb2,10.11,0.0,89,"{""ok"": 74, ""agent_timeout"": 13, ""env_error"": 2}",control

@@ -177,6 +177,21 @@
    "not_run_count": 0,
    "instance_count": 236,
    "report_mean_percent_incl_extra_task": 0.5642978795402889
+  },
+  "union/tb2": {
+   "n_rows": 89,
+   "failure_counts": {
+    "ok": 74,
+    "agent_timeout": 13,
+    "env_error": 2
+   },
+   "primary": 10.112359550561798,
+   "seed_std": 0.0,
+   "per_seed": {
+    "seed1": 10.112359550561798
+   },
+   "n_complete_seeds": 1,
+   "partial_seeds": {}
   }
  },
  "paired_bootstrap_merged_minus_base": {
@@ -211,6 +226,24 @@
     -3.6898329303046453
    ],
    "n_tasks": 236
+  }
+ },
+ "paired_bootstrap_union_tb2": {
+  "union_minus_base": {
+   "diff_pp": -8.98876404494382,
+   "ci95": [
+    -15.730337078651685,
+    -2.247191011235955
+   ],
+   "n_tasks": 89
+  },
+  "union_minus_merged": {
+   "diff_pp": -2.247191011235955,
+   "ci95": [
+    -8.98876404494382,
+    4.49438202247191
+   ],
+   "n_tasks": 89
   }
  },
  "macro_merged_minus_base": {
