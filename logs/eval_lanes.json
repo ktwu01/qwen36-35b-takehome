@@ -70,5 +70,41 @@
   "start": "2026-10-18T06:33:49",
   "end": "2026-10-19T15:12:58",
   "log": "logs/vllm_term_seismic15.log"
+ },
+ {
+  "host": "seismic15",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "union",
+  "pid": 2296392,
+  "start": "2026-10-24T15:18:44",
+  "end": "2026-10-24T15:20:26",
+  "log": "logs/vllm_union_seismic15.log"
+ },
+ {
+  "host": "seismic15",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "union",
+  "pid": 2303964,
+  "start": "2026-10-24T15:21:20",
+  "end": "2026-10-24T22:15:58",
+  "log": "logs/vllm_union_seismic15.log"
+ },
+ {
+  "host": "seismic17",
+  "gpu": "NVIDIA RTX A4500",
+  "model": "union",
+  "pid": 2070700,
+  "start": "2026-10-24T15:17:04",
+  "end": "2026-10-24T20:25:24",
+  "log": "logs/vllm_union_seismic17.log"
+ },
+ {
+  "host": "seismic18",
+  "gpu": "NVIDIA RTX PRO 4000 Blackwell",
+  "model": "union",
+  "pid": 2360129,
+  "start": "2026-10-24T15:15:53",
+  "end": "2026-10-24T19:07:43",
+  "log": "logs/vllm_union_seismic18.log"
  }
 ]
